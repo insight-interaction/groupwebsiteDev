@@ -1,0 +1,149 @@
+<template>
+    <div class="section" id="section-project">
+        <div class="container">
+            <div class="section-head" id="team"><span>Team</span></div>
+
+            <div class="team-peoples">
+                <div v-for="p in people" class="team-people">
+                    <a :href="p.url" target="_blank">
+                        <img :src="p.img" class="team-people-img mx-auto d-block" />
+                        <div class="team-people-name">{{ p.name }}</div>
+                        <div class="team-people-role">{{ p.role }}</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script lang="ts">
+import "bootstrap/dist/css/bootstrap.css";
+import * as _ from "underscore";
+
+import { CommentOutlined } from "@ant-design/icons-vue";
+
+import Project from "./Project.vue";
+
+import { defineComponent } from "vue";
+import { useStore } from "vuex";
+
+import { onMounted, computed, reactive, toRefs, h, watch } from "vue";
+import { groupBy } from "underscore";
+
+const people = [
+    {
+        name: "Martin Wattenberg",
+        role: "Professor",
+        profile: "martin.jpeg",
+        url: "https://www.bewitched.com/",
+    },
+    {
+        name: "Fernanda Viégas",
+        role: "Professor",
+        profile: "fernanda.jpg",
+        url: "http://www.fernandaviegas.com/",
+    },
+    { name: "Yida Chen", role: "PhD", profile: "yida.jpg", url: "https://yc015.github.io/" },
+    {
+        name: "Cynthia Chen",
+        role: "Undergraduate",
+        profile: "cynthia.jpeg",
+        url: "https://chenxcynthia.github.io/",
+    },
+    {
+        name: "Kenneth Li",
+        role: "PhD",
+        profile: "kenneth.jpeg",
+        url: "https://likenneth.github.io/",
+    },
+    {
+        name: "Shivam Raval",
+        role: "PhD",
+        profile: "shivam.png",
+        url: "https://scholar.harvard.edu/shivamraval",
+    },
+    { name: "Aoyu Wu", role: "Postdoc", profile: "aoyu.jpeg", url: "https://wowjyu.github.io/" },
+    {
+        name: "Catherine Yeh",
+        role: "PhD",
+        profile: "catherine.jpg",
+        url: "https://catherinesyeh.github.io/",
+    },
+    { name: "Trevor DePodesta", role: "Undergraduate", profile: "", url: "" },
+    {
+        name: "David Bau",
+        role: "Alumni",
+        profile: "david.jpg",
+        url: "http://davidbau.com/research/",
+    },
+].map((x) => ({
+    ...x,
+    img: x.profile
+        ? require(`@/assets/images/people/${x.profile}`)
+        : require(`@/assets/images/people/placeholder.png`),
+}));
+
+export default defineComponent({
+    name: "Projects",
+    components: { CommentOutlined },
+    setup() {
+        const state = reactive({});
+
+        return {
+            people,
+            ...toRefs(state),
+        };
+    },
+    computed: {},
+});
+</script>
+
+<style rel="stylesheet" lang="scss">
+$blue: #263459;
+$color1: #96351e;
+$color2: #dbb98f;
+
+div.team-peoples {
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+
+    a {
+        color: inherit; /* blue colors for links too */
+        text-decoration: inherit; /* no underline */
+    }
+}
+div.team-people {
+    padding: 1rem 0;
+
+    img.team-people-img {
+        object-fit: cover;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+
+        border: 2px solid #194787;
+    }
+
+    div.team-people-name {
+        color: #194787;
+    }
+
+    div.team-people-role {
+        font-style: italic;
+    }
+}
+
+@media (min-width: 700px) {
+    div.team-peoples {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    div.team-peoples {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+</style>
