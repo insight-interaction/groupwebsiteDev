@@ -4,7 +4,7 @@
             <div class="section-head" id="team"><span>Team</span></div>
 
             <div class="team-peoples">
-                <div v-for="p in people" class="team-people">
+                <div v-for="p in finalPeopleList" class="team-people">
                     <a :href="p.url" target="_blank">
                         <img :src="p.img" class="team-people-img mx-auto d-block" />
                         <div class="team-people-name">{{ p.name }}</div>
@@ -30,7 +30,30 @@ import { useStore } from "vuex";
 import { onMounted, computed, reactive, toRefs, h, watch } from "vue";
 import { groupBy } from "underscore";
 
-const people = [
+// define person type
+type Person = {
+    name: string;
+    role: "Professor" | "Postdoc" | "PhD Student" | "Undergraduate" | "Alumni";
+    profile: string;
+    url: string;
+}
+
+// sort by role
+const roleOrder = ["Professor", "Postdoc", "PhD Student", "Undergraduate", "Alumni"]
+
+const comparePeople = (a: Person, b: Person) => {
+    // Compare by role
+    if (roleOrder.indexOf(a.role) < roleOrder.indexOf(b.role)) return -1;
+    if (roleOrder.indexOf(a.role) > roleOrder.indexOf(b.role)) return 1;
+
+    // If roles are equal, compare by last name
+    const lastNameA = a.name.split(" ").pop() || "";
+    const lastNameB = b.name.split(" ").pop() || "";
+    return lastNameA.localeCompare(lastNameB);
+}
+
+// list of people
+let people: Person[] = [
     {
         name: "Martin Wattenberg",
         role: "Professor",
@@ -76,7 +99,12 @@ const people = [
         profile: "david.jpg",
         url: "http://davidbau.com/research/",
     },
-].map((x) => ({
+];
+
+people.sort(comparePeople); // sort
+
+// final person mapping
+const finalPeopleList = people.map((x) => ({
     ...x,
     img: x.profile
         ? require(`@/assets/images/people/${x.profile}`)
@@ -90,7 +118,7 @@ export default defineComponent({
         const state = reactive({});
 
         return {
-            people,
+            finalPeopleList,
             ...toRefs(state),
         };
     },
