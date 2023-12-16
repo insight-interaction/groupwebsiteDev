@@ -139,6 +139,20 @@ $blue: #263459;
 $color1: #96351e;
 $color2: #dbb98f;
 
+$text-color: #1d1d1f;
+$dark-accent: #194787;
+$light-accent: #a9caec;
+
+::-moz-selection {
+    background: $light-accent;
+    color: $text-color;
+}
+
+::selection {
+    background: $light-accent;
+    color: $text-color;
+}
+
 html,
 body {
     overflow-x: hidden;
@@ -149,7 +163,7 @@ body {
     font-size: 18px;
     background: white;
 
-    color: #1d1d1f;
+    color: $text-color;
 
     scroll-behavior: smooth;
 }
@@ -162,7 +176,7 @@ div.container {
 nav {
     // height: 10px;
     // width: 100%;
-    background-color: #194787;
+    background-color: $dark-accent;
     padding: 0px 20px;
 
     a {
