@@ -93,6 +93,7 @@ let people: Person[] = [
         url: "https://catherinesyeh.github.io/",
     },
     { name: "Trevor DePodesta", role: "Undergraduate", profile: "", url: "" },
+    { name: "Olivia Seow", role: "PhD Student", profile: "olivia.jpeg", url: "https://www.oliviaseow.com/" },
     {
         name: "David Bau",
         role: "Alumni",
