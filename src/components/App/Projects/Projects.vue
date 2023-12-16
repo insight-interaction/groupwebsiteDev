@@ -28,13 +28,13 @@ const projects = [
     {
         imgurl: "proj_transformer.png",
         title: "Applied Interpretability",
-        about: "Applied interpretability focuses on understanding the inner workings of large language models and, based on these findings, improving the controllability of current model behavior to secure human benefits. It benefits from an endless pool of real-world problems derived from AI safety research, e.g., hallucination, privacy, and copyright. Previously, we have conducted preliminary explorations into the world models of toy GPT models and diffusion models, which were shown causal to the generation of these models. Building on this, we anticipate a productive line of research ahead.",
+        about: "Applied interpretability focuses on understanding the inner workings of large language models, and based on these findings, improving the controllability of current model behavior to secure human benefits. It benefits from an endless pool of real-world problems derived from AI safety research, e.g., hallucination, privacy, and copyright. Previously, we have conducted preliminary explorations into the world models of toy GPT models and diffusion models, which were shown to be causal to the generation of these models. Building on this work, we anticipate a productive line of research ahead.",
         id: "proj_transform",
     },
     {
         imgurl: "proj_dashboard.png",
         title: "Human-LLM Interaction",
-        about: "We ask if chatbot LLM encodes internal representations of user and itself, and if ture, how should we surface the internal mind of LLMs for reliable and safe use.",
+        about: "We ask if chatbot LLMs encode internal representations of the user and itself, and if true, how we should surface the internal mind of LLMs for reliable and safe use.",
         id: "proj_dashboard",
     },
     {
@@ -75,6 +75,7 @@ $color2: #dbb98f;
 #section-research {
     .ant-card-head {
         min-height: 30px;
+
         .ant-card-head-title {
             padding-top: 8px;
             padding-bottom: 8px;

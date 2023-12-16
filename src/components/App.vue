@@ -1,32 +1,16 @@
 <template>
     <div id="page">
-        <nav
-            class="navbar navbar-expand-lg sticky-top section"
-            v-bind:class="{ navbarOpen: navShow }"
-        >
+        <nav class="navbar navbar-expand-lg sticky-top section" v-bind:class="{ navbarOpen: navShow }">
             <div class="container">
-                <a class="navbar-brand" href="#" style="margin-left: 30px"
-                    >Insight and Interaction</a
-                >
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#navbarSupportedContent"
-                    @click.stop="toggleNavbar()"
-                >
+                <a class="navbar-brand" href="#" style="margin-left: 30px">Insight and Interaction</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    @click.stop="toggleNavbar()">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div
-                    class="collapse navbar-collapse"
-                    id="navbarSupportedContent"
-                    v-bind:class="{ show: navShow }"
-                >
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" v-bind:class="{ show: navShow }">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#home"
-                                >Home <span class="sr-only">(current)</span></a
-                            >
+                            <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#themes">Themes</a>
@@ -76,7 +60,7 @@
 
         <footer class="footer h-100">
             <div class="align-middle justify-content-center align-self-center text-center">
-                Last updated on Mar 2023.
+                Last updated: Dec 2023
             </div>
         </footer>
     </div>
@@ -187,6 +171,7 @@ nav {
 }
 
 @media all and (min-width: 768px) {
+
     // margin: 0px 100px;
     div.myrow {
         margin-left: 30px;
@@ -257,7 +242,7 @@ div#body {
     }
 
 
-    & > span {
+    &>span {
         // background: url("~@/assets/background.png");
 
         // background: url(/assets/background.png);

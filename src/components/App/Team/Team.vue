@@ -43,7 +43,7 @@ const people = [
         profile: "fernanda.jpg",
         url: "http://www.fernandaviegas.com/",
     },
-    { name: "Yida Chen", role: "PhD", profile: "yida.jpg", url: "https://yc015.github.io/" },
+    { name: "Yida Chen", role: "PhD Student", profile: "yida.jpg", url: "https://yc015.github.io/" },
     {
         name: "Cynthia Chen",
         role: "Undergraduate",
@@ -52,20 +52,20 @@ const people = [
     },
     {
         name: "Kenneth Li",
-        role: "PhD",
+        role: "PhD Student",
         profile: "kenneth.jpeg",
         url: "https://likenneth.github.io/",
     },
     {
         name: "Shivam Raval",
-        role: "PhD",
+        role: "PhD Student",
         profile: "shivam.png",
         url: "https://scholar.harvard.edu/shivamraval",
     },
     { name: "Aoyu Wu", role: "Postdoc", profile: "aoyu.jpeg", url: "https://wowjyu.github.io/" },
     {
         name: "Catherine Yeh",
-        role: "PhD",
+        role: "PhD Student",
         profile: "catherine.jpg",
         url: "https://catherinesyeh.github.io/",
     },
@@ -109,10 +109,13 @@ div.team-peoples {
     gap: 1rem;
 
     a {
-        color: inherit; /* blue colors for links too */
-        text-decoration: inherit; /* no underline */
+        color: inherit;
+        /* blue colors for links too */
+        text-decoration: inherit;
+        /* no underline */
     }
 }
+
 div.team-people {
     padding: 1rem 0;
 
@@ -144,6 +147,4 @@ div.team-people {
         grid-template-columns: repeat(3, 1fr);
     }
 }
-
-
 </style>

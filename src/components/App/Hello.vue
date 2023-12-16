@@ -4,7 +4,9 @@
             <img class="section-about-logo" :src="require(`@/assets/grouplogo.png`)" />
             <div class="section-about-head">Insight and Interaction</div>
             <div class="section-about-introtext">
-                The Insight + Interaction lab seeks to understand the inner workings of AI systems, and use these insights to enable better human/AI interaction. Key approaches in our research include data visualization, mechanistic interpretability, and even artistic exploration.
+                The Insight + Interaction lab seeks to understand the inner workings of AI systems, and use these insights
+                to enable better human-AI interaction. Key approaches in our research include data visualization,
+                mechanistic interpretability, and even artistic exploration.
             </div>
         </div>
     </div>
@@ -37,18 +39,18 @@ export default defineComponent({
 <style rel="stylesheet" lang="scss">
 div#section-about {
     background: white;
-    color:  #194787;
+    color: #194787;
 
     background: #194787;
     color: #f5f5f7;
-    
+
     padding-bottom: 60px;
     padding-top: 60px;
 
     img.section-about-logo {
         margin: 0px auto;
         display: block;
-        
+
         width: 300px;
         height: 300px;
     }
