@@ -2,7 +2,7 @@
     <div id="page">
         <nav class="navbar navbar-expand-lg sticky-top section" v-bind:class="{ navbarOpen: navShow }">
             <div class="container">
-                <a class="navbar-brand" href="#" style="margin-left: 30px">Insight and Interaction</a>
+                <a class="navbar-brand" href="#" style="margin-left: 30px">Insight + Interaction</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     @click.stop="toggleNavbar()">
                     <span class="navbar-toggler-icon"></span>
@@ -10,7 +10,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent" v-bind:class="{ show: navShow }">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="#home">Home<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#themes">Themes</a>
@@ -131,17 +131,22 @@ export default defineComponent({
 </script>
 
 <style rel="stylesheet" lang="scss">
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 @import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");
 
-$blue: #263459;
-$color1: #96351e;
-$color2: #dbb98f;
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900;1,9..40,1000&display=swap');
 
-$text-color: #1d1d1f;
-$dark-accent: #194787;
-$light-accent: #a9caec;
+@import url('https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 ::-moz-selection {
     background: $light-accent;
@@ -159,8 +164,9 @@ body {
 
     width: 100vw;
 
-    font-family: "Abel", sans-serif;
-    font-size: 18px;
+    font-family: $main-font;
+    font-weight: 300;
+    font-size: 16px;
     background: white;
 
     color: $text-color;
@@ -178,9 +184,24 @@ nav {
     // width: 100%;
     background-color: $dark-accent;
     padding: 0px 20px;
+    font-family: $title-font;
 
     a {
-        color: #f5f5f7 !important;
+        color: white !important;
+    }
+
+    a:hover {
+        color: $light-accent !important;
+        transition: 0.5s;
+    }
+
+    .navbar-brand {
+        font-weight: 500;
+        font-size: 1.1em;
+    }
+
+    .nav-link {
+        font-size: smaller;
     }
 }
 
@@ -232,15 +253,15 @@ div#body {
     font-weight: 500;
     font-size: 1.2em;
     padding-bottom: 0.5em;
-    color: $blue;
+    color: $dark-accent;
 }
 
 .section-head {
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1.6em;
     padding-bottom: 10px;
 
-    color: $blue; // $color1;
+    color: $dark-accent; // $color1;
 
     &::before {
         display: block;
@@ -269,8 +290,11 @@ div#body {
 
 .footer {
     margin-top: 20px;
-    background-color: $blue;
+    background-color: $dark-accent;
     height: 40px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     color: white;
+    font-size: smaller;
 }
 </style>

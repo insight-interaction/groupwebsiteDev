@@ -128,14 +128,12 @@ export default defineComponent({
 </script>
 
 <style rel="stylesheet" lang="scss">
-$blue: #263459;
-$color1: #96351e;
-$color2: #dbb98f;
-
 div.team-peoples {
     margin: 0 auto;
     display: grid;
     gap: 1rem;
+    margin-bottom: 10px;
+    margin-top: 10px;
 
     a {
         color: inherit;
@@ -146,23 +144,40 @@ div.team-peoples {
 }
 
 div.team-people {
-    padding: 1rem 0;
+    padding: 0 0 1rem;
+    text-align: center;
+    font-size: smaller;
 
     img.team-people-img {
         object-fit: cover;
         width: 100%;
         aspect-ratio: 1 / 1;
-
-        border: 2px solid #194787;
+        margin: 0px 30px 6px;
+        border-radius: 100%;
+        border: 2px solid $dark-accent;
+        // background: linear-gradient(transparent, transparent) padding-box,
+        //     linear-gradient(0deg, $med-accent, $dark-accent) border-box;
     }
 
     div.team-people-name {
-        color: #194787;
+        color: $dark-accent;
+        font-weight: 500;
     }
 
     div.team-people-role {
         font-style: italic;
+        font-size: small;
     }
+}
+
+div.team-people:nth-child(3n) img.team-people-img {
+    background: linear-gradient(transparent, transparent) padding-box,
+        linear-gradient(60deg, $med-accent, $dark-accent) border-box;
+}
+
+div.team-people:nth-child(3n+1) img.team-people-img {
+    background: linear-gradient(transparent, transparent) padding-box,
+        linear-gradient(120deg, $med-accent, $dark-accent) border-box;
 }
 
 @media (min-width: 700px) {

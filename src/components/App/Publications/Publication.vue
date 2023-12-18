@@ -6,25 +6,27 @@
             </div>
 
             <div class='col-md-10 col-8 pub_info_wrapper'>
-                <div class="publication_title">{{publication.title}} </div>
+                <div class="publication_title">{{ publication.title }} </div>
 
                 <div class="publication_author">
-                    {{ publication.author}}
+                    {{ publication.author }}
                 </div>
 
                 <div class="publication_venue">
-                    {{ publication.venue}}, {{  publication.year }}
+                    {{ publication.venue }}, {{ publication.year }}
                 </div>
 
                 <div class="publication_miscellaneous">
                     <span v-if="publication.preprint">
-                        <a :href="publication.preprint" target="_blank" rel="noopener noreferrer"><object data="https://sites.harvard.edu/insight-lab/files/2022/10/icon_pdf.svg" type="image/svg+xml" class='publication_miscellaneous_icon'></object></a>
+                        <a :href="publication.preprint" target="_blank" rel="noopener noreferrer"><object
+                                data="https://sites.harvard.edu/insight-lab/files/2022/10/icon_pdf.svg" type="image/svg+xml"
+                                class='publication_miscellaneous_icon'></object></a>
                     </span>
                 </div>
 
             </div>
+        </div>
     </div>
-</div>
 </template>
 
 <script lang="ts">
@@ -68,7 +70,7 @@ export default defineComponent({
     border-bottom: 1px solid black;
 
     a {
-        color: #1d1d1f;
+        color: $text-color;
         text-decoration: none;
     }
 }
@@ -80,13 +82,14 @@ export default defineComponent({
 
 .pub_book {
     vertical-align: middle;
-    color: #1d1d1f;
+    color: $text-color;
     font-weight: 300;
 }
 
 .pub-img {
     max-width: 100%;
 }
+
 .pub_title {
     font-size: 16px;
     font-weight: bold;
@@ -164,9 +167,8 @@ export default defineComponent({
 }
 
 .ant-tooltip-inner {
-  color: #263459;
-  background-color: #E4EAF2;
-  width: 400px;
+    color: #263459;
+    background-color: #E4EAF2;
+    width: 400px;
 }
-
 </style>

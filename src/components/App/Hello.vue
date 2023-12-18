@@ -2,11 +2,14 @@
     <div class="section" id="section-about">
         <div class="container" id="home">
             <img class="section-about-logo" :src="require(`@/assets/grouplogo.png`)" />
-            <div class="section-about-head">Insight and Interaction</div>
+            <div class="section-about-head">Insight + Interaction Lab</div>
             <div class="section-about-introtext">
-                The Insight + Interaction lab seeks to understand the inner workings of AI systems, and use these insights
-                to enable better human-AI interaction. Key approaches in our research include data visualization,
-                mechanistic interpretability, and even artistic exploration.
+                We seek to understand the inner workings of AI
+                systems, and use these insights
+                to enable better human-AI interaction. Key approaches in our research include <span class="emphasis">data
+                    visualization</span>,
+                <span class="emphasis">mechanistic interpretability</span>, and even <span class="emphasis">artistic
+                    exploration</span>.
             </div>
         </div>
     </div>
@@ -38,11 +41,8 @@ export default defineComponent({
 
 <style rel="stylesheet" lang="scss">
 div#section-about {
-    background: white;
-    color: #194787;
-
-    background: #194787;
-    color: #f5f5f7;
+    background: $dark-accent;
+    color: white;
 
     padding-bottom: 60px;
     padding-top: 60px;
@@ -59,10 +59,26 @@ div#section-about {
 div.section-about-head {
     text-align: center;
     font-size: 40px;
+    font-weight: 600;
+    font-family: $title-font;
+    padding-top: 20px;
+    margin-bottom: 4px;
 }
 
 div.section-about-introtext {
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
+
+    span.emphasis {
+        font-weight: 500;
+        // font-family: $accent-font;
+        letter-spacing: 0.2px;
+        // font-style: italic;
+        // color: $light-accent;
+
+        background: -webkit-linear-gradient(45deg, white, $light-accent);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 }
 </style>

@@ -3,8 +3,10 @@
         <div class="container">
             <div class="section-head" id="themes"><span>Research Themes</span></div>
             <!-- Below is a list of our main research themes in the area of AI Interpretability, Human-Computer Interaction, and visualization. -->
-            <div v-for="project in projects" :key="project.title">
-                <Project :project="project" />
+            <div class="project-outer-container">
+                <div v-for="project in projects" :key="project.title">
+                    <Project :project="project" />
+                </div>
             </div>
         </div>
     </div>
@@ -28,19 +30,19 @@ const projects = [
     {
         imgurl: "proj_transformer.png",
         title: "Applied Interpretability",
-        about: "Applied interpretability focuses on understanding the inner workings of large language models, and based on these findings, improving the controllability of current model behavior to secure human benefits. It benefits from an endless pool of real-world problems derived from AI safety research, e.g., hallucination, privacy, and copyright. Previously, we have conducted preliminary explorations into the world models of toy GPT models and diffusion models, which were shown to be causal to the generation of these models. Building on this work, we anticipate a productive line of research ahead.",
+        about: "We focus on understanding the inner workings of large language models (LLMs), and based on these findings, improving the controllability of current model behavior to secure human benefits. Our work targets real-world problems derived from AI safety research, e.g., hallucination, privacy, and copyright issues. Previously, we conducted preliminary explorations into the world models of toy GPT models and diffusion models, which were shown to causally impact model generations.",
         id: "proj_transform",
     },
     {
         imgurl: "proj_dashboard.png",
         title: "Human-LLM Interaction",
-        about: "We ask if chatbot LLMs encode internal representations of the user and itself, and if true, how we should surface the internal mind of LLMs for reliable and safe use.",
+        about: "We ask if chatbot LLMs encode internal representations of the user and itself, and if true, how we should surface the internal mind of LLMs for safe and reliable use.",
         id: "proj_dashboard",
     },
     {
         imgurl: "proj_visualization.png",
         title: "Visualization",
-        about: "We develop novel interactive visualization tools to study mechanisms in AI models such as transformers and embeddings.",
+        about: "We develop novel interactive visualization tools to study mechanisms in AI models such as transformer self-attention and contextual embeddings.",
         id: "proj_dashboard",
     }
 ] as any[];
@@ -68,9 +70,10 @@ export default defineComponent({
 </script>
 
 <style rel="stylesheet" lang="scss">
-$blue: #263459;
-$color1: #96351e;
-$color2: #dbb98f;
+.project-outer-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
 #section-research {
     .ant-card-head {
@@ -83,7 +86,7 @@ $color2: #dbb98f;
     }
 
     img {
-        border: 1px solid #5e7595;
+        border: 1px solid $dark-accent;
     }
 
     .ant-card-body {

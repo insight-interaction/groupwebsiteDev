@@ -203,13 +203,10 @@ export default defineComponent({
 </script>
 
 <style rel="stylesheet" lang="scss">
-$blue: #263459;
-$color1: #96351e;
-$color2: #dbb98f;
-
 #section-research {
     .ant-card-head {
         min-height: 30px;
+
         .ant-card-head-title {
             padding-top: 8px;
             padding-bottom: 8px;
@@ -249,7 +246,7 @@ $color2: #dbb98f;
     }
 }
 
-div.publication_wrapper {
+div.publication_wrapper:not(:last-child) {
     border-bottom: 1px solid silver;
 }
 
@@ -263,6 +260,7 @@ div.publication_wrapper a {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px 0;
     /* height: 800px; */
 
     font-weight: 200;
@@ -279,14 +277,20 @@ div.pub_info_wrapper {
 }
 
 .publication_title {
-    font-size: 18px;
-    font-weight: bold;
+    // font-size: 18px;
+    font-weight: 600;
+    font-family: $title-font;
 }
 
 .publication_author {
     /* font-family: "Post Grotesk Book", sans-serif; */
-    margin: 5px 0px;
+    margin: 2px 0px 8px;
     font-weight: 200;
+    font-size: smaller;
+}
+
+.publication_venue {
+    font-size: small;
 }
 
 .publication_miscellaneous {
@@ -323,7 +327,7 @@ div.pub_info_wrapper {
     }
 
     div.publication_wrapper {
-        width: 95vw;
+        width: 100%;
         margin: 10px auto;
     }
 

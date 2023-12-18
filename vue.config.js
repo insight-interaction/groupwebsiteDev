@@ -8,6 +8,11 @@ module.exports = {
                     javascriptEnabled: true,
                 }
             },
+            sass: {
+                additionalData: `
+                  @import "@/assets/scss/global.scss";
+                `
+            }
         },
     },
     publicPath: "./",

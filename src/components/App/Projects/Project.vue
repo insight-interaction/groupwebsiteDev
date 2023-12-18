@@ -5,8 +5,8 @@
         </div>
         <div class="col-md-7 col-sm-12" style="">
             <div class="proj_title">{{ project.title }}</div>
-
-            {{ project.about }}
+            <span class="proj_details">
+                {{ project.about }}</span>
         </div>
     </div>
 </template>
@@ -33,7 +33,7 @@ export default defineComponent({
         });
         const pub = ref(null);
 
-        onMounted(() => {});
+        onMounted(() => { });
 
         return {
             ...toRefs(state),
@@ -46,11 +46,11 @@ export default defineComponent({
 
 <style rel="stylesheet" lang="scss">
 .project-container {
-    padding: 30px 0;
+    padding: 0 0 1.4em;
 
     // border-bottom: 1px solid black;
     a {
-        color: #1d1d1f;
+        color: $text-color;
         text-decoration: none;
     }
 }
@@ -62,16 +62,20 @@ export default defineComponent({
 
 .proj_book {
     vertical-align: middle;
-    color: #1d1d1f;
+    color: $text-color;
     font-weight: 300;
 }
 
 .proj_img {
     max-width: 100%;
 }
+
 .proj_title {
-    font-size: 1.6em;
-    font-weight: bold;
+    font-size: 1.2em;
+    font-weight: 600;
+    font-family: $title-font;
+    margin-bottom: 2px;
+    margin-top: 2px;
 }
 
 .proj_award {
@@ -81,6 +85,10 @@ export default defineComponent({
 
 .proj_author {
     font-size: 15px;
+}
+
+.proj_details {
+    font-size: 0.9em;
 }
 
 .badge-j {
