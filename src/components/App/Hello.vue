@@ -1,8 +1,9 @@
 <template>
     <div class="section" id="section-about">
         <div class="container" id="home">
-            <img class="section-about-logo" :src="require(`@/assets/grouplogo.png`)" />
-            <div class="section-about-head">Insight + Interaction Lab</div>
+            <!-- <img class="section-about-logo" :src="require(`@/assets/logo.svg`)" /> -->
+            <Logo />
+            <!-- <div class="section-about-head">Insight + Interaction Lab</div> -->
             <div class="section-about-introtext">
                 We seek to understand the inner workings of AI
                 systems, and use these insights
@@ -21,11 +22,13 @@ import "bootstrap/dist/css/bootstrap.css";
 import { defineComponent } from "vue";
 import { useStore } from "vuex";
 
+import Logo from "./Logo.vue";
+
 import { onMounted, computed, reactive, toRefs, h, watch } from "vue";
 
 export default defineComponent({
     name: "App",
-    components: {},
+    components: { Logo },
     setup() {
         const store = useStore();
 
@@ -35,7 +38,7 @@ export default defineComponent({
             ...toRefs(state),
         };
     },
-    computed: {},
+    computed: {}
 });
 </script>
 
@@ -48,11 +51,10 @@ div#section-about {
     padding-top: 60px;
 
     img.section-about-logo {
-        margin: 0px auto;
+        margin: 0px auto 20px;
         display: block;
-
-        width: 300px;
-        height: 300px;
+        width: 100% // width: 300px;
+            // height: 300px;
     }
 }
 
@@ -80,5 +82,6 @@ div.section-about-introtext {
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
+
 }
 </style>
