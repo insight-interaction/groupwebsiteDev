@@ -115,6 +115,13 @@ export default defineComponent({
                     content: "",
                 },
             ],
+            link: [
+                {
+                    rel: 'icon',
+                    href: require(`@/assets/fav.png`), // Use the imported favicon
+                    type: 'image/x-icon'
+                }
+            ],
         });
 
         const toggleNavbar = () => {
