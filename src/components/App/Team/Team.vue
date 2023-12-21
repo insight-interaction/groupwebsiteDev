@@ -46,10 +46,10 @@ const comparePeople = (a: Person, b: Person) => {
     if (roleOrder.indexOf(a.role) < roleOrder.indexOf(b.role)) return -1;
     if (roleOrder.indexOf(a.role) > roleOrder.indexOf(b.role)) return 1;
 
-    // If roles are equal, compare by last name
-    const lastNameA = a.name.split(" ").pop() || "";
-    const lastNameB = b.name.split(" ").pop() || "";
-    return lastNameA.localeCompare(lastNameB);
+    // If roles are equal, compare by first name
+    const firstNameA = a.name.split(" ")[0] || "";
+    const firstNameB = b.name.split(" ")[0] || "";
+    return firstNameA.localeCompare(firstNameB);
 }
 
 // list of people
@@ -85,7 +85,7 @@ let people: Person[] = [
         profile: "shivam.png",
         url: "https://scholar.harvard.edu/shivamraval",
     },
-    { name: "Aoyu Wu", role: "Postdoc", profile: "aoyu.jpeg", url: "https://wowjyu.github.io/" },
+    { name: "Aoyu Wu", role: "Postdoc", profile: "aoyu.jpg", url: "https://wowjyu.github.io/" },
     {
         name: "Catherine Yeh",
         role: "PhD Student",
