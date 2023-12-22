@@ -155,15 +155,7 @@ let alumni: Alum[] = [
         profile: "david.jpg",
         url: "http://davidbau.com/research/",
         year: 2022
-    },
-    {
-        name: "David Bau",
-        prev: "Postdoc",
-        now: "Professor @ Northeastern",
-        profile: "david.jpg",
-        url: "http://davidbau.com/research/",
-        year: 2022
-    },
+    }
 ]
 
 const compareAlumni = (a: Alum, b: Alum) => {
