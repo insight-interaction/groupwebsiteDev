@@ -87,6 +87,7 @@ export default defineComponent({
 
     img {
         border: 1px solid $dark-accent;
+        width: 100%;
     }
 
     .ant-card-body {

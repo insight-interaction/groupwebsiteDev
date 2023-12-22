@@ -260,7 +260,7 @@ div.publication_wrapper a {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 0;
+    padding: 10px;
     /* height: 800px; */
 
     font-weight: 200;

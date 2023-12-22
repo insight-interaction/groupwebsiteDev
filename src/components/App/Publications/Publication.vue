@@ -171,4 +171,16 @@ export default defineComponent({
     background-color: #E4EAF2;
     width: 400px;
 }
+
+@media (max-width: 600px) {
+
+    .pub_profile_wrapper,
+    .pub_info_wrapper {
+        width: 100%;
+    }
+
+    .pub_profile_wrapper {
+        padding-bottom: 0 !important;
+    }
+}
 </style>
