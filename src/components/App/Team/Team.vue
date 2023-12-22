@@ -130,7 +130,7 @@ let people: Person[] = [
         profile: "catherine.jpg", alter: "catherine.jpg",
         url: "https://catherinesyeh.github.io/",
     },
-    { name: "Trevor DePodesta", role: "Undergraduate", profile: "", alter: "trevor.png", url: "https://tdepodesta.github.io/" },
+    { name: "Trevor DePodesta", role: "Undergraduate", profile: "trevor.png", alter: "trevor.png", url: "https://tdepodesta.github.io/" },
     { name: "Olivia Seow", role: "PhD Student", profile: "olivia.jpeg", alter: "olivia.jpg", url: "https://www.oliviaseow.com/" },
 ];
 
@@ -148,6 +148,14 @@ const finalPeopleList = people.map((x) => ({
 
 // ALUMNI
 let alumni: Alum[] = [
+    {
+        name: "David Bau",
+        prev: "Postdoc",
+        now: "Professor @ Northeastern",
+        profile: "david.jpg",
+        url: "http://davidbau.com/research/",
+        year: 2022
+    },
     {
         name: "David Bau",
         prev: "Postdoc",
@@ -272,7 +280,8 @@ export default defineComponent({
     margin-bottom: 50px;
 
     .team-people {
-        width: max-content;
+        width: 100%;
+        max-width: max-content;
         display: flex;
         align-items: center;
         text-align: left;
@@ -302,15 +311,9 @@ export default defineComponent({
     }
 }
 
-@media (max-width: 1100px) {
-    .team-peoples {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
 @media (max-width: 1000px) {
     .team-peoples {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
