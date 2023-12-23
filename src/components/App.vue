@@ -1,5 +1,5 @@
 <template>
-    <div id="page">
+    <div id="top">
         <nav class="navbar navbar-expand-lg sticky-top section" v-bind:class="{ navbarOpen: navShow }">
             <div class="container">
                 <a class="navbar-brand" href="#" style="margin-left: 30px">Insight + Interaction</a>
@@ -59,15 +59,25 @@
         </div>
 
         <footer class="footer h-100">
-            <div class="align-middle justify-content-center align-self-center text-center">
-                Last updated: Dec 2023
+            <div class="container">
+                <a id="up-arrow" class="arrow-button" href="#top" title="Back to top"><img :src="toTop" /></a>
+                <div class="footer-imgs">
+                    <img :src="footerLogo" />
+                    <a-divider type="vertical"
+                        style="height: 40px; background-color: white; opacity: 0.5; width: 2px; margin: 0 20px; transform: rotate(15deg);" />
+                    <img :src="harvardLogo" />
+                </div>
+                <!-- <div class="align-middle justify-content-center align-self-center text-center">
+                <p class="update">
+                    Last updated: Dec 2023
+                </p>
+            </div> -->
             </div>
         </footer>
     </div>
 </template>
 
 <script lang="ts">
-import $ from "jquery";
 import "bootstrap/dist/css/bootstrap.css";
 import { useHead } from "@vueuse/head";
 // import { Head } from "@egoist/vue-head";
@@ -80,7 +90,7 @@ import Hello from "./App/Hello.vue";
 import Projects from "./App/Projects/Projects.vue";
 import Team from "./App/Team/Team.vue";
 
-import { onMounted, computed, reactive, toRefs, h, watch } from "vue";
+import { computed, reactive, toRefs } from "vue";
 
 export default defineComponent({
     name: "App",
@@ -97,6 +107,10 @@ export default defineComponent({
             svgStr: computed(() => store.state.svgStr),
             navShow: false,
         });
+
+        const footerLogo = require(`@/assets/footerlogo.svg`);
+        const harvardLogo = require(`@/assets/harvardlogo.svg`);
+        const toTop = require(`@/assets/backtotop.svg`);
 
         const siteData = reactive({
             title: `Insight + Interaction Lab`,
@@ -131,6 +145,9 @@ export default defineComponent({
         return {
             ...toRefs(state),
             toggleNavbar,
+            footerLogo,
+            harvardLogo,
+            toTop
         };
     },
     computed: {},
@@ -299,9 +316,57 @@ div#body {
     margin-top: 20px;
     background-color: $dark-accent;
     height: 40px;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 12px;
+    padding-bottom: 12px;
     color: white;
     font-size: smaller;
+    text-align: center;
+    position: relative;
+
+    img {
+        max-height: 40px;
+        width: auto;
+        margin: 0 !important;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+
+    p.update {
+        font-size: x-small;
+        margin-bottom: 0;
+        font-weight: 200;
+        // font-style: italic;
+    }
+
+    #up-arrow {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: 0.5s;
+    }
+
+    #up-arrow img {
+        max-height: 20px;
+    }
+
+    #up-arrow:hover {
+        opacity: 0.7;
+    }
+}
+
+@media (max-width: 500px) {
+    .footer {
+
+        img {
+            max-height: 35px;
+        }
+
+        #up-arrow {
+            right: 12px;
+        }
+    }
 }
 </style>
