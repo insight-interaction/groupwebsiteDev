@@ -20,7 +20,7 @@
                     <span v-if="publication.preprint">
                         <a :href="publication.preprint" target="_blank" rel="noopener noreferrer"><object
                                 data="https://sites.harvard.edu/insight-lab/files/2022/10/icon_pdf.svg" type="image/svg+xml"
-                                class='publication_miscellaneous_icon'></object></a>
+                                class='publication_miscellaneous_icon' title="Preprint"></object></a>
                     </span>
                 </div>
 

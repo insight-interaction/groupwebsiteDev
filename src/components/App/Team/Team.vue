@@ -18,7 +18,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a :href="p.url" target="_blank">
+                            <a :href="p.url" target="_blank" :title="p.name">
                                 <div class="team-people-name">{{ p.name }}</div>
                             </a>
                             <div class="team-people-role">{{ p.role }}</div>
@@ -32,7 +32,7 @@
                         <div v-for="p in finalAlumList" class="team-people">
                             <img :src="p.img" class="team-people-img mx-auto d-block" />
                             <div>
-                                <a :href="p.url" target="_blank">
+                                <a :href="p.url" target="_blank" :title="p.name">
                                     <div class="team-people-name">{{ p.name }}</div>
                                 </a>
                                 <div class="team-people-role">{{ p.prev }} &rarr; {{ p.now }}</div>

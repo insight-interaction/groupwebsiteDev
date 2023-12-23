@@ -1,8 +1,9 @@
 <template>
-    <div id="top">
+    <div id="home">
         <nav class="navbar navbar-expand-lg sticky-top section" v-bind:class="{ navbarOpen: navShow }">
             <div class="container">
-                <a class="navbar-brand" href="#" style="margin-left: 30px">Insight + Interaction</a>
+                <a class="navbar-brand" href="#home" style="margin-left: 30px" title="Insight + Interaction">Insight +
+                    Interaction</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     @click.stop="toggleNavbar()">
                     <span class="navbar-toggler-icon"></span>
@@ -10,16 +11,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent" v-bind:class="{ show: navShow }">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#home">Home<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="#home" title="Home">Home<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#themes">Themes</a>
+                            <a class="nav-link" href="#themes" title="Themes">Themes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#team">Team</a>
+                            <a class="nav-link" href="#team" title="Team">Team</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#publications">Publications</a>
+                            <a class="nav-link" href="#publications" title="Publications">Publications</a>
                         </li>
                         <!-- <li class="nav-item">
                         <a class="nav-link" href="#sec-press">Course</a>
@@ -60,12 +61,12 @@
 
         <footer class="footer h-100">
             <div class="container">
-                <a id="up-arrow" class="arrow-button" href="#top" title="Back to top"><img :src="toTop" /></a>
+                <a id="up-arrow" class="arrow-button" href="#home" title="Back to top"><img :src="toTop" /></a>
                 <div class="footer-imgs">
-                    <img :src="footerLogo" />
+                    <a href="#home" title="Insight + Interaction"><img :src="footerLogo" /></a>
                     <a-divider type="vertical"
                         style="height: 40px; background-color: white; opacity: 0.5; width: 2px; margin: 0 20px; transform: rotate(15deg);" />
-                    <img :src="harvardLogo" />
+                    <a href="https://seas.harvard.edu/" target="_blank" title="Harvard SEAS"><img :src="harvardLogo" /></a>
                 </div>
                 <!-- <div class="align-middle justify-content-center align-self-center text-center">
                 <p class="update">
@@ -261,6 +262,14 @@ nav {
     div.section {
         padding: 10px 20px;
     }
+
+    .section:not(#section-about):not(.navbar) div.container {
+        padding: 10px 0;
+    }
+
+    .navbar-brand {
+        margin-left: 0 !important;
+    }
 }
 
 div#body {
@@ -327,6 +336,11 @@ div#body {
         max-height: 40px;
         width: auto;
         margin: 0 !important;
+        transition: 0.5s;
+    }
+
+    .footer-imgs img:hover {
+        opacity: 0.7;
     }
 
     p {
@@ -359,7 +373,6 @@ div#body {
 
 @media (max-width: 500px) {
     .footer {
-
         img {
             max-height: 35px;
         }

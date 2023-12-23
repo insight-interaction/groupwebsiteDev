@@ -1,6 +1,6 @@
 <template>
     <div class="section" id="section-about">
-        <div class="container" id="home">
+        <div class="container" id="home-sec">
             <!-- <img class="section-about-logo" :src="require(`@/assets/logo.svg`)" /> -->
             <Logo />
             <!-- <div class="section-about-head">Insight + Interaction Lab</div> -->
@@ -12,6 +12,10 @@
                 <span class="emphasis">mechanistic interpretability</span>, and even <span class="emphasis">artistic
                     exploration</span>.
             </div>
+
+            <a id="down-arrow" class="arrow-button" href="#themes" title="Go to main content">
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+            </a>
         </div>
     </div>
 </template>
@@ -49,6 +53,7 @@ div#section-about {
 
     padding-bottom: 60px;
     padding-top: 60px;
+    position: relative;
 
     img.section-about-logo {
         margin: 0px auto 20px;
@@ -83,5 +88,18 @@ div.section-about-introtext {
         -webkit-text-fill-color: transparent;
     }
 
+}
+
+#down-arrow {
+    text-align: center;
+    display: block;
+    color: white;
+    margin-top: 20px;
+    transition: 0.5s;
+    font-size: larger;
+}
+
+#down-arrow:hover {
+    opacity: 0.7;
 }
 </style>
