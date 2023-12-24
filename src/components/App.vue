@@ -2,8 +2,8 @@
     <div id="home">
         <nav class="navbar navbar-expand-lg sticky-top section" v-bind:class="{ navbarOpen: navShow }">
             <div class="container">
-                <a class="navbar-brand" href="#home" style="margin-left: 30px" title="Insight + Interaction">Insight +
-                    Interaction</a>
+                <a class="navbar-brand" href="#home" style="margin-left: 30px" title="Insight + Interaction"><img
+                        :src="headerLogo" /></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     @click.stop="toggleNavbar()">
                     <span class="navbar-toggler-icon"></span>
@@ -109,6 +109,7 @@ export default defineComponent({
             navShow: false,
         });
 
+        const headerLogo = require(`@/assets/headerlogo.svg`)
         const footerLogo = require(`@/assets/footerlogo.svg`);
         const harvardLogo = require(`@/assets/harvardlogo.svg`);
         const toTop = require(`@/assets/backtotop.svg`);
@@ -146,6 +147,7 @@ export default defineComponent({
         return {
             ...toRefs(state),
             toggleNavbar,
+            headerLogo,
             footerLogo,
             harvardLogo,
             toTop
@@ -218,11 +220,21 @@ nav {
     a:hover {
         color: $light-accent !important;
         transition: 0.5s;
+
+        img {
+            opacity: 0.7;
+        }
     }
 
     .navbar-brand {
         font-weight: 500;
         font-size: 1.1em;
+
+        img {
+            max-height: 18px;
+            margin: 0;
+            transition: 0.5s;
+        }
     }
 
     .nav-link {
@@ -269,6 +281,18 @@ nav {
 
     .navbar-brand {
         margin-left: 0 !important;
+        padding: 0;
+    }
+}
+
+@media all and (max-width:450px) {
+    .navbar {
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+    }
+
+    .navbar-brand img {
+        max-height: 16px !important;
     }
 }
 

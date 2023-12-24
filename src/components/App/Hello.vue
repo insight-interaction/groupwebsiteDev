@@ -90,6 +90,19 @@ div.section-about-introtext {
 
 }
 
+@media all and (max-width: 650px) {
+    div.section-about-introtext {
+        font-size: 16px;
+    }
+}
+
+
+@media all and (max-width: 450px) {
+    div.section-about-introtext {
+        font-size: 14px;
+    }
+}
+
 #down-arrow {
     text-align: center;
     display: block;
