@@ -2,11 +2,14 @@
     <div id="home">
         <nav class="navbar navbar-expand-lg sticky-top section" v-bind:class="{ navbarOpen: navShow }">
             <div class="container">
-                <a class="navbar-brand" href="#home" style="margin-left: 30px" title="Insight + Interaction"><img
-                        :src="headerLogo" /></a>
+                <a class="navbar-brand" href="#home" title="Insight + Interaction"><img :src="headerLogo" /></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     @click.stop="toggleNavbar()">
-                    <span class="navbar-toggler-icon"></span>
+                    <div id="nav-icon" :class="{ open: navShow }">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent" v-bind:class="{ show: navShow }">
                     <ul class="navbar-nav ms-auto">
@@ -109,7 +112,7 @@ export default defineComponent({
             navShow: false,
         });
 
-        const headerLogo = require(`@/assets/headerlogo.svg`)
+        const headerLogo = require(`@/assets/headerlogo.svg`);
         const footerLogo = require(`@/assets/footerlogo.svg`);
         const harvardLogo = require(`@/assets/harvardlogo.svg`);
         const toTop = require(`@/assets/backtotop.svg`);
@@ -229,6 +232,8 @@ nav {
     .navbar-brand {
         font-weight: 500;
         font-size: 1.1em;
+        margin-left: 10px;
+        transition: 0.5s;
 
         img {
             max-height: 18px;
@@ -240,6 +245,31 @@ nav {
     .nav-link {
         font-size: smaller;
     }
+
+    .navbar-toggler {
+        padding: 0.25rem 0;
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        transition: 0.5s;
+
+        :hover {
+            opacity: 0.7;
+        }
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: none !important;
+    }
+
+    .navbar-collapse {
+        transition: 0.5s;
+    }
+
+    .navbar-collapse.show {
+        padding: 0 10px;
+    }
+
 }
 
 @media all and (min-width: 768px) {
@@ -259,6 +289,24 @@ nav {
     div.section {
         padding: 0px 60px;
         // margin-top: 30px;
+    }
+
+    .navbar-expand-lg .navbar-toggler {
+        display: none;
+    }
+
+    .navbar-expand-lg .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+    }
+
+    .navbar-expand-lg .navbar-nav {
+        flex-direction: row;
+    }
+
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
     }
 }
 
@@ -283,12 +331,28 @@ nav {
         margin-left: 0 !important;
         padding: 0;
     }
+
+    .navbar-toggler {
+        margin-right: 0 !important;
+    }
+
+    .navbar-collapse.show {
+        padding: 0 !important;
+    }
+
+    nav.navbarOpen {
+        box-shadow: 0px 3px 15px rgb($med-accent, 0.5);
+    }
 }
 
 @media all and (max-width:450px) {
     .navbar {
-        padding-top: 0.25rem;
-        padding-bottom: 0.25rem;
+        padding-top: 0.4rem;
+        padding-bottom: 0.4rem;
+    }
+
+    .navbar-toggler {
+        transform: scale(0.9);
     }
 
     .navbar-brand img {
@@ -387,7 +451,8 @@ div#body {
     }
 
     #up-arrow img {
-        max-height: 20px;
+        max-height: 25px;
+        transition: 0.5s;
     }
 
     #up-arrow:hover {
@@ -404,6 +469,92 @@ div#body {
         #up-arrow {
             right: 12px;
         }
+
+        #up-arrow img {
+            max-height: 20px;
+        }
     }
+}
+
+#nav-icon {
+    width: 20px;
+    height: 17px;
+    position: relative;
+    margin: 0px auto;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
+#nav-icon span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: white;
+    border-radius: 2px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+}
+
+#nav-icon span:nth-child(1) {
+    top: 0px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+
+#nav-icon span:nth-child(2) {
+    top: 7.5px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+
+#nav-icon span:nth-child(3) {
+    top: 15px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+
+#nav-icon.open span:nth-child(1) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg) scaleX(1.2);
+    top: -1px;
+    left: 1px;
+}
+
+#nav-icon.open span:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+}
+
+#nav-icon.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg) scaleX(1.2);
+    top: 16px;
+    left: 1px;
 }
 </style>
