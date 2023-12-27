@@ -161,7 +161,7 @@ function stopAnimation() {
     })
 }
 
-function myEventHander(e: Event) {
+function myEventHandler(e: Event) {
     stopAnimation();
     animateSvgLetters();
 }
@@ -176,12 +176,12 @@ export default defineComponent({
 
         onMounted(() => {
             animateSvgLetters();
-            window.addEventListener("resize", myEventHander);
+            window.addEventListener("resize", myEventHandler);
         });
 
         onUnmounted(() => {
             stopAnimation();
-            window.removeEventListener("resize", myEventHander);
+            window.removeEventListener("resize", myEventHandler);
         });
 
         return {

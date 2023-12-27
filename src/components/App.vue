@@ -2,7 +2,7 @@
     <div id="home">
         <nav class="navbar navbar-expand-lg sticky-top section" v-bind:class="{ navbarOpen: navShow }">
             <div class="container">
-                <a class="navbar-brand" href="#home" title="Insight + Interaction"><img :src="headerLogo" /></a>
+                <a class="navbar-brand" href="#" title="Insight + Interaction"><img :src="headerLogo" /></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     @click.stop="toggleNavbar()">
                     <div id="nav-icon" :class="{ open: navShow }">
@@ -13,17 +13,19 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent" v-bind:class="{ show: navShow }">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#home" title="Home">Home<span class="sr-only">(current)</span></a>
+                        <li class="nav-item" :class="{ active: activeSection === 'home' }">
+                            <a class="nav-link" href="#" title="Home" @click.stop="setActiveSection('home')">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#themes" title="Themes">Themes</a>
+                        <li class="nav-item" :class="{ active: activeSection === 'themes' }">
+                            <a class="nav-link" href="#themes" title="Themes"
+                                @click.stop="setActiveSection('themes')">Themes</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#team" title="Team">Team</a>
+                        <li class="nav-item" :class="{ active: activeSection === 'team' }">
+                            <a class="nav-link" href="#team" title="Team" @click.stop="setActiveSection('team')">Team</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#publications" title="Publications">Publications</a>
+                        <li class="nav-item" :class="{ active: activeSection === 'pubs' }">
+                            <a class="nav-link" href="#publications" title="Publications"
+                                @click.stop="setActiveSection('pubs')">Publications</a>
                         </li>
                         <!-- <li class="nav-item">
                         <a class="nav-link" href="#sec-press">Course</a>
@@ -49,24 +51,13 @@
                 </div> -->
                 </div>
             </div>
-
-            <div class="col-sm-only">
-                <Hello />
-                <div class="row myrow" id="row-profile">
-                    <div class="col-12">
-                        <Projects />
-                        <Team />
-                        <Publications />
-                    </div>
-                </div>
-            </div>
         </div>
 
         <footer class="footer h-100">
             <div class="container">
-                <a id="up-arrow" class="arrow-button" href="#home" title="Back to top"><img :src="toTop" /></a>
+                <a id="up-arrow" class="arrow-button" href="#" title="Back to top"><img :src="toTop" /></a>
                 <div class="footer-imgs">
-                    <a href="#home" title="Insight + Interaction"><img :src="footerLogo" /></a>
+                    <a href="#" title="Insight + Interaction"><img :src="footerLogo" /></a>
                     <a-divider type="vertical"
                         style="height: 40px; background-color: white; opacity: 0.5; width: 2px; margin: 0 20px; transform: rotate(15deg);" />
                     <a href="https://seas.harvard.edu/" target="_blank" title="Harvard SEAS"><img :src="harvardLogo" /></a>
@@ -84,9 +75,6 @@
 <script lang="ts">
 import "bootstrap/dist/css/bootstrap.css";
 import { useHead } from "@vueuse/head";
-// import { Head } from "@egoist/vue-head";
-
-import { defineComponent } from "vue";
 import { useStore } from "vuex";
 
 import Publications from "./App/Publications/Publications.vue";
@@ -94,7 +82,7 @@ import Hello from "./App/Hello.vue";
 import Projects from "./App/Projects/Projects.vue";
 import Team from "./App/Team/Team.vue";
 
-import { computed, reactive, toRefs } from "vue";
+import { defineComponent, computed, reactive, toRefs, onMounted, onBeforeUnmount } from "vue";
 
 export default defineComponent({
     name: "App",
@@ -110,6 +98,7 @@ export default defineComponent({
         const state = reactive({
             svgStr: computed(() => store.state.svgStr),
             navShow: false,
+            activeSection: "home"
         });
 
         const headerLogo = require(`@/assets/headerlogo.svg`);
@@ -147,16 +136,49 @@ export default defineComponent({
             state.navShow = !state.navShow;
         };
 
+        const setActiveSection = (section: string) => {
+            state.activeSection = section;
+        }
+
+        const onScroll = () => {
+            const scrollPosition = window.scrollY + 50;
+
+            // const home = document.getElementById("home-sec");
+            const themes = document.getElementById("themes");
+            const team = document.getElementById("team");
+            const pubs = document.getElementById("publications");
+
+            // Logic to determine which section is in view
+            if (themes && scrollPosition < themes.offsetTop) {
+                setActiveSection('home');
+            } else if (themes && team && scrollPosition >= themes.offsetTop && scrollPosition < team.offsetTop) {
+                setActiveSection('themes');
+            } else if (team && pubs && scrollPosition >= team.offsetTop && scrollPosition < pubs.offsetTop) {
+                setActiveSection('team');
+            } else {
+                setActiveSection('pubs');
+            }
+        };
+
+        onMounted(() => {
+            window.addEventListener('scroll', onScroll);
+        });
+
+        onBeforeUnmount(() => {
+            window.removeEventListener('scroll', onScroll);
+        });
+
         return {
             ...toRefs(state),
             toggleNavbar,
+            setActiveSection,
+            onScroll,
             headerLogo,
             footerLogo,
             harvardLogo,
             toTop
         };
-    },
-    computed: {},
+    }
 });
 </script>
 
@@ -190,8 +212,7 @@ export default defineComponent({
 
 html,
 body {
-    overflow-x: hidden;
-
+    // overflow-x: hidden;
     width: 100vw;
 
     font-family: $main-font;
@@ -200,13 +221,17 @@ body {
     background: white;
 
     color: $text-color;
-
-    scroll-behavior: smooth;
+    height: auto;
 }
 
 div.container {
     max-width: 1280px;
     padding: 10px auto;
+}
+
+div.section {
+    padding: 0px 60px;
+    // margin-top: 30px;
 }
 
 nav {
@@ -221,12 +246,8 @@ nav {
     }
 
     a:hover {
-        color: $light-accent !important;
+        opacity: 0.7;
         transition: 0.5s;
-
-        img {
-            opacity: 0.7;
-        }
     }
 
     .navbar-brand {
@@ -244,6 +265,12 @@ nav {
 
     .nav-link {
         font-size: smaller;
+        transition: 0.5s;
+    }
+
+    .nav-item.active .nav-link {
+        color: $light-accent !important;
+        pointer-events: none;
     }
 
     .navbar-toggler {
@@ -282,15 +309,6 @@ nav {
         margin-bottom: 30px;
     }
 
-    div.col-sm-only {
-        display: none;
-    }
-
-    div.section {
-        padding: 0px 60px;
-        // margin-top: 30px;
-    }
-
     .navbar-expand-lg .navbar-toggler {
         display: none;
     }
@@ -315,14 +333,6 @@ nav {
         margin: 20px 10px;
     }
 
-    div.col-sm-none {
-        display: none;
-    }
-
-    div.section {
-        padding: 10px 20px;
-    }
-
     .section:not(#section-about):not(.navbar) div.container {
         padding: 10px 0;
     }
@@ -342,6 +352,12 @@ nav {
 
     nav.navbarOpen {
         box-shadow: 0px 3px 15px rgb($med-accent, 0.5);
+    }
+}
+
+@media all and (max-width: 600px) {
+    div.section {
+        padding: 10px 20px;
     }
 }
 

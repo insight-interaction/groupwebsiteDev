@@ -85,6 +85,7 @@ div.section-about-introtext {
 
         background: -webkit-linear-gradient(45deg, white, $light-accent);
         -webkit-background-clip: text;
+        background-clip: text;
         -webkit-text-fill-color: transparent;
     }
 
