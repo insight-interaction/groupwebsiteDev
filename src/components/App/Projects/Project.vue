@@ -55,17 +55,6 @@ export default defineComponent({
     }
 }
 
-.publicationDiv i.fas {
-    vertical-align: middle;
-    width: 17px !important;
-}
-
-.proj_book {
-    vertical-align: middle;
-    color: $text-color;
-    font-weight: 300;
-}
-
 .proj_img {
     max-width: 100%;
 }
@@ -78,78 +67,8 @@ export default defineComponent({
     margin-top: 2px;
 }
 
-.proj_award {
-    font-size: 14px;
-    color: #96351e;
-}
-
-.proj_author {
-    font-size: 15px;
-}
-
 .proj_details {
     font-size: 0.9em;
-}
-
-.badge-j {
-    color: #cf1322;
-    background: #fff1f0;
-    border: 1px solid #ffa39e;
-    padding: 0.25em 0.35em !important;
-    // background-color: #f58e85 !important;
-}
-
-.badge-c {
-    color: #d46b08;
-    background: #fff7e6;
-    border: 1px solid #ffd591;
-    padding: 0.25em 0.35em !important;
-
-    // background-color: #f9ad45 !important;
-}
-
-.badge-o {
-    color: #096dd9;
-    background: #e6f7ff;
-    border: 1px solid #91d5ff;
-    padding: 0.25em 0.35em !important;
-
-    // background-color: #90c7f5 !important;
-}
-
-.badge {
-    font-weight: 400;
-}
-
-.badge-venue {
-    margin-left: 2px;
-    margin-right: 2px;
-    display: inline-block;
-    min-width: 10px;
-    padding: 3px 7px;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 1;
-    color: #000000d9;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    background: #fafafa;
-    border: 1px solid #d9d9d9;
-    padding: 0.25em 0.35em !important;
-
-    border-radius: 0.25rem;
-}
-
-.proj_icon {
-    color: #333 !important;
-    margin-right: 16px;
-    font-size: 12px;
-}
-
-.ant-tooltip-inner {
-    color: #263459;
-    background-color: #e4eaf2;
-    width: 400px;
+    // font-family: $title-font;
 }
 </style>

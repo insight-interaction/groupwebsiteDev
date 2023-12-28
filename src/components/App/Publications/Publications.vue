@@ -36,6 +36,26 @@ type Pub = {
 
 const publications: Pub[] = [
     {
+        title: "Inference-Time Intervention: Eliciting Truthful Answers from a Language Model",
+        author: "Kenneth Li*, Oam Patel*, Fernanda Viégas, Hanspeter Pfister, and Martin Wattenberg",
+        venue: "Conference on Neural Information Processing Systems (NeurIPS)",
+        image: "https://sites.harvard.edu/insight-lab/files/2023/12/truth.png",
+        preprint: "https://arxiv.org/pdf/2306.03341.pdf",
+        code: "https://github.com/likenneth/honest_llama",
+        year: 2023
+    },
+    {
+        title: "Beyond Surface Statistics: Scene Representations in a Latent Diffusion Model",
+        author: "Yida Chen, Fernanda Viégas, and Martin Wattenberg",
+        venue: "NeurIPS Workshop on Diffusion Models",
+        image: "https://sites.harvard.edu/insight-lab/files/2023/12/depth.png",
+        preprint: "https://arxiv.org/pdf/2306.05720.pdf",
+        code: "https://github.com/yc015/scene-representation-diffusion-model",
+        project: "https://yc015.github.io/scene-representation-diffusion-model/",
+        poster: "https://nips.cc/media/PosterPDFs/NeurIPS%202023/74894.png?t=1701540884.728899",
+        year: 2023
+    },
+    {
         title: "AttentionViz: A Global View of Transformer Attention",
         author: "Catherine Yeh, Yida Chen, Aoyu Wu, Cynthia Chen, Fernanda Viégas, and Martin Wattenberg",
         venue: "IEEE Transactions on Visualization and Computer Graphics",
@@ -46,6 +66,41 @@ const publications: Pub[] = [
         project: "https://catherinesyeh.github.io/attn-docs/",
         video: "https://www.youtube.com/watch?v=YBxRfWTFb3U",
         year: 2023,
+    },
+    {
+        title: "Explain-and-Test: An Interactive Machine Learning Framework for Exploring Text Embeddings",
+        author: "Shivam Raval, Carolyn Wang, Fernanda Viégas, and Martin Wattenberg",
+        venue: "IEEE Visualization and Visual Analytics",
+        image: "https://sites.harvard.edu/insight-lab/files/2023/12/Workflow.png",
+        preprint: "https://ieeexplore.ieee.org/abstract/document/10360935",
+        video: "https://www.youtube.com/watch?v=p6-xK7qQiYQ",
+        year: 2023
+    },
+    {
+        title: "Emergent World Representations: Exploring a Sequence Model Trained on a Synthetic Task",
+        author: "Kenneth Li, Aspen K. Hopkins, David Bau, Fernanda Viégas, Hanspeter Pfister, and Martin Wattenberg",
+        venue: "International Conference on Learning Representations (ICLR)",
+        image: "https://sites.harvard.edu/insight-lab/files/2023/12/othello.png",
+        preprint: "https://arxiv.org/pdf/2210.13382.pdf",
+        code: "https://github.com/likenneth/othello_world",
+        demo: "https://likenneth.github.io/othello/togglable.html",
+        year: 2023
+    },
+    {
+        title: "Grand Challenges in Visual Analytics Applications",
+        author: "Aoyu Wu, Dazhen Deng, Min Chen, Shixia Liu, Daniel Keim, Ross Maciejewski, Silvia Miksch, Hendrik Strobelt, Fernanda Viégas, and Martin Wattenberg",
+        venue: "IEEE Computer Graphics and Applications",
+        image: "https://wowjyu.github.io/img/cga23viewpoint.d51f6d02.png",
+        preprint: "https://ieeexplore.ieee.org/abstract/document/10251911",
+        year: 2023
+    },
+    {
+        title: "Identifying Structure in the MIMIC ICU Dataset",
+        author: "Zad Chin, Shivam Raval, Finale Doshi-Velez, Martin Wattenberg, and Leo Anthony Celi",
+        venue: "NeurIPS Workshop on Learning from Time Series for Health",
+        image: "https://sites.harvard.edu/insight-lab/files/2023/12/mimic.png",
+        preprint: "https://finale.seas.harvard.edu/sites/scholar.harvard.edu/files/finale/files/chin_et_al._-_2022_-_identifying_structure_in_the_mimic_icu_dataset.pdf",
+        year: 2022
     },
     {
         title: "Toy Models of Superposition",
@@ -139,7 +194,7 @@ const publications: Pub[] = [
     {
         title: "Visualizing and measuring the geometry of BERT",
         author: "Emily Reif, Ann Yuan, Martin Wattenberg, Fernanda B Viegas, Andy Coenen, Adam Pearce, and Been Kim",
-        venue: "Advances in Neural Information Processing Systems (NIPS)",
+        venue: "Advances in Neural Information Processing Systems (NeurIPS)",
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2019_bertgeo.png",
         preprint:
             "http://papers.neurips.cc/paper/9065-visualizing-and-measuring-the-geometry-of-bert.pdf",
@@ -156,7 +211,7 @@ const publications: Pub[] = [
     {
         title: "Adversarial spheres",
         author: "Justin Gilmer, Luke Metz, Fartash Faghri, Sam Schoenholz, Maithra Raghu, Martin Wattenberg, and Ian Goodfellow",
-        venue: "ICLR",
+        venue: "International Conference on Learning Representations (ICLR)",
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2018_Gilmer.png",
         preprint: "https://arxiv.org/pdf/1801.02774.pdf",
         year: 2018,
@@ -207,6 +262,7 @@ export default defineComponent({
         const state = reactive({
             yearFilter: [],
             currentTab: "All",
+            visiblePublications: 10, // Number of visible publications
         });
 
         return {
@@ -220,41 +276,6 @@ export default defineComponent({
 </script>
 
 <style rel="stylesheet" lang="scss">
-#section-research {
-    .ant-card-head {
-        min-height: 30px;
-
-        .ant-card-head-title {
-            padding-top: 8px;
-            padding-bottom: 8px;
-        }
-    }
-
-    img {
-        border: 1px solid #5e7595;
-    }
-
-    .ant-card-body {
-        padding: 8px 24px;
-    }
-
-    .anticon {
-        vertical-align: 0.1em;
-    }
-
-    .ant-tabs {
-        font-size: 15px;
-
-        .research-head {
-            font-size: 1.2em;
-            font-weight: 500;
-            // text-decoration: underline;
-            // text-decoration-color: $color1;
-            // text-decoration-thickness: 2px;
-        }
-    }
-}
-
 div.publication_wrapper:not(:last-child) {
     border-bottom: 1px solid #ddd;
 }
@@ -294,30 +315,22 @@ div.pub_info_wrapper {
     margin: 2px 0px 8px;
     font-weight: 200;
     font-size: smaller;
+    font-family: $title-font;
 }
 
 .publication_venue {
     font-size: small;
+    transform: scale(0.9);
+    transform-origin: left;
 }
 
 .publication_miscellaneous {
-    margin: 5px 0px;
-}
-
-.publication_miscellaneous_icon {
-    pointer-events: none;
+    margin-top: 2px;
+    margin-bottom: 5px;
 }
 
 .publicationsByYear_wrapper {
     margin: 30px 0px;
-}
-
-.publicationsByYear_head {
-    font-family: "inter";
-    font-size: 40px;
-    font-weight: 500;
-    text-align: center;
-    display: block;
 }
 
 .publication_venue {

@@ -243,6 +243,7 @@ export default defineComponent({
         color: $dark-accent;
         font-weight: 500;
         transition: 0.5s;
+        font-family: $title-font;
     }
 
     a:hover .team-people-name {
@@ -253,6 +254,7 @@ export default defineComponent({
     .team-people-role {
         font-style: italic;
         font-size: small;
+        transform: scale(0.9);
     }
 }
 
@@ -288,6 +290,7 @@ export default defineComponent({
 
     .team-people-role {
         font-size: x-small;
+        transform-origin: left;
     }
 
     img.team-people-img {
@@ -405,5 +408,6 @@ export default defineComponent({
 
 span.emphasis {
     font-weight: 600;
+    font-family: $title-font;
 }
 </style>

@@ -21,10 +21,8 @@ import { CommentOutlined } from "@ant-design/icons-vue";
 import Project from "./Project.vue";
 
 import { defineComponent } from "vue";
-import { useStore } from "vuex";
 
-import { onMounted, computed, reactive, toRefs, h, watch } from "vue";
-import { groupBy } from "underscore";
+import { reactive, toRefs } from "vue";
 
 const projects = [
     {
@@ -76,42 +74,14 @@ export default defineComponent({
 }
 
 #section-research {
-    .ant-card-head {
-        min-height: 30px;
-
-        .ant-card-head-title {
-            padding-top: 8px;
-            padding-bottom: 8px;
-        }
-    }
-
     img {
         // border: 1px solid $dark-accent;
         width: 100%;
+        border: none;
 
-        border-image: linear-gradient(135deg, $dark-accent, $med-accent) 30;
-        border-width: 1px;
-        border-style: solid;
-    }
-
-    .ant-card-body {
-        padding: 8px 24px;
-    }
-
-    .anticon {
-        vertical-align: 0.1em;
-    }
-
-    .ant-tabs {
-        font-size: 15px;
-
-        .research-head {
-            font-size: 1.2em;
-            font-weight: 500;
-            // text-decoration: underline;
-            // text-decoration-color: $color1;
-            // text-decoration-thickness: 2px;
-        }
+        // border-image: linear-gradient(135deg, $dark-accent, $med-accent) 30;
+        // border-width: 1px;
+        // border-style: solid;
     }
 }
 </style>
