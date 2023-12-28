@@ -16,18 +16,34 @@ import { CommentOutlined } from "@ant-design/icons-vue";
 import Publication from "./Publication.vue";
 
 import { defineComponent } from "vue";
-import { useStore } from "vuex";
 
-import { onMounted, computed, reactive, toRefs, h, watch } from "vue";
-import { groupBy } from "underscore";
+import { reactive, toRefs } from "vue";
 
-const publications = [
+// define publication type
+type Pub = {
+    title: string;
+    author: string;
+    venue: string;
+    image: string;
+    preprint?: string;
+    demo?: string;
+    github?: string;
+    project?: string;
+    video?: string;
+    year: number;
+}
+
+const publications: Pub[] = [
     {
         title: "AttentionViz: A Global View of Transformer Attention",
         author: "Catherine Yeh, Yida Chen, Aoyu Wu, Cynthia Chen, Fernanda Viégas, and Martin Wattenberg",
         venue: "IEEE Transactions on Visualization and Computer Graphics",
         image: "https://sites.harvard.edu/insight-lab/files/2023/05/2023_pub_attenviz.png",
         preprint: "https://arxiv.org/pdf/2305.03210.pdf",
+        demo: "http://attentionviz.com/",
+        github: "https://github.com/catherinesyeh/attention-viz",
+        project: "https://catherinesyeh.github.io/attn-docs/",
+        video: "https://www.youtube.com/watch?v=YBxRfWTFb3U",
         year: 2023,
     },
     {
@@ -235,25 +251,15 @@ export default defineComponent({
             // text-decoration-color: $color1;
             // text-decoration-thickness: 2px;
         }
-
-        span.work-short {
-            // border-bottom: 2px solid $color1;
-
-            // text-decoration: underline;
-            // text-decoration-color: $color1;
-            // text-decoration-thickness: 2px;
-        }
     }
 }
 
 div.publication_wrapper:not(:last-child) {
-    border-bottom: 1px solid silver;
+    border-bottom: 1px solid #ddd;
 }
 
 div.publication_wrapper a {
-    color: #b41111 !important;
-    text-decoration: underline !important;
-    background-color: transparent !important;
+    text-decoration: none !important;
 }
 
 .pub_profile_wrapper {

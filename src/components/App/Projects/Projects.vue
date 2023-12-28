@@ -86,8 +86,12 @@ export default defineComponent({
     }
 
     img {
-        border: 1px solid $dark-accent;
+        // border: 1px solid $dark-accent;
         width: 100%;
+
+        border-image: linear-gradient(135deg, $dark-accent, $med-accent) 30;
+        border-width: 1px;
+        border-style: solid;
     }
 
     .ant-card-body {
@@ -104,14 +108,6 @@ export default defineComponent({
         .research-head {
             font-size: 1.2em;
             font-weight: 500;
-            // text-decoration: underline;
-            // text-decoration-color: $color1;
-            // text-decoration-thickness: 2px;
-        }
-
-        span.work-short {
-            // border-bottom: 2px solid $color1;
-
             // text-decoration: underline;
             // text-decoration-color: $color1;
             // text-decoration-thickness: 2px;

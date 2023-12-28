@@ -101,9 +101,9 @@ export default defineComponent({
             activeSection: "home"
         });
 
-        const headerLogo = require(`@/assets/headerlogo.svg`);
-        const footerLogo = require(`@/assets/footerlogo.svg`);
-        const harvardLogo = require(`@/assets/harvardlogo.svg`);
+        const headerLogo = require(`@/assets/logos/headerlogo.svg`);
+        const footerLogo = require(`@/assets/logos/footerlogo.svg`);
+        const harvardLogo = require(`@/assets/logos/harvardlogo.svg`);
         const toTop = require(`@/assets/backtotop.svg`);
 
         const siteData = reactive({
@@ -415,11 +415,6 @@ div#body {
 
 
     &>span {
-        // background: url("~@/assets/background.png");
-
-        // background: url(/assets/background.png);
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
         padding: 8px 0;
     }
 }

@@ -2,7 +2,7 @@
     <div class='publication_wrapper'>
         <div class="row">
             <div class='col-md-2 col-4 pub_profile_wrapper'>
-                <img :src="publication.image" class="publication_profile" />
+                <img :src="publication.image" class="publication_profile" :title="publication.title" />
             </div>
 
             <div class='col-md-10 col-8 pub_info_wrapper'>
@@ -17,11 +17,27 @@
                 </div>
 
                 <div class="publication_miscellaneous">
-                    <span v-if="publication.preprint">
-                        <a :href="publication.preprint" target="_blank" rel="noopener noreferrer"><object
-                                data="https://sites.harvard.edu/insight-lab/files/2022/10/icon_pdf.svg" type="image/svg+xml"
-                                class='publication_miscellaneous_icon' title="Preprint"></object></a>
-                    </span>
+                    <a v-if="publication.preprint" :href="publication.preprint" target="_blank" rel="noopener noreferrer"
+                        title="Paper" class="paper-button">
+                        <FileTextOutlined />
+                        <span>Paper</span>
+                    </a>
+                    <a v-if="publication.project" :href="publication.project" target="_blank" rel="noopener noreferrer"
+                        title="Project Page" class="paper-button">
+                        <LinkOutlined /><span>Project Page</span>
+                    </a>
+                    <a v-if="publication.demo" :href="publication.demo" target="_blank" rel="noopener noreferrer"
+                        title="Demo" class="paper-button">
+                        <DesktopOutlined /><span>Demo</span>
+                    </a>
+                    <a v-if="publication.github" :href="publication.github" target="_blank" rel="noopener noreferrer"
+                        title="Github" class="paper-button">
+                        <GithubOutlined /><span>Github</span>
+                    </a>
+                    <a v-if="publication.video" :href="publication.video" target="_blank" rel="noopener noreferrer"
+                        title="Video" class="paper-button">
+                        <YoutubeOutlined /><span>Video</span>
+                    </a>
                 </div>
 
             </div>
@@ -37,12 +53,13 @@ import "@fortawesome/fontawesome-free/js/all.js";
 import { defineComponent } from "vue";
 import { useStore } from "vuex";
 
-import { ref, onMounted, computed, reactive, toRefs, h, watch } from "vue";
+import { ref, onMounted, computed, reactive, toRefs } from "vue";
+import { FileTextOutlined, LinkOutlined, DesktopOutlined, GithubOutlined, YoutubeOutlined } from '@ant-design/icons-vue';
 
 export default defineComponent({
     name: "App",
     props: ["publication"],
-    components: {},
+    components: { FileTextOutlined, LinkOutlined, DesktopOutlined, GithubOutlined, YoutubeOutlined },
     setup(props) {
         const store = useStore();
 
@@ -56,7 +73,7 @@ export default defineComponent({
 
         return {
             ...toRefs(state),
-            pub,
+            pub
         };
     },
     computed: {},
@@ -182,5 +199,30 @@ export default defineComponent({
     .pub_profile_wrapper {
         padding-bottom: 0 !important;
     }
+}
+
+.paper-button {
+    // background-color: $dark-accent;
+    color: $med-accent !important;
+    padding: 2px 6px 4px;
+    border: 0.2px solid #eee;
+    text-transform: lowercase;
+    font-size: 12px;
+    border-radius: 2px;
+    display: inline-block;
+    transform: scale(0.9);
+    transform-origin: left;
+    transition: 0.5s;
+    font-weight: 200;
+    box-shadow: 0 1px 1px #0000000b;
+
+    svg {
+        margin-right: 4px;
+    }
+}
+
+.paper-button:hover {
+    background-color: rgb($lightest-accent, 0.2);
+    border-color: $lightest-accent;
 }
 </style>
