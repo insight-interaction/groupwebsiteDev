@@ -30,9 +30,13 @@
                         title="Demo" class="paper-button">
                         <DesktopOutlined /><span>Demo</span>
                     </a>
-                    <a v-if="publication.github" :href="publication.github" target="_blank" rel="noopener noreferrer"
-                        title="Github" class="paper-button">
-                        <GithubOutlined /><span>Github</span>
+                    <a v-if="publication.code" :href="publication.code" target="_blank" rel="noopener noreferrer"
+                        title="Code" class="paper-button">
+                        <CodeOutlined /><span>Code</span>
+                    </a>
+                    <a v-if="publication.poster" :href="publication.poster" target="_blank" rel="noopener noreferrer"
+                        title="Poster" class="paper-button">
+                        <CameraOutlined /><span>Poster</span>
                     </a>
                     <a v-if="publication.video" :href="publication.video" target="_blank" rel="noopener noreferrer"
                         title="Video" class="paper-button">
@@ -54,12 +58,12 @@ import { defineComponent } from "vue";
 import { useStore } from "vuex";
 
 import { ref, onMounted, computed, reactive, toRefs } from "vue";
-import { FileTextOutlined, LinkOutlined, DesktopOutlined, GithubOutlined, YoutubeOutlined } from '@ant-design/icons-vue';
+import { FileTextOutlined, LinkOutlined, DesktopOutlined, CodeOutlined, YoutubeOutlined, CameraOutlined } from '@ant-design/icons-vue';
 
 export default defineComponent({
     name: "App",
     props: ["publication"],
-    components: { FileTextOutlined, LinkOutlined, DesktopOutlined, GithubOutlined, YoutubeOutlined },
+    components: { FileTextOutlined, LinkOutlined, DesktopOutlined, CodeOutlined, YoutubeOutlined, CameraOutlined },
     setup(props) {
         const store = useStore();
 

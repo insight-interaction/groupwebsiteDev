@@ -27,9 +27,10 @@ type Pub = {
     image: string;
     preprint?: string;
     demo?: string;
-    github?: string;
+    code?: string;
     project?: string;
     video?: string;
+    poster?: string;
     year: number;
 }
 
@@ -41,7 +42,7 @@ const publications: Pub[] = [
         image: "https://sites.harvard.edu/insight-lab/files/2023/05/2023_pub_attenviz.png",
         preprint: "https://arxiv.org/pdf/2305.03210.pdf",
         demo: "http://attentionviz.com/",
-        github: "https://github.com/catherinesyeh/attention-viz",
+        code: "https://github.com/catherinesyeh/attention-viz",
         project: "https://catherinesyeh.github.io/attn-docs/",
         video: "https://www.youtube.com/watch?v=YBxRfWTFb3U",
         year: 2023,
