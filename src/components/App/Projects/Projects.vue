@@ -72,16 +72,4 @@ export default defineComponent({
     margin-top: 10px;
     margin-bottom: 10px;
 }
-
-#section-research {
-    img {
-        // border: 1px solid $dark-accent;
-        width: 100%;
-        border: none;
-
-        // border-image: linear-gradient(135deg, $dark-accent, $med-accent) 30;
-        // border-width: 1px;
-        // border-style: solid;
-    }
-}
 </style>

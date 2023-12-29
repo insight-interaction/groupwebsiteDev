@@ -1,8 +1,26 @@
 <template>
     <div class="section" id="section-research">
         <div class="container">
-            <div class="section-head" id="publications"><span>Publications</span></div>
-            <Publication v-for="publication in publications" :publication="publication" />
+            <div class="section-head" id="publications"><span>Publications</span>
+                <div class="slider-container">
+                    {{ minYear }}
+                    <a-slider range v-model:value="yearFilter" :min="minYear" :max="maxYear" tooltipPlacement="bottom" />{{
+                        maxYear }}
+                </div>
+            </div>
+            <div v-for="(publication, index) in filteredPublications" :key="publication.title">
+                <Publication v-if="index < displayLimit" :publication="publication"
+                    :class="{ visible: index < displayLimit - 1 }" />
+            </div>
+            <!-- Show More/Less Buttons -->
+            <div class="publist-buttons">
+                <a-button type="text" size="small" v-if="displayLimit < filteredPublications.length" @click="showMore">Show
+                    More</a-button>
+                <p class="slash" v-if="displayLimit < filteredPublications.length && displayLimit > 10"> /
+                </p>
+                <a-button type="text" size="small" v-if="displayLimit > 10" @click="showLess">Show Less</a-button>
+            </div>
+
         </div>
     </div>
 </template>
@@ -15,9 +33,7 @@ import { CommentOutlined } from "@ant-design/icons-vue";
 
 import Publication from "./Publication.vue";
 
-import { defineComponent } from "vue";
-
-import { reactive, toRefs } from "vue";
+import { defineComponent, watch, reactive, toRefs } from "vue";
 
 // define publication type
 type Pub = {
@@ -167,7 +183,7 @@ const publications: Pub[] = [
         year: 2019,
     },
     {
-        title: "Do neural networks show gestalt phenomena? an exploration of the law of closure",
+        title: "Do Neural Networks Show Gestalt Phenomena? An Exploration of the Law of Closure",
         author: "Been Kim, Emily Reif, Martin Wattenberg, and Samy Bengio",
         venue: "Arxiv",
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2019_Kim.png",
@@ -175,7 +191,7 @@ const publications: Pub[] = [
         year: 2019,
     },
     {
-        title: "Gan lab: Understanding complex deep generative models using interactive visual experimentation",
+        title: "GAN Lab: Understanding Complex Deep Generative Models Using Interactive Visual Experimentation",
         author: "Minsuk Kahng, Nikhil Thorat, Duen Horng Chau, Fernanda B Viégas, and Martin Wattenberg",
         venue: "IEEE Transactions on Visualization and Computer Graphics",
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2019_ganlab.png",
@@ -192,7 +208,7 @@ const publications: Pub[] = [
         year: 2019,
     },
     {
-        title: "Visualizing and measuring the geometry of BERT",
+        title: "Visualizing and Measuring the Geometry of BERT",
         author: "Emily Reif, Ann Yuan, Martin Wattenberg, Fernanda B Viegas, Andy Coenen, Adam Pearce, and Been Kim",
         venue: "Advances in Neural Information Processing Systems (NeurIPS)",
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2019_bertgeo.png",
@@ -201,7 +217,7 @@ const publications: Pub[] = [
         year: 2019,
     },
     {
-        title: "Interpretability beyond feature attribution: Quantitative testing with concept activation vectors (tcav)",
+        title: "Interpretability Beyond Feature Attribution: Quantitative Testing with Concept Activation Vectors (TCAV)",
         author: "Been Kim, Martin Wattenberg, Justin Gilmer, Carrie Cai, James Wexler, and Fernanda Viegas",
         venue: "International Conference on Machine Learning (ICML)",
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2018_tcav.png",
@@ -209,7 +225,7 @@ const publications: Pub[] = [
         year: 2018,
     },
     {
-        title: "Adversarial spheres",
+        title: "Adversarial Spheres",
         author: "Justin Gilmer, Luke Metz, Fartash Faghri, Sam Schoenholz, Maithra Raghu, Martin Wattenberg, and Ian Goodfellow",
         venue: "International Conference on Learning Representations (ICLR)",
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2018_Gilmer.png",
@@ -217,14 +233,14 @@ const publications: Pub[] = [
         year: 2018,
     },
     {
-        title: "Deep learning of aftershock patterns following large earthquakes",
+        title: "Deep Learning of Aftershock Patterns Following Large Earthquakes",
         author: "Phoebe MR DeVries, Fernanda Viégas, Martin Wattenberg, and Brendan J Meade",
         venue: "Nature",
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2018_nature.png",
         year: 2018,
     },
     {
-        title: "Google’s multilingual neural machine translation system: Enabling zero-shot translation",
+        title: "Google's Multilingual Neural Machine Translation System: Enabling Zero-Shot Translation",
         author: "Melvin Johnson, Mike Schuster, Quoc V. Le, Maxim Krikun, Yonghui Wu, Zhifeng Chen, Nikhil Thorat, Fernanda Viégas, Martin Wattenberg, Greg Corrado, Macduff Hughes, and Jeffrey Dean",
         venue: "Transactions of the Association for Computational Linguistics (ACL)",
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2017_Johnson.png",
@@ -232,7 +248,7 @@ const publications: Pub[] = [
         year: 2017,
     },
     {
-        title: "Tensorflow: Large-scale machine learning on heterogeneous distributed systems",
+        title: "Tensorflow: Large-Scale Machine Learning on Heterogeneous Distributed Systems",
         author: "Martín Abadi, Ashish Agarwal, Paul Barham, Eugene Brevdo, Zhifeng Chen, Craig Citro, Greg S. Corrado, Andy Davis, Jeffrey Dean, Matthieu Devin, Sanjay Ghemawat, Ian Goodfellow, Andrew Harp, Geoffrey Irving, Michael Isard, Yangqing Jia, Rafal Jozefowicz, Lukasz Kaiser, Manjunath Kudlur, Josh Levenberg, Dan Mane, Rajat Monga, Sherry Moore, Derek Murray, Chris Olah, Mike Schuster, Jonathon Shlens, Benoit Steiner, Ilya Sutskever, Kunal Talwar, Paul Tucker, Vincent Vanhoucke, Vijay Vasudevan, Fernanda Viegas, Oriol Vinyals, Pete Warden, Martin Wattenberg, Martin Wicke, Yuan Yu, Xiaoqiang Zheng",
         venue: "Proceedings of the 12th USENIX conference on Operating Systems Design and Implementation (OSDI)",
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2016_tensorflow.png",
@@ -240,6 +256,13 @@ const publications: Pub[] = [
         year: 2016,
     },
 ];
+
+const comparePubs = (a: Pub, b: Pub) => {
+    // Compare by year
+    return b.year - a.year;
+}
+
+publications.sort(comparePubs);
 
 const publicationsByYear = _.chain(publications)
     .groupBy((x) => x.year)
@@ -255,20 +278,46 @@ export default defineComponent({
     name: "App",
     components: { Publication, CommentOutlined },
     setup() {
-        // for (let p of publications) {
-        //     p.img = require(`@/assets/images/${p.imgurl}`);
-        // }
+        const minYear = Math.min(...publications.map(p => p.year));
+        const maxYear = Math.max(...publications.map(p => p.year));
 
         const state = reactive({
-            yearFilter: [],
+            yearFilter: [minYear, maxYear],
             currentTab: "All",
-            visiblePublications: 10, // Number of visible publications
+            displayLimit: 10, // initially showing 10 publications
+            filteredPublications: publications
         });
+
+        // Method to show more publications
+        function showMore() {
+            state.displayLimit += 10; // Increase the limit by 10
+            if (state.displayLimit > state.filteredPublications.length) {
+                state.displayLimit = state.filteredPublications.length; // Don't exceed total number
+            }
+        }
+
+        // Method to show fewer publications
+        function showLess() {
+            state.displayLimit -= 10; // Decrease the limit by 10
+            if (state.displayLimit < 10) {
+                state.displayLimit = Math.min(10, state.filteredPublications.length); // Don't go below initial limit
+            }
+        }
+
+        watch(() => state.yearFilter,
+            () => {
+                state.filteredPublications = publications.filter(p => p.year >= state.yearFilter[0] && p.year <= state.yearFilter[1]);
+                state.displayLimit = Math.min(10, state.filteredPublications.length);
+            })
 
         return {
             publications,
             ...toRefs(state),
             publicationsByYear,
+            minYear,
+            maxYear,
+            showMore,
+            showLess
         };
     },
     computed: {},
@@ -276,7 +325,19 @@ export default defineComponent({
 </script>
 
 <style rel="stylesheet" lang="scss">
-div.publication_wrapper:not(:last-child) {
+#section-research {
+    img {
+        // border: 1px solid $dark-accent;
+        width: 100%;
+        border: none;
+
+        // border-image: linear-gradient(135deg, $dark-accent, $med-accent) 30;
+        // border-width: 1px;
+        // border-style: solid;
+    }
+}
+
+div.publication_wrapper.visible {
     border-bottom: 1px solid #ddd;
 }
 
@@ -335,6 +396,69 @@ div.pub_info_wrapper {
 
 .publication_venue {
     font-style: italic;
+}
+
+.publist-buttons {
+    text-align: center;
+
+    button {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    span {
+        font-size: smaller;
+        font-family: $title-font;
+        font-weight: 500;
+    }
+
+    .slash {
+        color: $light-accent;
+        font-size: large;
+        font-weight: initial;
+        display: inline;
+    }
+}
+
+// slider
+.slider-container {
+    color: $text-color;
+    font-size: x-small;
+    column-gap: 10px;
+    margin-top: 10px;
+    display: flex;
+    font-weight: initial;
+}
+
+.ant-slider {
+    width: 100%;
+    margin: auto 4px;
+
+    .ant-slider-handle {
+        border-color: $light-accent;
+    }
+
+    .ant-slider-track {
+        background-color: $light-accent;
+    }
+}
+
+.ant-slider:hover {
+    .ant-slider-track {
+        background-color: $med-accent;
+    }
+
+    .ant-slider-handle {
+        border-color: $med-accent !important;
+    }
+}
+
+.ant-tooltip {
+    font-size: xx-small;
+
+    .ant-tooltip-inner {
+        min-height: auto;
+    }
 }
 
 @media only screen and (max-width: 992px) {
