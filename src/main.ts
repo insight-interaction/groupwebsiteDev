@@ -6,7 +6,9 @@ import App from "./components/App.vue";
 import store from "./store";
 
 import {
-    Checkbox, Tabs, Card, Tag, Menu, Affix, Popover, Tooltip, Collapse, Divider, Anchor, Button, Slider
+    Checkbox, Tabs, Card, Tag, Menu, Affix, Popover, 
+    Tooltip, Collapse, Divider, Anchor, Button, Slider, 
+    Badge, Radio
 } from "ant-design-vue";
 import { createHead } from '@vueuse/head'
 const head = createHead()
@@ -15,7 +17,7 @@ createApp(App)
     .use(head)
     .use(store)
     .use(Checkbox).use(Tabs).use(Card).use(Tag).use(Menu).use(Affix).use(Popover).use(Tooltip).use(Collapse)
-    .use(Divider).use(Anchor).use(Button).use(Slider)
+    .use(Divider).use(Anchor).use(Button).use(Slider).use(Badge).use(Radio)
     .mount("#app");
 
 // // The Vue build version to load with the `import` command

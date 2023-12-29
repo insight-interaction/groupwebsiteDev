@@ -6,6 +6,10 @@
             </div>
 
             <div class='col-md-10 col-8 pub_info_wrapper'>
+
+                <div class="tags" v-for="tag in publication.tags" :key="tag">
+                    <a-badge :color="colors[tag]" :text="tag" class="tag" />
+                </div>
                 <div class="publication_title">{{ publication.title }} </div>
 
                 <div class="publication_author">
@@ -56,8 +60,9 @@ import "@fortawesome/fontawesome-free/js/all.js";
 
 import { defineComponent } from "vue";
 import { useStore } from "vuex";
+import { colors } from "./colors";
 
-import { ref, onMounted, computed, reactive, toRefs } from "vue";
+import { ref, computed, reactive, toRefs } from "vue";
 import { FileTextOutlined, LinkOutlined, DesktopOutlined, CodeOutlined, YoutubeOutlined, CameraOutlined } from '@ant-design/icons-vue';
 
 export default defineComponent({
@@ -72,12 +77,10 @@ export default defineComponent({
         });
         const pub = ref(null);
 
-        onMounted(() => {
-        });
-
         return {
             ...toRefs(state),
-            pub
+            pub,
+            colors
         };
     },
     computed: {},
@@ -123,5 +126,22 @@ export default defineComponent({
 .paper-button:hover {
     background-color: rgb($lightest-accent, 0.2);
     border-color: $lightest-accent;
+}
+
+.tags {
+    display: inline-block;
+    margin-bottom: 2px;
+
+    span {
+        font-size: x-small;
+    }
+
+    .ant-badge-status-text {
+        margin-left: 6px;
+    }
+}
+
+.tags:not(:last-child) .tag {
+    margin-right: 10px;
 }
 </style>

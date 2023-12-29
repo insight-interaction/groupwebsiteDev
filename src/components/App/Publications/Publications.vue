@@ -1,14 +1,22 @@
 <template>
     <div class="section" id="section-research">
         <div class="container">
-            <div class="section-head" id="publications"><span>Publications</span>
+            <div class="section-head" id="publications">
+                <div class="pub-header">
+                    <span>Publications</span>
+                    <div class="tag-select">
+                        <a-radio-group class="tag-group" v-model:value="currentTag" size="small" button-style="outlined">
+                            <a-radio-button v-for="tag in colorOptions" :value="tag" :title="tag">{{ tag }}</a-radio-button>
+                        </a-radio-group>
+                    </div>
+                </div>
                 <div class="slider-container">
                     {{ minYear }}
                     <a-slider range v-model:value="yearFilter" :min="minYear" :max="maxYear" tooltipPlacement="bottom" />{{
                         maxYear }}
                 </div>
             </div>
-            <div v-for="(publication, index) in filteredPublications" :key="publication.title">
+            <div v-for="( publication, index ) in  filteredPublications " :key="publication.title">
                 <Publication v-if="index < displayLimit" :publication="publication"
                     :class="{ visible: index < displayLimit - 1 }" />
             </div>
@@ -33,14 +41,21 @@ import { CommentOutlined } from "@ant-design/icons-vue";
 
 import Publication from "./Publication.vue";
 
-import { defineComponent, watch, reactive, toRefs } from "vue";
+import { defineComponent, watch, reactive, toRefs, ref } from "vue";
 
-// define publication type
+import { colors } from "./colors";
+
+import { SelectTypes } from 'ant-design-vue/es/select';
+
+// define publication types
+type Tag = "visualization" | "interpretability" | "human-ai interaction" | "machine learning";
+
 type Pub = {
     title: string;
     author: string;
     venue: string;
     image: string;
+    tags: Tag[];
     preprint?: string;
     demo?: string;
     code?: string;
@@ -58,7 +73,8 @@ const publications: Pub[] = [
         image: "https://sites.harvard.edu/insight-lab/files/2023/12/truth.png",
         preprint: "https://arxiv.org/pdf/2306.03341.pdf",
         code: "https://github.com/likenneth/honest_llama",
-        year: 2023
+        year: 2023,
+        tags: ["interpretability"]
     },
     {
         title: "Beyond Surface Statistics: Scene Representations in a Latent Diffusion Model",
@@ -69,7 +85,8 @@ const publications: Pub[] = [
         code: "https://github.com/yc015/scene-representation-diffusion-model",
         project: "https://yc015.github.io/scene-representation-diffusion-model/",
         poster: "https://nips.cc/media/PosterPDFs/NeurIPS%202023/74894.png?t=1701540884.728899",
-        year: 2023
+        year: 2023,
+        tags: ["interpretability"]
     },
     {
         title: "AttentionViz: A Global View of Transformer Attention",
@@ -82,6 +99,7 @@ const publications: Pub[] = [
         project: "https://catherinesyeh.github.io/attn-docs/",
         video: "https://www.youtube.com/watch?v=YBxRfWTFb3U",
         year: 2023,
+        tags: ["visualization"]
     },
     {
         title: "Explain-and-Test: An Interactive Machine Learning Framework for Exploring Text Embeddings",
@@ -90,7 +108,8 @@ const publications: Pub[] = [
         image: "https://sites.harvard.edu/insight-lab/files/2023/12/Workflow.png",
         preprint: "https://ieeexplore.ieee.org/abstract/document/10360935",
         video: "https://www.youtube.com/watch?v=p6-xK7qQiYQ",
-        year: 2023
+        year: 2023,
+        tags: ["visualization"]
     },
     {
         title: "Emergent World Representations: Exploring a Sequence Model Trained on a Synthetic Task",
@@ -100,7 +119,8 @@ const publications: Pub[] = [
         preprint: "https://arxiv.org/pdf/2210.13382.pdf",
         code: "https://github.com/likenneth/othello_world",
         demo: "https://likenneth.github.io/othello/togglable.html",
-        year: 2023
+        year: 2023,
+        tags: ["interpretability"]
     },
     {
         title: "Grand Challenges in Visual Analytics Applications",
@@ -108,7 +128,8 @@ const publications: Pub[] = [
         venue: "IEEE Computer Graphics and Applications",
         image: "https://wowjyu.github.io/img/cga23viewpoint.d51f6d02.png",
         preprint: "https://ieeexplore.ieee.org/abstract/document/10251911",
-        year: 2023
+        year: 2023,
+        tags: ["visualization"]
     },
     {
         title: "Identifying Structure in the MIMIC ICU Dataset",
@@ -116,7 +137,8 @@ const publications: Pub[] = [
         venue: "NeurIPS Workshop on Learning from Time Series for Health",
         image: "https://sites.harvard.edu/insight-lab/files/2023/12/mimic.png",
         preprint: "https://finale.seas.harvard.edu/sites/scholar.harvard.edu/files/finale/files/chin_et_al._-_2022_-_identifying_structure_in_the_mimic_icu_dataset.pdf",
-        year: 2022
+        year: 2022,
+        tags: ["visualization"]
     },
     {
         title: "Toy Models of Superposition",
@@ -125,6 +147,7 @@ const publications: Pub[] = [
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2022_composition.png",
         preprint: "https://transformer-circuits.pub/2022/toy_model/index.html",
         year: 2022,
+        tags: ["interpretability"]
     },
     {
         title: "Interpreting a Machine Learning Model for Detecting Gravitational Waves",
@@ -133,6 +156,7 @@ const publications: Pub[] = [
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2022_interpreting.png",
         preprint: "https://arxiv.org/pdf/2202.07399.pdf",
         year: 2022,
+        tags: ["interpretability"]
     },
     {
         title: "Exploring the Gap between Informal Mental and Formal Statistical Models",
@@ -141,6 +165,7 @@ const publications: Pub[] = [
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2021_Exploring.png",
         preprint: "https://hdsr.mitpress.mit.edu/pub/jefx48tr/release/2?readingCollection=c6a3a10e",
         year: 2021,
+        tags: ["visualization"]
     },
     {
         title: "Neural Networks Trained on Natural Scenes Exhibit Gestalt Closure",
@@ -149,6 +174,7 @@ const publications: Pub[] = [
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2021_kim_neural.png",
         preprint: "https://arxiv.org/pdf/1903.01069",
         year: 2021,
+        tags: ["interpretability"]
     },
     {
         title: "An Interpretability Illusion for BERT",
@@ -157,6 +183,7 @@ const publications: Pub[] = [
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2021_Bolukbasi.png",
         preprint: "https://arxiv.org/pdf/2104.07143",
         year: 2021,
+        tags: ["interpretability"]
     },
     {
         title: "The What-If Tool: Interactive Probing of Machine Learning Models",
@@ -165,6 +192,7 @@ const publications: Pub[] = [
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2020_Wexler.png",
         preprint: "https://arxiv.org/pdf/1907.04135.pdf",
         year: 2020,
+        tags: ["visualization"]
     },
     {
         title: "Human-Centered Tools for Coping with Imperfect Algorithms During Medical Decision-Making",
@@ -173,6 +201,7 @@ const publications: Pub[] = [
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2019_Terry.png",
         preprint: "https://arxiv.org/pdf/1902.02960.pdf",
         year: 2019,
+        tags: ["human-ai interaction"]
     },
     {
         title: "Tensorflow.js: Machine Learning for the Web and Beyond",
@@ -181,6 +210,7 @@ const publications: Pub[] = [
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2019_tensorflowjs.png",
         preprint: "https://arxiv.org/pdf/1901.05350",
         year: 2019,
+        tags: ["machine learning"]
     },
     {
         title: "Do Neural Networks Show Gestalt Phenomena? An Exploration of the Law of Closure",
@@ -189,6 +219,7 @@ const publications: Pub[] = [
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2019_Kim.png",
         preprint: "https://arxiv.org/pdf/1903.01069",
         year: 2019,
+        tags: ["interpretability"]
     },
     {
         title: "GAN Lab: Understanding Complex Deep Generative Models Using Interactive Visual Experimentation",
@@ -197,6 +228,7 @@ const publications: Pub[] = [
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2019_ganlab.png",
         preprint: "https://arxiv.org/pdf/1809.01587.pdf",
         year: 2019,
+        tags: ["visualization"]
     },
     {
         title: "XRAI: Better Attributions Through Regions",
@@ -206,6 +238,7 @@ const publications: Pub[] = [
         preprint:
             "https://openaccess.thecvf.com/content_ICCV_2019/papers/Kapishnikov_XRAI_Better_Attributions_Through_Regions_ICCV_2019_paper.pdf",
         year: 2019,
+        tags: ["visualization", "interpretability"]
     },
     {
         title: "Visualizing and Measuring the Geometry of BERT",
@@ -215,6 +248,7 @@ const publications: Pub[] = [
         preprint:
             "http://papers.neurips.cc/paper/9065-visualizing-and-measuring-the-geometry-of-bert.pdf",
         year: 2019,
+        tags: ["visualization", "interpretability"]
     },
     {
         title: "Interpretability Beyond Feature Attribution: Quantitative Testing with Concept Activation Vectors (TCAV)",
@@ -223,6 +257,7 @@ const publications: Pub[] = [
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2018_tcav.png",
         preprint: "https://proceedings.mlr.press/v80/kim18d/kim18d.pdf",
         year: 2018,
+        tags: ["interpretability"]
     },
     {
         title: "Adversarial Spheres",
@@ -231,6 +266,7 @@ const publications: Pub[] = [
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2018_Gilmer.png",
         preprint: "https://arxiv.org/pdf/1801.02774.pdf",
         year: 2018,
+        tags: ["interpretability"]
     },
     {
         title: "Deep Learning of Aftershock Patterns Following Large Earthquakes",
@@ -238,6 +274,7 @@ const publications: Pub[] = [
         venue: "Nature",
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2018_nature.png",
         year: 2018,
+        tags: ["interpretability", "machine learning"]
     },
     {
         title: "Google's Multilingual Neural Machine Translation System: Enabling Zero-Shot Translation",
@@ -246,6 +283,7 @@ const publications: Pub[] = [
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2017_Johnson.png",
         preprint: "https://arxiv.org/pdf/1611.04558.pdf",
         year: 2017,
+        tags: ["machine learning"]
     },
     {
         title: "Tensorflow: Large-Scale Machine Learning on Heterogeneous Distributed Systems",
@@ -254,6 +292,7 @@ const publications: Pub[] = [
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2016_tensorflow.png",
         preprint: "https://arxiv.org/pdf/1603.04467",
         year: 2016,
+        tags: ["machine learning"]
     },
 ];
 
@@ -283,10 +322,12 @@ export default defineComponent({
 
         const state = reactive({
             yearFilter: [minYear, maxYear],
-            currentTab: "All",
+            currentTag: "all",
             displayLimit: 10, // initially showing 10 publications
             filteredPublications: publications
         });
+
+        const colorOptions = ["all", ...Object.keys(colors)];
 
         // Method to show more publications
         function showMore() {
@@ -304,15 +345,17 @@ export default defineComponent({
             }
         }
 
-        watch(() => state.yearFilter,
+        watch(() => [state.yearFilter, state.currentTag],
             () => {
-                state.filteredPublications = publications.filter(p => p.year >= state.yearFilter[0] && p.year <= state.yearFilter[1]);
+                const yearPublications = publications.filter(p => p.year >= state.yearFilter[0] && p.year <= state.yearFilter[1]);
+                state.filteredPublications = state.currentTag === 'all' ? yearPublications : yearPublications.filter(p => p.tags.includes(state.currentTag as Tag));
                 state.displayLimit = Math.min(10, state.filteredPublications.length);
             })
 
         return {
             publications,
             ...toRefs(state),
+            colorOptions,
             publicationsByYear,
             minYear,
             maxYear,
@@ -458,6 +501,125 @@ div.pub_info_wrapper {
 
     .ant-tooltip-inner {
         min-height: auto;
+    }
+}
+
+.pub-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tag-select {
+
+    display: inline-flex;
+    align-items: center;
+
+    span {
+        font-weight: initial;
+        font-size: x-small;
+    }
+
+    .ant-radio-button-wrapper {
+        display: inline-flex;
+    }
+
+    .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+        color: $med-accent;
+        border-color: $med-accent;
+    }
+
+    .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled)::before {
+        background-color: $med-accent;
+    }
+
+    .ant-radio-button-wrapper:hover {
+        color: $med-accent;
+    }
+
+    // first tag (after "all")
+    .ant-radio-button-wrapper-checked:nth-child(2):not(.ant-radio-button-wrapper-disabled) {
+        color: $tag-color-1;
+        border-color: $tag-color-1;
+    }
+
+    .ant-radio-button-wrapper-checked:nth-child(2):not(.ant-radio-button-wrapper-disabled)::before {
+        background-color: $tag-color-1;
+    }
+
+    .ant-radio-button-wrapper:nth-child(2):hover {
+        color: $tag-color-1;
+    }
+
+    .ant-radio-button-wrapper-checked:nth-child(2):not(.ant-radio-button-wrapper-disabled):focus-within {
+        box-shadow: 0 0 0 3px rgb($tag-color-1, 0.08);
+    }
+
+    // second tag (after "all")
+    .ant-radio-button-wrapper-checked:nth-child(3):not(.ant-radio-button-wrapper-disabled) {
+        color: $tag-color-2;
+        border-color: $tag-color-2;
+    }
+
+    .ant-radio-button-wrapper-checked:nth-child(3):not(.ant-radio-button-wrapper-disabled)::before {
+        background-color: $tag-color-2;
+    }
+
+    .ant-radio-button-wrapper:nth-child(3):hover {
+        color: $tag-color-2;
+    }
+
+    .ant-radio-button-wrapper-checked:nth-child(3):not(.ant-radio-button-wrapper-disabled):focus-within {
+        box-shadow: 0 0 0 3px rgb($tag-color-2, 0.08);
+    }
+
+    // third tag (after "all")
+    .ant-radio-button-wrapper-checked:nth-child(4):not(.ant-radio-button-wrapper-disabled) {
+        color: $tag-color-3;
+        border-color: $tag-color-3;
+    }
+
+    .ant-radio-button-wrapper-checked:nth-child(4):not(.ant-radio-button-wrapper-disabled)::before {
+        background-color: $tag-color-3;
+    }
+
+    .ant-radio-button-wrapper:nth-child(4):hover {
+        color: $tag-color-3;
+    }
+
+    .ant-radio-button-wrapper-checked:nth-child(4):not(.ant-radio-button-wrapper-disabled):focus-within {
+        box-shadow: 0 0 0 3px rgb($tag-color-3, 0.08);
+    }
+
+    // fourth tag (after "all")
+    .ant-radio-button-wrapper-checked:nth-child(5):not(.ant-radio-button-wrapper-disabled) {
+        color: $tag-color-4;
+        border-color: $tag-color-4;
+    }
+
+    .ant-radio-button-wrapper-checked:nth-child(5):not(.ant-radio-button-wrapper-disabled)::before {
+        background-color: $tag-color-4;
+    }
+
+    .ant-radio-button-wrapper:nth-child(5):hover {
+        color: $tag-color-4;
+    }
+
+    .ant-radio-button-wrapper-checked:nth-child(5):not(.ant-radio-button-wrapper-disabled):focus-within {
+        box-shadow: 0 0 0 3px rgb($tag-color-4, 0.08);
+    }
+}
+
+@media (max-width: 850px) {
+
+    .pub-header,
+    .tag-select,
+    .tag-group {
+        display: block;
+    }
+
+    .tag-group {
+        margin-top: 2px;
     }
 }
 
