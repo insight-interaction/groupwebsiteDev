@@ -3,7 +3,7 @@
         <div class="col-md-5 col-sm-12 d-flex flex-wrap align-items-center">
             <img :src="project.img" class="proj_img mx-auto d-block" />
         </div>
-        <div class="col-md-7 col-sm-12" style="">
+        <div class="col-md-7 col-sm-12 proj">
             <div class="proj_title">{{ project.title }}</div>
             <span class="proj_details">
                 {{ project.about }}</span>
@@ -63,8 +63,32 @@ export default defineComponent({
     font-size: 1.2em;
     font-weight: 600;
     font-family: $title-font;
+    width: max-content;
     margin-bottom: 2px;
     margin-top: 2px;
+    position: relative;
+    z-index: 10;
+}
+
+.proj_title::before {
+    background-color: rgb($tag-color-2, 0.3);
+
+    content: "";
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 50%;
+    left: -4px;
+    bottom: 0px;
+    z-index: -1;
+    // transform: rotate(-2deg);
+}
+
+.project-inner-container:nth-child(2) .proj_title::before {
+    background-color: rgb($tag-color-3, 0.3);
+}
+
+.project-inner-container:nth-child(3) .proj_title::before {
+    background-color: rgb($tag-color-1, 0.3);
 }
 
 .proj_details {

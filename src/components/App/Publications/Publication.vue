@@ -60,7 +60,7 @@ import "@fortawesome/fontawesome-free/js/all.js";
 
 import { defineComponent } from "vue";
 import { useStore } from "vuex";
-import { colors } from "./colors";
+import { colors } from "./pub";
 
 import { ref, computed, reactive, toRefs } from "vue";
 import { FileTextOutlined, LinkOutlined, DesktopOutlined, CodeOutlined, YoutubeOutlined, CameraOutlined } from '@ant-design/icons-vue';

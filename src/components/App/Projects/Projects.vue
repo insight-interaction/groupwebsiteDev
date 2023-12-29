@@ -4,7 +4,7 @@
             <div class="section-head" id="themes"><span>Research Themes</span></div>
             <!-- Below is a list of our main research themes in the area of AI Interpretability, Human-Computer Interaction, and visualization. -->
             <div class="project-outer-container">
-                <div v-for="project in projects" :key="project.title">
+                <div v-for="project in projects" :key="project.title" class="project-inner-container">
                     <Project :project="project" />
                 </div>
             </div>

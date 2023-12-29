@@ -1,0 +1,110 @@
+<template>
+    <footer class="footer h-100">
+        <div class="container">
+            <a id="up-arrow" class="arrow-button" href="#" title="Back to top"><img :src="toTop" /></a>
+            <div class="footer-imgs">
+                <a href="#" title="Insight + Interaction"><img :src="footerLogo" /></a>
+                <a-divider type="vertical"
+                    style="height: 40px; background-color: white; opacity: 0.5; width: 2px; margin: 0 20px; transform: rotate(15deg);" />
+                <a href="https://seas.harvard.edu/" target="_blank" title="Harvard SEAS"><img :src="harvardLogo" /></a>
+            </div>
+            <!-- <div class="update-msg container align-middle justify-content-center align-self-center text-center">
+                Last updated: Dec 2023
+            </div> -->
+        </div>
+    </footer>
+</template>
+
+<script lang="ts">
+import "bootstrap/dist/css/bootstrap.css";
+
+import { defineComponent, reactive, toRefs } from "vue";
+
+export default defineComponent({
+    name: "Footer",
+    setup() {
+        const state = reactive({});
+
+        const footerLogo = require(`@/assets/logos/footerlogo.svg`);
+        const harvardLogo = require(`@/assets/logos/harvardlogo.svg`);
+        const toTop = require(`@/assets/backtotop.svg`);
+
+        return {
+            ...toRefs(state),
+            footerLogo,
+            harvardLogo,
+            toTop
+        };
+    },
+    computed: {}
+});
+</script>
+
+<style rel="stylesheet" lang="scss">
+.footer {
+    margin-top: 20px;
+    background-color: $dark-accent;
+    height: 40px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    color: white;
+    font-size: smaller;
+    text-align: center;
+    position: relative;
+
+    img {
+        max-height: 40px;
+        width: auto;
+        margin: 0 !important;
+        transition: 0.5s;
+    }
+
+    .footer-imgs img:hover {
+        opacity: 0.7;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+
+    p.update {
+        font-size: x-small;
+        margin-bottom: 0;
+        font-weight: 200;
+        // font-style: italic;
+    }
+
+    #up-arrow {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: 0.5s;
+    }
+
+    #up-arrow img {
+        max-height: 25px;
+        transition: 0.5s;
+    }
+
+    #up-arrow:hover {
+        opacity: 0.7;
+    }
+}
+
+@media (max-width: 500px) {
+    .footer {
+        img {
+            max-height: 35px;
+        }
+
+        #up-arrow {
+            right: 12px;
+        }
+
+        #up-arrow img {
+            max-height: 20px;
+        }
+    }
+}
+</style>
