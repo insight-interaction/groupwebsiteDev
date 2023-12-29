@@ -369,7 +369,7 @@ div.pub_info_wrapper {
     }
 
     .tag-group {
-        margin-top: 2px;
+        margin-top: 10px;
     }
 }
 

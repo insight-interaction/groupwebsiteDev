@@ -1,7 +1,7 @@
 <template>
     <div class="row project-container" ref="pub" v-bind:id="project.id">
         <div class="col-md-5 col-sm-12 d-flex flex-wrap align-items-center">
-            <img :src="project.img" class="proj_img mx-auto d-block" />
+            <img :src="project.img" class="proj_img mx-auto d-block" :title="project.title" />
         </div>
         <div class="col-md-7 col-sm-12 proj">
             <div class="proj_title">{{ project.title }}</div>

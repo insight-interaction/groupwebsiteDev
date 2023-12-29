@@ -7,9 +7,10 @@
             <div class="section-about-introtext">
                 We seek to understand the inner workings of AI
                 systems, and use these insights
-                to enable better human-AI interaction. Key approaches in our research include <span class="emphasis">data
+                to enable better human-AI interaction. Key approaches in our research include <span
+                    class="emphasis orange">data
                     visualization</span>,
-                <span class="emphasis">mechanistic interpretability</span>, and even <span class="emphasis">artistic
+                <span class="emphasis green">mechanistic interpretability</span>, and even <span class="emphasis">artistic
                     exploration</span>.
             </div>
 
@@ -83,10 +84,19 @@ div.section-about-introtext {
         // font-style: italic;
         // color: $light-accent;
 
-        background: -webkit-linear-gradient(45deg, white, $light-accent);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
+        background: -webkit-linear-gradient(45deg, white, $tag-color-3);
+        // background: -webkit-linear-gradient(45deg, white, $light-accent) !important;
+        -webkit-background-clip: text !important;
+        background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+    }
+
+    span.orange {
+        background: -webkit-linear-gradient(45deg, white, $tag-color-1);
+    }
+
+    span.green {
+        background: -webkit-linear-gradient(45deg, white, $tag-color-2);
     }
 
 }
