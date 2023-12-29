@@ -1,11 +1,13 @@
 <template>
     <div class='publication_wrapper'>
         <div class="row">
-            <div class='col-md-2 col-4 pub_profile_wrapper'>
+            <div class='pub_profile_wrapper'
+                :class="{ 'col-md-2': imageSize === 'small', 'col-md-3': imageSize === 'medium', 'col-md-4': imageSize === 'big' }">
                 <img :src="publication.image" class="publication_profile" :title="publication.title" />
             </div>
 
-            <div class='col-md-10 col-8 pub_info_wrapper'>
+            <div class='pub_info_wrapper'
+                :class="{ 'col-md-10': imageSize === 'small', 'col-md-9': imageSize === 'medium', 'col-md-8': imageSize === 'big' }">
 
                 <div class="tags" v-for="tag in publication.tags" :key="tag">
                     <a-badge :color="colors[tag]" :text="tag" class="tag" />
@@ -58,7 +60,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "@fortawesome/fontawesome-free/css/all.css";
 import "@fortawesome/fontawesome-free/js/all.js";
 
-import { defineComponent } from "vue";
+import { defineComponent, onMounted, onUnmounted } from "vue";
 import { useStore } from "vuex";
 import { colors } from "./pub";
 
@@ -74,8 +76,29 @@ export default defineComponent({
 
         const state = reactive({
             svgStr: computed(() => store.state.svgStr),
+            imageSize: "small",
         });
         const pub = ref(null);
+
+        const adjustColumns = () => {
+            if (window.innerWidth > 1100) {
+                state.imageSize = "small";
+            } else if (window.innerWidth < 850) {
+                state.imageSize = "big";
+            } else {
+                state.imageSize = "medium";
+            }
+        }
+
+        onMounted(() => {
+            adjustColumns();
+            window.addEventListener("resize", adjustColumns);
+        });
+
+        onUnmounted(() => {
+            adjustColumns();
+            window.removeEventListener("resize", adjustColumns);
+        });
 
         return {
             ...toRefs(state),

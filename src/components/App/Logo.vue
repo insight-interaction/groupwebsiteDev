@@ -135,9 +135,8 @@
 import "bootstrap/dist/css/bootstrap.css";
 
 import { defineComponent } from "vue";
-import { useStore } from "vuex";
 
-import { onMounted, computed, reactive, toRefs, h, watch, onUnmounted } from "vue";
+import { onMounted, reactive, toRefs, onUnmounted } from "vue";
 
 function animateSvgLetters() {
     let delay: number = 200;
@@ -170,7 +169,6 @@ export default defineComponent({
     name: "App",
     components: {},
     setup() {
-        const store = useStore();
 
         const state = reactive({});
 
@@ -188,7 +186,6 @@ export default defineComponent({
             ...toRefs(state),
         };
     },
-    computed: {}
 });
 </script>
 

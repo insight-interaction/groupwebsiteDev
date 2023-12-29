@@ -1,6 +1,6 @@
 <template>
     <div class="row project-container" ref="pub" v-bind:id="project.id">
-        <div class="col-md-5 col-sm-12 d-flex flex-wrap align-items-center">
+        <div class="col-md-5 col-sm-12 d-flex flex-wrap align-items-center img-wrapper">
             <img :src="project.img" class="proj_img mx-auto d-block" :title="project.title" />
         </div>
         <div class="col-md-7 col-sm-12 proj">
@@ -55,8 +55,14 @@ export default defineComponent({
     }
 }
 
+.img-wrapper {
+    max-width: 100%;
+    overflow: hidden;
+}
+
 .proj_img {
     max-width: 100%;
+    transition: 0.5s;
 }
 
 .proj_title {
