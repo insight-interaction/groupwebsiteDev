@@ -88,6 +88,97 @@ export default defineComponent({
 </script>
 
 <style rel="stylesheet" lang="scss">
+div.publication_wrapper.visible {
+    border-bottom: 1px solid #ddd;
+}
+
+div.publication_wrapper a {
+    text-decoration: none !important;
+}
+
+.pub_profile_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    /* height: 800px; */
+
+    font-weight: 200;
+    overflow: hidden;
+}
+
+img.publication_profile {
+    margin: auto;
+    transition: 0.5s;
+}
+
+img.publication_profile:hover {
+    transform: scale(1.25);
+}
+
+div.pub_info_wrapper {
+    padding: 20px 20px;
+}
+
+.publication_title {
+    // font-size: 18px;
+    font-weight: 600;
+    font-family: $title-font;
+}
+
+.publication_author {
+    /* font-family: "Post Grotesk Book", sans-serif; */
+    margin: 2px 0px 8px;
+    font-weight: 200;
+    font-size: smaller;
+    font-family: $title-font;
+}
+
+.publication_venue {
+    font-size: small;
+    transform: scale(0.9);
+    transform-origin: left;
+    font-style: italic;
+}
+
+.publication_miscellaneous {
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+
+@media only screen and (max-width: 992px) {
+    .pub_profile_wrapper {
+        justify-content: left;
+    }
+
+    div.pub_info_wrapper {
+        padding: 10px 10px;
+    }
+
+    div.publication_wrapper {
+        width: 100%;
+        margin: 10px auto;
+    }
+
+    img {
+        margin: 10px 30px;
+        width: 100%;
+    }
+
+    .publication_title {
+        font-size: 0.9em !important;
+    }
+
+    .publication_author,
+    .publication_venue {
+        font-size: 0.85em;
+    }
+
+    .publicationsByYear_head {
+        font-size: 32px;
+    }
+}
+
 @media (max-width: 600px) {
 
     .pub_profile_wrapper,

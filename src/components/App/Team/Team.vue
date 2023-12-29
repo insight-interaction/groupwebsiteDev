@@ -154,15 +154,11 @@ export default defineComponent({
         aspect-ratio: 1 / 1;
         margin: 0px 30px 6px;
         border-radius: 100%;
-        border: 2px solid $dark-accent;
+        border: 2px solid transparent;
         transition: 0.5s;
-        // background: linear-gradient(transparent, transparent) padding-box,
-        //     linear-gradient(0deg, $med-accent, $dark-accent) border-box;
+        background: linear-gradient(transparent, transparent) padding-box,
+            linear-gradient(135deg, $dark-accent, $tag-color-2) border-box;
     }
-
-    // a:hover img.team-people-img {
-    //     border: 2px solid rgb($dark-accent, 0.7);
-    // }
 
     .team-people-name {
         color: $dark-accent;
@@ -183,15 +179,20 @@ export default defineComponent({
     }
 }
 
-// div.team-people:nth-child(3n) img.team-people-img {
-//     background: linear-gradient(transparent, transparent) padding-box,
-//         linear-gradient(60deg, $med-accent, $dark-accent) border-box;
-// }
+div.team-people:nth-child(4n+2) img.team-people-img {
+    background: linear-gradient(transparent, transparent) padding-box,
+        linear-gradient(90deg, $dark-accent, $tag-color-1) border-box;
+}
 
-// div.team-people:nth-child(3n+1) img.team-people-img {
-//     background: linear-gradient(transparent, transparent) padding-box,
-//         linear-gradient(120deg, $med-accent, $dark-accent) border-box;
-// }
+div.team-people:nth-child(4n+3) img.team-people-img {
+    background: linear-gradient(transparent, transparent) padding-box,
+        linear-gradient(45deg, $dark-accent, $tag-color-3) border-box;
+}
+
+div.team-people:nth-child(4n+4) img.team-people-img {
+    background: linear-gradient(transparent, transparent) padding-box,
+        linear-gradient(180deg, $dark-accent, $tag-color-4) border-box;
+}
 
 .team-peoples.alumni {
     grid-template-columns: 1fr;
@@ -221,7 +222,25 @@ export default defineComponent({
     img.team-people-img {
         max-width: 50px;
         margin: 0px;
-        border-color: $med-accent;
+        // border-color: $med-accent;
+
+        background: linear-gradient(transparent, transparent) padding-box,
+            linear-gradient(180deg, $dark-accent, $med-accent) border-box;
+    }
+
+    div.team-people:nth-child(4n+2) img.team-people-img {
+        background: linear-gradient(transparent, transparent) padding-box,
+            linear-gradient(135deg, $dark-accent, $med-accent) border-box;
+    }
+
+    div.team-people:nth-child(4n+3) img.team-people-img {
+        background: linear-gradient(transparent, transparent) padding-box,
+            linear-gradient(90deg, $dark-accent, $med-accent) border-box;
+    }
+
+    div.team-people:nth-child(4n+4) img.team-people-img {
+        background: linear-gradient(transparent, transparent) padding-box,
+            linear-gradient(45deg, $dark-accent, $med-accent) border-box;
     }
 }
 
@@ -253,7 +272,7 @@ export default defineComponent({
     }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 680px) {
     .team-peoples {
         grid-template-columns: repeat(4, 1fr);
     }
