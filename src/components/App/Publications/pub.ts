@@ -14,6 +14,7 @@ export type Pub = {
     venue: string;
     image: string;
     tags: Tag[];
+    summary?: string;
     preprint?: string;
     demo?: string;
     code?: string;
@@ -29,6 +30,7 @@ export const publications: Pub[] = [
         author: "Kenneth Li*, Oam Patel*, Fernanda Viégas, Hanspeter Pfister, and Martin Wattenberg",
         venue: "Conference on Neural Information Processing Systems (NeurIPS)",
         image: "https://sites.harvard.edu/insight-lab/files/2023/12/truth.png",
+        summary: "By manipulating the activations of a language model, we can compel it to tell the truth it knows but otherwise hides.",
         preprint: "https://arxiv.org/pdf/2306.03341.pdf",
         code: "https://github.com/likenneth/honest_llama",
         year: 2023,
@@ -39,6 +41,7 @@ export const publications: Pub[] = [
         author: "Yida Chen, Fernanda Viégas, and Martin Wattenberg",
         venue: "NeurIPS Workshop on Diffusion Models",
         image: "https://sites.harvard.edu/insight-lab/files/2023/12/depth.png",
+        summary: "Using linear probes, we find controllable representations of 3D geometry inside a latent diffusion model.",
         preprint: "https://arxiv.org/pdf/2306.05720.pdf",
         code: "https://github.com/yc015/scene-representation-diffusion-model",
         project: "https://yc015.github.io/scene-representation-diffusion-model/",
@@ -51,6 +54,7 @@ export const publications: Pub[] = [
         author: "Catherine Yeh, Yida Chen, Aoyu Wu, Cynthia Chen, Fernanda Viégas, and Martin Wattenberg",
         venue: "IEEE Transactions on Visualization and Computer Graphics",
         image: "https://sites.harvard.edu/insight-lab/files/2023/05/2023_pub_attenviz.png",
+        summary: "We design a new technique to visualize self-attention patterns in transformer models using joint query-key embeddings.",
         preprint: "https://arxiv.org/pdf/2305.03210.pdf",
         demo: "http://attentionviz.com/",
         code: "https://github.com/catherinesyeh/attention-viz",
@@ -64,6 +68,7 @@ export const publications: Pub[] = [
         author: "Shivam Raval, Carolyn Wang, Fernanda Viégas, and Martin Wattenberg",
         venue: "IEEE Visualization and Visual Analytics",
         image: "https://sites.harvard.edu/insight-lab/files/2023/12/Workflow.png",
+        summary: "We introduce a human-in-the-loop framework for exploring and explaining text embeddings.",
         preprint: "https://ieeexplore.ieee.org/abstract/document/10360935",
         video: "https://www.youtube.com/watch?v=p6-xK7qQiYQ",
         year: 2023,
@@ -74,6 +79,7 @@ export const publications: Pub[] = [
         author: "Kenneth Li, Aspen K. Hopkins, David Bau, Fernanda Viégas, Hanspeter Pfister, and Martin Wattenberg",
         venue: "International Conference on Learning Representations (ICLR)",
         image: "https://sites.harvard.edu/insight-lab/files/2023/12/othello.png",
+        summary: "In a GPT trained from scratch on Othello game transcripts, we uncover an interpretable and controllable world model of the game board.",
         preprint: "https://arxiv.org/pdf/2210.13382.pdf",
         code: "https://github.com/likenneth/othello_world",
         demo: "https://likenneth.github.io/othello/togglable.html",
@@ -85,6 +91,7 @@ export const publications: Pub[] = [
         author: "Aoyu Wu, Dazhen Deng, Min Chen, Shixia Liu, Daniel Keim, Ross Maciejewski, Silvia Miksch, Hendrik Strobelt, Fernanda Viégas, and Martin Wattenberg",
         venue: "IEEE Computer Graphics and Applications",
         image: "https://wowjyu.github.io/img/cga23viewpoint.d51f6d02.png",
+        summary: "We outline a research and development agenda for making VA application research more rigorous and impactful.",
         preprint: "https://ieeexplore.ieee.org/abstract/document/10251911",
         year: 2023,
         tags: ["visualization"]
@@ -94,6 +101,7 @@ export const publications: Pub[] = [
         author: "Zad Chin, Shivam Raval, Finale Doshi-Velez, Martin Wattenberg, and Leo Anthony Celi",
         venue: "NeurIPS Workshop on Learning from Time Series for Health",
         image: "https://sites.harvard.edu/insight-lab/files/2023/12/mimic.png",
+        summary: "We take a bottom-up, data-driven approach to identify two dominant structures in the MIMIC ICU dataset.",
         preprint: "https://finale.seas.harvard.edu/sites/scholar.harvard.edu/files/finale/files/chin_et_al._-_2022_-_identifying_structure_in_the_mimic_icu_dataset.pdf",
         year: 2022,
         tags: ["visualization"]
@@ -103,6 +111,7 @@ export const publications: Pub[] = [
         author: "Nelson Elhage, Tristan Hume, Catherine Olsson, Nicholas Schiefer, Tom Henighan, Shauna Kravec, Zac Hatfield-Dodds, Robert Lasenby, Dawn Drain, Carol Chen, Roger Grosse, Sam McCandlish, Jared Kaplan, Dario Amodei, Martin Wattenberg, and Christopher Olah",
         venue: "Transformer Circuits Thread",
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2022_composition.png",
+        summary: "We use toy models to investigate the phenomenon of superposition — when models represent more features than they have dimensions.",
         preprint: "https://transformer-circuits.pub/2022/toy_model/index.html",
         year: 2022,
         tags: ["interpretability"]
@@ -112,6 +121,7 @@ export const publications: Pub[] = [
         author: "Mohammadtaher Safarzadeh, Asad Khan, E. A. Huerta, and Martin Wattenberg",
         venue: "arXiv",
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2022_interpreting.png",
+        summary: "We apply computer vision interpretability techniques to deep learning models used for detecting gravitational waves.",
         preprint: "https://arxiv.org/pdf/2202.07399.pdf",
         year: 2022,
         tags: ["interpretability"]
@@ -121,6 +131,7 @@ export const publications: Pub[] = [
         author: "Hanspeter Pfister, Martin Wattenberg, Johanna Beyer, and Carolina Nobre",
         venue: "Harvard Data Science Review",
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2021_Exploring.png",
+        summary: "We discuss the challenges and opportunities in integrating exploratory and confirmatory data analyses, focusing on the differences between informal mental models and formal statistical models.",
         preprint: "https://hdsr.mitpress.mit.edu/pub/jefx48tr/release/2?readingCollection=c6a3a10e",
         year: 2021,
         tags: ["visualization"]

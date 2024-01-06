@@ -1,5 +1,6 @@
 <template>
     <div class="section" id="section-about">
+        <img class="home-bg" src="https://sites.harvard.edu/insight-lab/files/2022/10/wind_map-e1665190001416.jpg" />
         <div class="container" id="home-sec">
             <!-- <img class="section-about-logo" :src="require(`@/assets/logo.svg`)" /> -->
             <Logo />
@@ -25,17 +26,15 @@
 import "bootstrap/dist/css/bootstrap.css";
 
 import { defineComponent } from "vue";
-import { useStore } from "vuex";
 
 import Logo from "./Logo.vue";
 
-import { onMounted, computed, reactive, toRefs, h, watch } from "vue";
+import { reactive, toRefs } from "vue";
 
 export default defineComponent({
     name: "App",
     components: { Logo },
     setup() {
-        const store = useStore();
 
         const state = reactive({});
 
@@ -55,6 +54,24 @@ div#section-about {
     padding-bottom: 60px;
     padding-top: 60px;
     position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    img.home-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.1;
+        margin: 0 !important;
+        z-index: -1;
+
+        -webkit-mask-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
+        mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 0) 100%);
+
+    }
 
     img.section-about-logo {
         margin: 0px auto 20px;

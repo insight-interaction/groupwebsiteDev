@@ -22,6 +22,10 @@
                     {{ publication.venue }}, {{ publication.year }}
                 </div>
 
+                <div v-if="publication.summary" class="publication_summary">
+                    {{ publication.summary }}
+                </div>
+
                 <div class="publication_miscellaneous">
                     <a v-if="publication.preprint" :href="publication.preprint" target="_blank" rel="noopener noreferrer"
                         title="Paper" class="paper-button">
@@ -151,10 +155,18 @@ div.pub_info_wrapper {
 
 .publication_author {
     /* font-family: "Post Grotesk Book", sans-serif; */
-    margin: 2px 0px 8px;
+    margin: 0px 0px 4px;
     font-weight: 200;
     font-size: smaller;
     font-family: $title-font;
+}
+
+.publication_summary {
+    margin-top: 8px;
+    font-size: small;
+    transform: scale(0.9);
+    transform-origin: left;
+    opacity: 0.6;
 }
 
 .publication_venue {

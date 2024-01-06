@@ -45,7 +45,7 @@ export default defineComponent({
     setup() {
         const state = reactive({
             navShow: false,
-            activeSection: "home"
+            activeSection: "home",
         });
 
         const headerLogo = require(`@/assets/logos/headerlogo.svg`);
@@ -103,9 +103,9 @@ export default defineComponent({
 nav {
     // height: 10px;
     // width: 100%;
-    background-color: $dark-accent;
     padding: 0px 20px;
     font-family: $title-font;
+    background-color: $dark-accent;
 
     a {
         color: white !important;
