@@ -28,7 +28,7 @@ export const publications: Pub[] = [
     {
         title: "Inference-Time Intervention: Eliciting Truthful Answers from a Language Model",
         author: "Kenneth Li*, Oam Patel*, Fernanda Viégas, Hanspeter Pfister, and Martin Wattenberg",
-        venue: "Conference on Neural Information Processing Systems (NeurIPS)",
+        venue: "NeurIPS",
         image: "https://sites.harvard.edu/insight-lab/files/2023/12/truth.png",
         summary: "By manipulating the activations of a language model, we can compel it to tell the truth it knows but otherwise hides.",
         preprint: "https://arxiv.org/pdf/2306.03341.pdf",
@@ -39,7 +39,7 @@ export const publications: Pub[] = [
     {
         title: "Beyond Surface Statistics: Scene Representations in a Latent Diffusion Model",
         author: "Yida Chen, Fernanda Viégas, and Martin Wattenberg",
-        venue: "NeurIPS Workshop on Diffusion Models",
+        venue: "NeurIPS",
         image: "https://sites.harvard.edu/insight-lab/files/2023/12/depth.png",
         summary: "Using linear probes, we find controllable representations of 3D geometry inside a latent diffusion model.",
         preprint: "https://arxiv.org/pdf/2306.05720.pdf",
@@ -52,7 +52,7 @@ export const publications: Pub[] = [
     {
         title: "AttentionViz: A Global View of Transformer Attention",
         author: "Catherine Yeh, Yida Chen, Aoyu Wu, Cynthia Chen, Fernanda Viégas, and Martin Wattenberg",
-        venue: "IEEE Transactions on Visualization and Computer Graphics",
+        venue: "IEEE VIS",
         image: "https://sites.harvard.edu/insight-lab/files/2023/05/2023_pub_attenviz.png",
         summary: "We design a new technique to visualize self-attention patterns in transformer models using joint query-key embeddings.",
         preprint: "https://arxiv.org/pdf/2305.03210.pdf",
@@ -66,7 +66,7 @@ export const publications: Pub[] = [
     {
         title: "Explain-and-Test: An Interactive Machine Learning Framework for Exploring Text Embeddings",
         author: "Shivam Raval, Carolyn Wang, Fernanda Viégas, and Martin Wattenberg",
-        venue: "IEEE Visualization and Visual Analytics",
+        venue: "IEEE VIS",
         image: "https://sites.harvard.edu/insight-lab/files/2023/12/Workflow.png",
         summary: "We introduce a human-in-the-loop framework for exploring and explaining text embeddings.",
         preprint: "https://ieeexplore.ieee.org/abstract/document/10360935",
@@ -77,7 +77,7 @@ export const publications: Pub[] = [
     {
         title: "Emergent World Representations: Exploring a Sequence Model Trained on a Synthetic Task",
         author: "Kenneth Li, Aspen K. Hopkins, David Bau, Fernanda Viégas, Hanspeter Pfister, and Martin Wattenberg",
-        venue: "International Conference on Learning Representations (ICLR)",
+        venue: "ICLR",
         image: "https://sites.harvard.edu/insight-lab/files/2023/12/othello.png",
         summary: "In a GPT trained from scratch on Othello game transcripts, we uncover an interpretable and controllable world model of the game board.",
         preprint: "https://arxiv.org/pdf/2210.13382.pdf",
@@ -89,7 +89,7 @@ export const publications: Pub[] = [
     {
         title: "Grand Challenges in Visual Analytics Applications",
         author: "Aoyu Wu, Dazhen Deng, Min Chen, Shixia Liu, Daniel Keim, Ross Maciejewski, Silvia Miksch, Hendrik Strobelt, Fernanda Viégas, and Martin Wattenberg",
-        venue: "IEEE Computer Graphics and Applications",
+        venue: "IEEE CG&A",
         image: "https://wowjyu.github.io/img/cga23viewpoint.d51f6d02.png",
         summary: "We outline a research and development agenda for making VA application research more rigorous and impactful.",
         preprint: "https://ieeexplore.ieee.org/abstract/document/10251911",
@@ -99,7 +99,7 @@ export const publications: Pub[] = [
     {
         title: "Identifying Structure in the MIMIC ICU Dataset",
         author: "Zad Chin, Shivam Raval, Finale Doshi-Velez, Martin Wattenberg, and Leo Anthony Celi",
-        venue: "NeurIPS Workshop on Learning from Time Series for Health",
+        venue: "NeurIPS",
         image: "https://sites.harvard.edu/insight-lab/files/2023/12/mimic.png",
         summary: "We take a bottom-up, data-driven approach to identify two dominant structures in the MIMIC ICU dataset.",
         preprint: "https://finale.seas.harvard.edu/sites/scholar.harvard.edu/files/finale/files/chin_et_al._-_2022_-_identifying_structure_in_the_mimic_icu_dataset.pdf",
@@ -157,16 +157,16 @@ export const publications: Pub[] = [
     {
         title: "The What-If Tool: Interactive Probing of Machine Learning Models",
         author: "James Wexler, Mahima Pushkarna, Tolga Bolukbasi, Martin Wattenberg, Fernanda Viégas, and Jimbo Wilson",
-        venue: "IEEE Transactions on Visualization and Computer Graphics",
+        venue: "IEEE VAST",
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2020_Wexler.png",
         preprint: "https://arxiv.org/pdf/1907.04135.pdf",
-        year: 2020,
+        year: 2019,
         tags: ["visualization"]
     },
     {
         title: "Human-Centered Tools for Coping with Imperfect Algorithms During Medical Decision-Making",
         author: "Michael Terry, Martin C. Stumpe, Greg S. Corrado, Fernanda Viegas, Martin Wattenberg, Daniel Smilkov, Been Kim, Jason Hipp, Narayan Hegde, Emily Reif, and Carrie J. Cai",
-        venue: "Proceedings of the CHI Conference on Human Factors in Computing Systems",
+        venue: "ACM CHI",
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2019_Terry.png",
         preprint: "https://arxiv.org/pdf/1902.02960.pdf",
         year: 2019,
@@ -174,8 +174,8 @@ export const publications: Pub[] = [
     },
     {
         title: "Tensorflow.js: Machine Learning for the Web and Beyond",
-        author: "Daniel Smilkov Nikhil Thorat Yannick Assogba Ann Yuan Nick Kreeger Ping Yu Kangyi Zhang Shanqing Cai Eric Nielsen David Soergel Stan Bileschi Michael Terry Charles Nicholson Sandeep N. Gupta Sarah Sirajuddin D. Sculley Rajat Monga Greg Corrado Fernanda B. Viegas Martin Wattenberg",
-        venue: "Proceedings of Machine Learning and Systems",
+        author: "Daniel Smilkov, Nikhil Thorat, Yannick Assogba, Ann Yuan, Nick Kreeger, Ping Yu, Kangyi Zhang, Shanqing Cai, Eric Nielsen, David Soergel, Stan Bileschi, Michael Terry, Charles Nicholson, Sandeep N. Gupta, Sarah Sirajuddin, D. Sculley, Rajat Monga, Greg Corrado, Fernanda B. Viegas, Martin Wattenberg",
+        venue: "SysML",
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2019_tensorflowjs.png",
         preprint: "https://arxiv.org/pdf/1901.05350",
         year: 2019,
@@ -184,7 +184,7 @@ export const publications: Pub[] = [
     {
         title: "Do Neural Networks Show Gestalt Phenomena? An Exploration of the Law of Closure",
         author: "Been Kim, Emily Reif, Martin Wattenberg, and Samy Bengio",
-        venue: "Arxiv",
+        venue: "arXiv",
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2019_Kim.png",
         preprint: "https://arxiv.org/pdf/1903.01069",
         year: 2019,
@@ -193,16 +193,16 @@ export const publications: Pub[] = [
     {
         title: "GAN Lab: Understanding Complex Deep Generative Models Using Interactive Visual Experimentation",
         author: "Minsuk Kahng, Nikhil Thorat, Duen Horng Chau, Fernanda B Viégas, and Martin Wattenberg",
-        venue: "IEEE Transactions on Visualization and Computer Graphics",
+        venue: "IEEE VAST",
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2019_ganlab.png",
         preprint: "https://arxiv.org/pdf/1809.01587.pdf",
-        year: 2019,
+        year: 2018,
         tags: ["visualization"]
     },
     {
         title: "XRAI: Better Attributions Through Regions",
         author: "Andrei Kapishnikov, Tolga Bolukbasi, Fernanda Viégas, and Michael Terry",
-        venue: "Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)",
+        venue: "ICCV",
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2019_iccv.png",
         preprint:
             "https://openaccess.thecvf.com/content_ICCV_2019/papers/Kapishnikov_XRAI_Better_Attributions_Through_Regions_ICCV_2019_paper.pdf",
@@ -212,7 +212,7 @@ export const publications: Pub[] = [
     {
         title: "Visualizing and Measuring the Geometry of BERT",
         author: "Emily Reif, Ann Yuan, Martin Wattenberg, Fernanda B Viegas, Andy Coenen, Adam Pearce, and Been Kim",
-        venue: "Advances in Neural Information Processing Systems (NeurIPS)",
+        venue: "NeurIPS",
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2019_bertgeo.png",
         preprint:
             "http://papers.neurips.cc/paper/9065-visualizing-and-measuring-the-geometry-of-bert.pdf",
@@ -222,7 +222,7 @@ export const publications: Pub[] = [
     {
         title: "Interpretability Beyond Feature Attribution: Quantitative Testing with Concept Activation Vectors (TCAV)",
         author: "Been Kim, Martin Wattenberg, Justin Gilmer, Carrie Cai, James Wexler, and Fernanda Viegas",
-        venue: "International Conference on Machine Learning (ICML)",
+        venue: "ICML",
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2018_tcav.png",
         preprint: "https://proceedings.mlr.press/v80/kim18d/kim18d.pdf",
         year: 2018,
@@ -231,7 +231,7 @@ export const publications: Pub[] = [
     {
         title: "Adversarial Spheres",
         author: "Justin Gilmer, Luke Metz, Fartash Faghri, Sam Schoenholz, Maithra Raghu, Martin Wattenberg, and Ian Goodfellow",
-        venue: "International Conference on Learning Representations (ICLR)",
+        venue: "ICLR",
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2018_Gilmer.png",
         preprint: "https://arxiv.org/pdf/1801.02774.pdf",
         year: 2018,
@@ -248,7 +248,7 @@ export const publications: Pub[] = [
     {
         title: "Google's Multilingual Neural Machine Translation System: Enabling Zero-Shot Translation",
         author: "Melvin Johnson, Mike Schuster, Quoc V. Le, Maxim Krikun, Yonghui Wu, Zhifeng Chen, Nikhil Thorat, Fernanda Viégas, Martin Wattenberg, Greg Corrado, Macduff Hughes, and Jeffrey Dean",
-        venue: "Transactions of the Association for Computational Linguistics (ACL)",
+        venue: "ACL",
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2017_Johnson.png",
         preprint: "https://arxiv.org/pdf/1611.04558.pdf",
         year: 2017,
@@ -257,7 +257,7 @@ export const publications: Pub[] = [
     {
         title: "Tensorflow: Large-Scale Machine Learning on Heterogeneous Distributed Systems",
         author: "Martín Abadi, Ashish Agarwal, Paul Barham, Eugene Brevdo, Zhifeng Chen, Craig Citro, Greg S. Corrado, Andy Davis, Jeffrey Dean, Matthieu Devin, Sanjay Ghemawat, Ian Goodfellow, Andrew Harp, Geoffrey Irving, Michael Isard, Yangqing Jia, Rafal Jozefowicz, Lukasz Kaiser, Manjunath Kudlur, Josh Levenberg, Dan Mane, Rajat Monga, Sherry Moore, Derek Murray, Chris Olah, Mike Schuster, Jonathon Shlens, Benoit Steiner, Ilya Sutskever, Kunal Talwar, Paul Tucker, Vincent Vanhoucke, Vijay Vasudevan, Fernanda Viegas, Oriol Vinyals, Pete Warden, Martin Wattenberg, Martin Wicke, Yuan Yu, Xiaoqiang Zheng",
-        venue: "Proceedings of the 12th USENIX conference on Operating Systems Design and Implementation (OSDI)",
+        venue: "OSDI",
         image: "https://sites.harvard.edu/insight-lab/files/2022/10/pub_2016_tensorflow.png",
         preprint: "https://arxiv.org/pdf/1603.04467",
         year: 2016,

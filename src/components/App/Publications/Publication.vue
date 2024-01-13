@@ -12,8 +12,13 @@
             <div class='pub_info_wrapper'
                 :class="{ 'col-md-10': imageSize === 'small', 'col-md-9': imageSize === 'medium', 'col-md-8': imageSize === 'big' }">
 
-                <div class="tags" v-for="tag in publication.tags" :key="tag">
-                    <a-badge :color="colors[tag]" :text="tag" class="tag" />
+                <div class="tag-box">
+                    <div class="publication_venue">
+                        {{ publication.venue }} {{ publication.year }}
+                    </div>
+                    <div class="tags" v-for="tag in publication.tags" :key="tag">
+                        <a-badge :color="colors[tag]" :text="tag" class="tag" />
+                    </div>
                 </div>
                 <a v-if="clickLink !== ''" :href="clickLink" target="_blank" :title="publication.title"
                     class="publication_title">
@@ -23,10 +28,6 @@
 
                 <div class="publication_author">
                     {{ publication.author }}
-                </div>
-
-                <div class="publication_venue">
-                    {{ publication.venue }}, {{ publication.year }}
                 </div>
 
                 <div v-if="publication.summary" class="publication_summary">
@@ -153,6 +154,7 @@ img.publication_profile:hover {
 
 div.pub_info_wrapper {
     padding: 20px 20px;
+    margin: auto 0;
 }
 
 .publication_title {
@@ -165,30 +167,36 @@ div.pub_info_wrapper {
 
 .publication_author {
     /* font-family: "Post Grotesk Book", sans-serif; */
-    margin: 0px 0px 4px;
+    // margin: 0px 0px 4px;
     font-weight: 200;
     font-size: smaller;
     font-family: $title-font;
 }
 
 .publication_summary {
-    margin-top: 8px;
+    margin-top: 4px;
     font-size: small;
-    transform: scale(0.9);
+    // transform: scale(0.9);
     transform-origin: left;
-    opacity: 0.6;
+    // opacity: 0.6;
 }
 
 .publication_venue {
-    font-size: small;
-    transform: scale(0.9);
+    font-size: x-small !important;
+    width: max-content;
+    padding: 0 4px;
+    border-radius: 2px;
+    // transform: scale(0.9);
+    // font-weight: 400;
     transform-origin: left;
-    font-style: italic;
+    // font-style: italic;
+    background: rgb($text-color, 0.03);
+    // font-family: $title-font;
 }
 
 .publication_miscellaneous {
     margin-top: 2px;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
 }
 
 @media only screen and (max-width: 992px) {
@@ -264,9 +272,18 @@ div.pub_info_wrapper {
     border-color: $lightest-accent;
 }
 
+.tag-box {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 2px;
+
+    div:first-child {
+        margin-right: 10px;
+    }
+}
+
 .tags {
     display: inline-block;
-    margin-bottom: 2px;
 
     span {
         font-size: x-small;
