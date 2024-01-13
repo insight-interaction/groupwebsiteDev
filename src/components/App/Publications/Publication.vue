@@ -16,8 +16,10 @@
                     <div class="publication_venue">
                         {{ publication.venue }} {{ publication.year }}
                     </div>
-                    <div class="tags" v-for="tag in publication.tags" :key="tag">
-                        <a-badge :color="colors[tag]" :text="tag" class="tag" />
+                    <div class="tag-container">
+                        <div class="tags" v-for="tag in publication.tags" :key="tag">
+                            <a-badge :color="colors[tag]" :text="tag" class="tag" />
+                        </div>
                     </div>
                 </div>
                 <a v-if="clickLink !== ''" :href="clickLink" target="_blank" :title="publication.title"
@@ -163,6 +165,8 @@ div.pub_info_wrapper {
     // font-size: 18px;
     font-weight: 600;
     font-family: $title-font;
+    width: max-content;
+    max-width: 100%;
 }
 
 .publication_author {
@@ -275,15 +279,22 @@ div.pub_info_wrapper {
 .tag-box {
     display: flex;
     align-items: baseline;
+    justify-content: space-between;
     margin-bottom: 2px;
 
-    div:first-child {
+    .publication_venue {
         margin-right: 10px;
     }
 }
 
+.tag-container {
+    text-align: right;
+}
+
 .tags {
     display: inline-block;
+    width: max-content;
+    max-width: 100%;
 
     span {
         font-size: x-small;
