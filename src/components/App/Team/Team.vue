@@ -9,14 +9,14 @@
                     <div class="team-peoples">
                         <div v-for="p in finalPeopleList" class="team-people">
                             <div class="flip-card">
-                                <div class="flip-card-inner">
+                                <a class="flip-card-inner" :href="p.url" target="_blank" :title="p.name">
                                     <div class="flip-card-front">
                                         <img :src="p.img" class="team-people-img mx-auto d-block" />
                                     </div>
                                     <div class="flip-card-back"><img :src="p.hoverImg"
                                             class="team-people-img mx-auto d-block" />
                                     </div>
-                                </div>
+                                </a>
                             </div>
                             <a :href="p.url" target="_blank" :title="p.name">
                                 <div class="team-people-name">{{ p.name }}</div>
@@ -30,7 +30,9 @@
                     <span class="emphasis">Alumni</span>
                     <div class="team-peoples alumni">
                         <div v-for="p in finalAlumList" class="team-people">
-                            <img :src="p.img" class="team-people-img mx-auto d-block" />
+                            <a :href="p.url" target="_blank" :title="p.name">
+                                <img :src="p.img" class="team-people-img mx-auto d-block" />
+                            </a>
                             <div>
                                 <a :href="p.url" target="_blank" :title="p.name">
                                     <div class="team-people-name">{{ p.name }}</div>
@@ -226,6 +228,10 @@ div.team-people:nth-child(4n+4) img.team-people-img {
 
         background: linear-gradient(transparent, transparent) padding-box,
             linear-gradient(180deg, $dark-accent, $med-accent) border-box;
+
+        // &:hover {
+        //     transform: scale(1.05);
+        // }
     }
 
     div.team-people:nth-child(4n+2) img.team-people-img {
@@ -307,6 +313,7 @@ div.team-people:nth-child(4n+4) img.team-people-img {
 /* This container is needed to position the front and back side */
 .flip-card-inner {
     position: relative;
+    display: block;
     width: 100%;
     height: 100%;
     text-align: center;

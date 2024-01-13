@@ -3,7 +3,10 @@
         <div class="row">
             <div class='pub_profile_wrapper'
                 :class="{ 'col-md-2': imageSize === 'small', 'col-md-3': imageSize === 'medium', 'col-md-4': imageSize === 'big' }">
-                <img :src="publication.image" class="publication_profile" :title="publication.title" />
+                <a v-if="clickLink !== ''" :href="clickLink" target="_blank" :title="publication.title">
+                    <img :src="publication.image" class="publication_profile" />
+                </a>
+                <img v-else :src="publication.image" class="publication_profile" :title="publication.title" />
             </div>
 
             <div class='pub_info_wrapper'
@@ -12,7 +15,11 @@
                 <div class="tags" v-for="tag in publication.tags" :key="tag">
                     <a-badge :color="colors[tag]" :text="tag" class="tag" />
                 </div>
-                <div class="publication_title">{{ publication.title }} </div>
+                <a v-if="clickLink !== ''" :href="clickLink" target="_blank" :title="publication.title"
+                    class="publication_title">
+                    {{ publication.title }}
+                </a>
+                <div v-else class="publication_title">{{ publication.title }} </div>
 
                 <div class="publication_author">
                     {{ publication.author }}
@@ -81,6 +88,7 @@ export default defineComponent({
         const state = reactive({
             svgStr: computed(() => store.state.svgStr),
             imageSize: "small",
+            clickLink: props.publication.project ? props.publication.project : props.publication.preprint ? props.publication.preprint : "",
         });
         const pub = ref(null);
 
@@ -148,6 +156,8 @@ div.pub_info_wrapper {
 }
 
 .publication_title {
+    color: unset !important;
+    display: block;
     // font-size: 18px;
     font-weight: 600;
     font-family: $title-font;
