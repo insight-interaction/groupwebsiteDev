@@ -22,20 +22,23 @@
                         </div>
                     </div>
                 </div>
-                <a v-if="clickLink !== ''" :href="clickLink" target="_blank" :title="publication.title"
-                    class="publication_title">
-                    {{ publication.title }}
-                </a>
-                <div v-else class="publication_title">{{ publication.title }} </div>
+                <div>
+                    <a v-if="clickLink !== ''" :href="clickLink" target="_blank" :title="publication.title"
+                        class="publication_title">
+                        {{ publication.title }}
+                    </a>
+                    <div v-else class="publication_title">{{ publication.title }} </div>
 
-                <div class="publication_author">
-                    {{ publication.author }}
+                    <div class="publication_author">
+                        {{ publication.author }}
+                    </div>
+
+                    <div v-if="publication.summary" class="publication_summary">
+                        {{ publication.summary }}
+                    </div>
+
+
                 </div>
-
-                <div v-if="publication.summary" class="publication_summary">
-                    {{ publication.summary }}
-                </div>
-
                 <div class="publication_miscellaneous">
                     <a v-if="publication.preprint" :href="publication.preprint" target="_blank" rel="noopener noreferrer"
                         title="Paper" class="paper-button">
@@ -63,7 +66,6 @@
                         <YoutubeOutlined /><span>Video</span>
                     </a>
                 </div>
-
             </div>
         </div>
     </div>
@@ -156,7 +158,10 @@ img.publication_profile:hover {
 
 div.pub_info_wrapper {
     padding: 20px 20px;
-    margin: auto 0;
+    // margin: auto 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .publication_title {
