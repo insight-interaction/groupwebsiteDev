@@ -55,7 +55,7 @@ export const publications: Pub[] = [
         venue: "IEEE VIS",
         image: "https://sites.harvard.edu/insight-lab/files/2023/05/2023_pub_attenviz.png",
         summary: "We design a new technique to visualize self-attention patterns in transformer models using joint query-key embeddings.",
-        preprint: "https://arxiv.org/pdf/2305.03210.pdf",
+        preprint: "https://ieeexplore.ieee.org/document/10297591",
         demo: "http://attentionviz.com/",
         code: "https://github.com/catherinesyeh/attention-viz",
         project: "https://catherinesyeh.github.io/attn-docs/",
@@ -69,7 +69,7 @@ export const publications: Pub[] = [
         venue: "IEEE VIS",
         image: "https://sites.harvard.edu/insight-lab/files/2023/12/Workflow.png",
         summary: "We introduce a human-in-the-loop framework for exploring and explaining text embeddings.",
-        preprint: "https://ieeexplore.ieee.org/abstract/document/10360935",
+        preprint: "https://ieeexplore.ieee.org/document/10360935",
         video: "https://www.youtube.com/watch?v=p6-xK7qQiYQ",
         year: 2023,
         tags: ["visualization"]
@@ -92,7 +92,7 @@ export const publications: Pub[] = [
         venue: "IEEE CG&A",
         image: "https://wowjyu.github.io/img/cga23viewpoint.d51f6d02.png",
         summary: "We outline a research and development agenda for making VA application research more rigorous and impactful.",
-        preprint: "https://ieeexplore.ieee.org/abstract/document/10251911",
+        preprint: "https://ieeexplore.ieee.org/document/10251911",
         year: 2023,
         tags: ["visualization"]
     },
