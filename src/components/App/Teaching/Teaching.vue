@@ -11,7 +11,13 @@
                         class="mx-auto d-block"
                     />
                     <div class="caption">
-                        COMPSCI 73: Code, Data, and Art <br />
+                        COMPSCI 73: Code, Data, and Art
+
+                        <a href="https://wattenberg.github.io/cs73/">
+                            <LinkOutlined :style="{ verticalAlign: 'middle' }" />
+                        </a>
+
+                        <br />
 
                         <span class="course-description">
                             A studio course where software is used as an artistic medium. The course
@@ -25,15 +31,22 @@
                 <div
                     class="col-md-6 col-sm-12 d-flex flex-wrap align-items-center img-wrapper course-container"
                 >
-                    <img
-                        :src="require(`@/assets/images/course_hbs.jpg`)"
-                        class="mx-auto d-block"
-                    />
+                    <img :src="require(`@/assets/images/course_hbs.jpg`)" class="mx-auto d-block" />
                     <div class="caption">
-                        Data Visualization for Analysis and Communication <br />
+                        Data Visualization for Analysis and Communication
+
+                        <a href="https://www.hbs.edu/coursecatalog/2135.html">
+                            <LinkOutlined :style="{ verticalAlign: 'middle' }" />
+                        </a>
+
+                        <br />
 
                         <span class="course-description">
-                            A course designed for students who expect to analyze or present data during their career—and these days, data is everywhere, from finance to management consulting.  The course will discuss how to critically evaluate visualizations, and how to use them as a bridge between quantitative analysis and decision-making.</span
+                            A course designed for students who expect to analyze or present data
+                            during their career—and these days, data is everywhere, from finance to
+                            management consulting. The course will discuss how to critically
+                            evaluate visualizations, and how to use them as a bridge between
+                            quantitative analysis and decision-making.</span
                         >
                     </div>
                 </div>
@@ -50,9 +63,11 @@ import { defineComponent } from "vue";
 
 import { reactive, toRefs } from "vue";
 
+import { LinkOutlined } from "@ant-design/icons-vue";
+
 export default defineComponent({
     name: "People",
-    components: {},
+    components: { LinkOutlined },
     setup() {
         const state = reactive({});
 
@@ -73,6 +88,10 @@ div.course-container {
         width: 100%;
         display: block;
         max-height: 320px;
+    }
+
+    a {
+        color: inherit;
     }
 
     .caption {
