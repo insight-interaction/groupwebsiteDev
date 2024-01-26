@@ -13,10 +13,6 @@
                         <Publications />
                         <Teaching />
                     </div>
-                    <!-- <div class="col-3">
-                    <News />
-                    <Teaching />
-                </div> -->
                 </div>
             </div>
         </div>
@@ -140,7 +136,7 @@ div.container {
 
 div.section {
     padding: 0px 60px;
-    // margin-top: 30px;
+    margin-top: 30px;
 }
 
 @media all and (min-width: 768px) {

@@ -53,6 +53,7 @@ div#section-about {
 
     padding-bottom: 60px;
     padding-top: 60px;
+    margin-top: 0px !important;
     position: relative;
     overflow: hidden;
     z-index: 1;
