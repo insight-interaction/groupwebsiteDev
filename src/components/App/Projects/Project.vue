@@ -63,6 +63,10 @@ export default defineComponent({
 .proj_img {
     max-width: 100%;
     transition: 0.5s;
+    box-shadow: 0 4px 8px #ccc;
+    border-radius: 2px;
+    margin-bottom: 12px;
+    margin-top: 4px;
 }
 
 .proj_title {

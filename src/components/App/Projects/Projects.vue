@@ -40,7 +40,7 @@ const projects = [
     {
         imgurl: "proj_vis.gif",
         title: "Data Visualization",
-        about: "We investigate the use of data visualization for bringing unseen patterns to light and communicating them. To this aim, we develop innovative interactive visualizations for real-world applications, with focuses on critical fields such as artificial intelligence and healthcare. Additionally, we are eager to explore the integration of visualization techniques in the realm of art, aiming to enhance its revelatory and expressive power.",
+        about: "We investigate the use of data visualization for bringing unseen patterns to light and communicating them in new ways. To this aim, we develop innovative interactive visualizations for real-world applications, with focuses on critical fields such as artificial intelligence and healthcare. Additionally, we are eager to explore the integration of visualization techniques in the realm of art, aiming to enhance its revelatory and expressive power.",
         id: "proj_dashboard",
     }
 ] as any[];
