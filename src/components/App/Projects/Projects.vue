@@ -28,20 +28,20 @@ const projects = [
     {
         imgurl: "proj_interpret.gif",
         title: "Mechanistic Interpretability",
-        about: "We aim to understand the inner workings of complex machine learning models, and based on these findings, improving the controllability of current model behavior to secure human benefits. Our work targets real-world problems derived from AI safety research, e.g., hallucination, privacy, and copyright issues. Previously, we conducted preliminary explorations into the world models of toy GPT models and diffusion models, which were shown to causally impact model generations.",
+        about: "We aim to understand the inner workings of complex machine learning models, and based on these findings, improve the controllability of current model behavior to secure human benefits. Our work targets real-world problems derived from AI safety research, e.g., hallucination, privacy, and copyright issues. Previously, we conducted preliminary explorations into the world models of toy GPT models and diffusion models, which were shown to causally impact model generations.",
         id: "proj_transform",
     },
     {
         imgurl: "proj_dashboard.png",
         title: "Human-Computer Interaction",
-        about: "We are working to pioneer HCI technoloigies in the age of AI. A key aspect of our research is investigating novel interface designs for AI models. These interfaces aim to surface the inner workings of LLMs to public, ensuring their transparent, safe, and reliable utilization in a controlled manner. We are also interested in developing new techniques for practical applications such as language learning to enhance user experience and effectiveness.",
+        about: "We are working to pioneer HCI technologies in the age of AI. A key aspect of our research is investigating novel interface designs for AI models. These interfaces aim to surface the inner workings of LLMs to the public, ensuring their transparent, safe, and reliable utilization in a controlled manner. We are also interested in developing new techniques for practical applications such as language learning to enhance user experiences and effectiveness.",
         id: "proj_dashboard",
     },
     {
         imgurl: "proj_vis.gif",
         title: "Data Visualization",
         about: "We investigate the use of data visualization for uncovering unseen patterns and communicating them in novel ways. To this aim, we develop innovative interactive visualizations for real-world applications, with focuses on critical fields such as artificial intelligence and healthcare. Additionally, we are eager to explore the integration of visualization techniques in the realm of art, aiming to enhance its revelatory and expressive power.",
-        id: "proj_dashboard",
+        id: "proj_vis",
     }
 ] as any[];
 
@@ -69,7 +69,7 @@ export default defineComponent({
 
 <style rel="stylesheet" lang="scss">
 .project-outer-container {
-    margin-top: 10px;
+    // margin-top: 10px;
     margin-bottom: 10px;
 }
 </style>

@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve",
-    "build": "export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service build"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
   },
   "dependencies": {
+    "-": "^0.0.1",
     "@ant-design/icons-vue": "^6.0.1",
     "@egoist/vue-head": "^0.1.8",
     "@fortawesome/fontawesome-free": "^5.2.0",
@@ -19,6 +20,7 @@
     "jquery": "^3.2.1",
     "less": "3.13.0",
     "less-loader": "^7.1.0",
+    "npm": "^10.4.0",
     "regenerator-runtime": "^0.13.7",
     "sass": "^1.50.1",
     "underscore": "^1.13.1",
