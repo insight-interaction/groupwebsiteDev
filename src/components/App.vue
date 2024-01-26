@@ -11,6 +11,7 @@
                         <Projects />
                         <Team />
                         <Publications />
+                        <Teaching />
                     </div>
                     <!-- <div class="col-3">
                     <News />
@@ -33,6 +34,7 @@ import Publications from "./App/Publications/Publications.vue";
 import Hello from "./App/Hello.vue";
 import Projects from "./App/Projects/Projects.vue";
 import Team from "./App/Team/Team.vue";
+import Teaching from "./App/Teaching/Teaching.vue";
 import Footer from "./App/Footer.vue";
 import Nav from "./App/Nav.vue";
 
@@ -44,6 +46,7 @@ export default defineComponent({
         Publications,
         Hello,
         Projects,
+        Teaching,
         Team,
         Footer,
         Nav

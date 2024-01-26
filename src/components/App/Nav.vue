@@ -26,9 +26,9 @@
                         <a class="nav-link" href="#publications" title="Publications"
                             @click.stop="setActiveSection('pubs')">Publications</a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="#sec-press">Course</a>
-                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#courses">Courses</a>
+                    </li>
                 </ul>
             </div>
         </div>
