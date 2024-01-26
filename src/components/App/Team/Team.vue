@@ -208,7 +208,7 @@ div.team-people:nth-child(4n+4) img.team-people-img {
         align-items: center;
         text-align: left;
         gap: 1rem;
-        font-size: 10px;
+        font-size: 14px;
         padding: 0;
     }
 
@@ -217,7 +217,7 @@ div.team-people:nth-child(4n+4) img.team-people-img {
     }
 
     .team-people-role {
-        font-size: x-small;
+        font-size: small;
         transform-origin: left;
     }
 

@@ -34,13 +34,13 @@ const projects = [
     {
         imgurl: "proj_dashboard.png",
         title: "Human-Computer Interaction",
-        about: "We are working to pioneer HCI technoloigies in the age of AI and other emerging technologies. A key aspect of our research is investigating novel interface designs for AI models. These interfaces aim to surface the inner workings of LLMs to public users, ensuring their transparent, safe, and reliable utilization. We are also interested in developing new techniques for practical applications such as language learning to enhance user experience and effectiveness.",
+        about: "We are working to pioneer HCI technoloigies in the age of AI. A key aspect of our research is investigating novel interface designs for AI models. These interfaces aim to surface the inner workings of LLMs to public, ensuring their transparent, safe, and reliable utilization in a controlled manner. We are also interested in developing new techniques for practical applications such as language learning to enhance user experience and effectiveness.",
         id: "proj_dashboard",
     },
     {
         imgurl: "proj_vis.gif",
         title: "Data Visualization",
-        about: "We investigate the use of data visualization for bringing unseen patterns to light and communicating them in new ways. To this aim, we develop innovative interactive visualizations for real-world applications, with focuses on critical fields such as artificial intelligence and healthcare. Additionally, we are eager to explore the integration of visualization techniques in the realm of art, aiming to enhance its revelatory and expressive power.",
+        about: "We investigate the use of data visualization for uncovering unseen patterns and communicating them in novel ways. To this aim, we develop innovative interactive visualizations for real-world applications, with focuses on critical fields such as artificial intelligence and healthcare. Additionally, we are eager to explore the integration of visualization techniques in the realm of art, aiming to enhance its revelatory and expressive power.",
         id: "proj_dashboard",
     }
 ] as any[];
