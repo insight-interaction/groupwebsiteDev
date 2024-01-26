@@ -13,7 +13,7 @@
                     <div class="caption">
                         COMPSCI 73: Code, Data, and Art
 
-                        <a href="https://wattenberg.github.io/cs73/">
+                        <a href="https://wattenberg.github.io/cs73/" target="_blank">
                             <LinkOutlined :style="{ verticalAlign: 'middle' }" />
                         </a>
 
@@ -35,7 +35,7 @@
                     <div class="caption">
                         Data Visualization for Analysis and Communication
 
-                        <a href="https://www.hbs.edu/coursecatalog/2135.html">
+                        <a href="https://www.hbs.edu/coursecatalog/2135.html" target="_blank">
                             <LinkOutlined :style="{ verticalAlign: 'middle' }" />
                         </a>
 
