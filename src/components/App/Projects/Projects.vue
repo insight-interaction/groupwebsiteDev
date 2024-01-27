@@ -27,7 +27,7 @@ import { reactive, toRefs } from "vue";
 const projects = [
     {
         imgurl: "proj_interpret.gif",
-        title: "Mechanistic Interpretability",
+        title: "AI Interpretability",
         about: "We aim to understand the inner workings of complex machine learning models, and based on these findings, improve the controllability of current model behavior to secure human benefits. Our work targets real-world problems derived from AI safety research, e.g., hallucination, privacy, and copyright issues. Previously, we conducted preliminary explorations into the world models of toy GPT models and diffusion models, which were shown to causally impact model generations.",
         id: "proj_transform",
     },
@@ -71,5 +71,11 @@ export default defineComponent({
 .project-outer-container {
     // margin-top: 10px;
     margin-bottom: 10px;
+}
+
+@media all and (max-width: 600px) {
+    .project-outer-container {
+        margin-bottom: 0px;
+    }
 }
 </style>

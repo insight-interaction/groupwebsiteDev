@@ -192,6 +192,8 @@ export default defineComponent({
 <style rel="stylesheet" lang="scss">
 #my-logo {
     margin: 0px auto 20px;
+    max-width: 800px;
+    display: block;
 }
 
 .wavy {

@@ -47,6 +47,7 @@ export default defineComponent({
 <style rel="stylesheet" lang="scss">
 .project-container {
     padding: 0 0 1.4em;
+    align-items: center;
 
     // border-bottom: 1px solid black;
     a {

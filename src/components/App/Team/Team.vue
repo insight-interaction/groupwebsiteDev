@@ -199,7 +199,7 @@ div.team-people:nth-child(4n+4) img.team-people-img {
 .team-peoples.alumni {
     grid-template-columns: 1fr;
     gap: 0.5rem;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 
     .team-people {
         width: 100%;
@@ -285,6 +285,11 @@ div.team-people:nth-child(4n+4) img.team-people-img {
 
     .team-peoples.alumni {
         grid-template-columns: 1fr;
+    }
+
+    #section-people {
+        padding-top: 0px;
+        padding-bottom: 0px;
     }
 }
 

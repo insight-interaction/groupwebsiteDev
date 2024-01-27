@@ -51,8 +51,8 @@ div#section-about {
     background: $dark-accent;
     color: white;
 
-    padding-bottom: 60px;
-    padding-top: 60px;
+    padding-bottom: 40px;
+    padding-top: 40px;
     margin-top: 0px !important;
     position: relative;
     overflow: hidden;
