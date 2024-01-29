@@ -223,7 +223,7 @@ nav {
 
 @media all and (max-width: 768px) {
     .navbar-brand {
-        margin-left: 0 !important;
+        margin-left: -10px !important;
         padding: 0;
     }
 
