@@ -56,7 +56,7 @@ export default defineComponent({
 
         const setActiveSection = (section: string) => {
             state.activeSection = section;
-            console.log(section);
+            // console.log(section);
         }
 
         const onScroll = () => {
@@ -125,6 +125,8 @@ nav {
         font-size: 1.1em;
         margin-left: 10px;
         transition: 0.5s;
+        width: max-content;
+        min-width: 200px;
 
         img {
             max-height: 18px;
