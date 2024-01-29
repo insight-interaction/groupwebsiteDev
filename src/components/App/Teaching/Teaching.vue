@@ -96,8 +96,13 @@ div.course-container {
         aspect-ratio: 16/9;
         margin: 0 !important;
 
-        border: 2px solid $light-accent;
+        // border: 2px solid $light-accent;
         border-radius: 2px;
+
+        border: 2px solid transparent;
+        // transition: 0.5s;
+        background: linear-gradient(transparent, transparent) padding-box,
+            linear-gradient(135deg, $dark-accent, $light-accent) border-box;
     }
 
     a {
