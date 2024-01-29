@@ -132,15 +132,17 @@ export default defineComponent({
 
     .cls-1 {
         fill: #a9c9ea;
+        stroke: #a9c9ea;
     }
 
     .cls-1,
     .cls-2 {
-        stroke-width: 0px;
+        stroke-width: 1px;
     }
 
     .cls-2 {
-        fill: #fff;
+        fill: white;
+        stroke: white;
     }
 }
 
@@ -166,4 +168,5 @@ export default defineComponent({
     100% {
         transform: translateY(0px);
     }
-}</style>
+}
+</style>
