@@ -130,7 +130,7 @@ nav {
 
         img {
             max-height: 18px;
-            margin: 0;
+            margin: 0 0 0 -10px;
             transition: 0.5s;
         }
     }
@@ -223,7 +223,7 @@ nav {
 
 @media all and (max-width: 768px) {
     .navbar-brand {
-        margin-left: -10px !important;
+        margin-left: 0px !important;
         padding: 0;
     }
 
