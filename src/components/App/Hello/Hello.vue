@@ -1,6 +1,7 @@
 <template>
-    <div class="section" id="section-about">
-        <img class="home-bg" src="https://sites.harvard.edu/insight-lab/files/2022/10/wind_map-e1665190001416.jpg" />
+    <div class="section" id="section-about" title="tap to change the wind!">
+        <!-- <img class="home-bg" src="https://sites.harvard.edu/insight-lab/files/2022/10/wind_map-e1665190001416.jpg" /> -->
+        <Wind />
         <div class="container" id="home-sec">
             <!-- <img class="section-about-logo" :src="require(`@/assets/logo.svg`)" /> -->
             <Logo />
@@ -28,12 +29,13 @@ import "bootstrap/dist/css/bootstrap.css";
 import { defineComponent } from "vue";
 
 import Logo from "./Logo.vue";
+import Wind from "./Wind.vue";
 
 import { reactive, toRefs } from "vue";
 
 export default defineComponent({
-    name: "App",
-    components: { Logo },
+    name: "Hello",
+    components: { Logo, Wind },
     setup() {
 
         const state = reactive({});
@@ -57,6 +59,17 @@ div#section-about {
     position: relative;
     overflow: hidden;
     z-index: 1;
+
+    iframe.home-bg {
+        width: 100%;
+        margin-top: -90px;
+        min-height: 50vh;
+
+        canvas {
+            width: 100% !important;
+            height: 100% !important;
+        }
+    }
 
     img.home-bg {
         position: absolute;
@@ -136,9 +149,10 @@ div.section-about-introtext {
     text-align: center;
     display: block;
     color: white;
-    margin-top: 20px;
     transition: 0.5s;
     font-size: larger;
+    width: max-content;
+    margin: 20px auto 0;
 }
 
 #down-arrow:hover {

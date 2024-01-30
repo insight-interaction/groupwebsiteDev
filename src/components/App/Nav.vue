@@ -250,6 +250,10 @@ nav {
         transform: scale(0.9);
     }
 
+    .navbar-brand {
+        margin-left: -10px !important;
+    }
+
     .navbar-brand img {
         max-height: 16px !important;
     }

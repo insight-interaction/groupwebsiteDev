@@ -27,7 +27,7 @@ import { useHead } from "@vueuse/head";
 import { useStore } from "vuex";
 
 import Publications from "./App/Publications/Publications.vue";
-import Hello from "./App/Hello.vue";
+import Hello from "./App/Hello/Hello.vue";
 import Projects from "./App/Projects/Projects.vue";
 import Team from "./App/Team/Team.vue";
 import Teaching from "./App/Teaching/Teaching.vue";
