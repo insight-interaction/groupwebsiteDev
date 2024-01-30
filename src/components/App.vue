@@ -74,7 +74,7 @@ export default defineComponent({
             link: [
                 {
                     rel: 'icon',
-                    href: require(`@/assets/fav.png`), // Use the imported favicon
+                    href: require(`@/assets/fav.svg`), // Use the imported favicon
                     type: 'image/x-icon'
                 }
             ],
