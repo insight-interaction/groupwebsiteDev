@@ -34,7 +34,7 @@ const projects = [
     {
         imgurl: "proj_dashboard.png",
         title: "Human-Computer Interaction",
-        about: "We are working to pioneer HCI technoloigies in the age of AI. A key aspect of our research is investigating novel interface designs for AI models. These interfaces aim to surface the inner workings of LLMs to public, ensuring their transparent, safe, and reliable utilization in a controlled manner. We are also interested in developing new techniques for practical applications such as language learning to enhance user experience and effectiveness.",
+        about: "We are working to pioneer HCI technologies in the age of AI. A key aspect of our research is investigating novel interface designs for AI models. These interfaces aim to surface the inner workings of LLMs to public, ensuring their transparent, safe, and reliable utilization in a controlled manner. We are also interested in developing new techniques for practical applications such as language learning to enhance user experience and effectiveness.",
         id: "proj_dashboard",
     },
     {
