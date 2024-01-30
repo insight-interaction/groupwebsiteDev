@@ -34,11 +34,7 @@ const projects = [
     {
         imgurl: "proj_hci.gif",
         title: "Human-Computer Interaction",
-<<<<<<< HEAD
-        about: "We are working to pioneer HCI technologies in the age of AI. A key aspect of our research is investigating novel interface designs for AI models. These interfaces aim to surface the inner workings of LLMs to public, ensuring their transparent, safe, and reliable utilization in a controlled manner. We are also interested in developing new techniques for practical applications such as language learning to enhance user experience and effectiveness.",
-=======
         about: "How can we build human-centered systems in the age of AI? A core interest is interface design for AI language models. One of our current projects aims to build interfaces that surface the inner workings of LLMs to users.. We are also interested in developing new techniques for practical applications such as language learning to enhance user experiences and effectiveness.",
->>>>>>> c0138049e6ec5b3c0250538132b58050df908bf6
         id: "proj_dashboard",
     },
     {
