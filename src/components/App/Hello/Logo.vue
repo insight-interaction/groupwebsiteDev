@@ -185,6 +185,11 @@ export default defineComponent({
     margin: 0px auto 30px;
     max-width: 500px;
     display: block;
+    transition: 0.5s;
+
+    &:hover {
+        transform: scale(1.015);
+    }
 
     // animation-name: shift;
     // animation-duration: 5s;

@@ -120,6 +120,11 @@ div.section-about-introtext {
         -webkit-background-clip: text !important;
         background-clip: text !important;
         -webkit-text-fill-color: transparent !important;
+        transition: 0.5s;
+
+        &:hover {
+            letter-spacing: 0.4px;
+        }
     }
 
     span.orange {
