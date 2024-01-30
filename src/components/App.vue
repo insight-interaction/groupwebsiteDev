@@ -27,7 +27,7 @@ import { useHead } from "@vueuse/head";
 import { useStore } from "vuex";
 
 import Publications from "./App/Publications/Publications.vue";
-import Hello from "./App/Hello.vue";
+import Hello from "./App/Hello/Hello.vue";
 import Projects from "./App/Projects/Projects.vue";
 import Team from "./App/Team/Team.vue";
 import Teaching from "./App/Teaching/Teaching.vue";
@@ -74,7 +74,7 @@ export default defineComponent({
             link: [
                 {
                     rel: 'icon',
-                    href: require(`@/assets/fav.png`), // Use the imported favicon
+                    href: require(`@/assets/fav.svg`), // Use the imported favicon
                     type: 'image/x-icon'
                 }
             ],
@@ -136,7 +136,7 @@ div.container {
 
 div.section {
     padding: 0px 60px;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 @media all and (min-width: 768px) {
@@ -163,6 +163,7 @@ div.section {
 @media all and (max-width: 600px) {
     div.section {
         padding: 10px 20px;
+        margin-top: 0;
     }
 }
 
@@ -190,18 +191,13 @@ div#body {
 
     color: $dark-accent; // $color1;
 
-    &::before {
-        display: block;
-        height: 4rem;
-        margin-top: -4rem;
-        visibility: hidden;
-        content: "";
-    }
-
-    &.section-head-padding {
-        padding-top: 30px;
-        padding-bottom: 10px;
-    }
+    // &::before {
+    //     display: block;
+    //     height: 2rem;
+    //     margin-top: -2rem;
+    //     visibility: hidden;
+    //     content: "";
+    // }
 
 
     &>span {

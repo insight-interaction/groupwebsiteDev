@@ -26,8 +26,8 @@
                         <a class="nav-link" href="#publications" title="Publications"
                             @click.stop="setActiveSection('pubs')">Publications</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#courses">Courses</a>
+                    <li class="nav-item" :class="{ active: activeSection === 'courses' }">
+                        <a class="nav-link" href="#courses" @click.stop="setActiveSection('courses')">Courses</a>
                     </li>
                 </ul>
             </div>
@@ -56,15 +56,17 @@ export default defineComponent({
 
         const setActiveSection = (section: string) => {
             state.activeSection = section;
+            // console.log(section);
         }
 
         const onScroll = () => {
-            const scrollPosition = window.scrollY + 50;
+            const scrollPosition = window.scrollY + 100;
 
             // const home = document.getElementById("home-sec");
             const themes = document.getElementById("themes");
             const team = document.getElementById("team");
             const pubs = document.getElementById("publications");
+            const courses = document.getElementById("courses");
 
             // Logic to determine which section is in view
             if (themes && scrollPosition < themes.offsetTop) {
@@ -73,8 +75,10 @@ export default defineComponent({
                 setActiveSection('themes');
             } else if (team && pubs && scrollPosition >= team.offsetTop && scrollPosition < pubs.offsetTop) {
                 setActiveSection('team');
-            } else {
+            } else if (pubs && courses && scrollPosition >= pubs.offsetTop && scrollPosition < Math.min(courses.offsetTop, document.documentElement.offsetHeight - document.documentElement.clientHeight - 100)) {
                 setActiveSection('pubs');
+            } else {
+                setActiveSection('courses');
             }
         };
 
@@ -121,10 +125,12 @@ nav {
         font-size: 1.1em;
         margin-left: 10px;
         transition: 0.5s;
+        width: max-content;
+        min-width: 200px;
 
         img {
             max-height: 18px;
-            margin: 0;
+            margin: 0 0 0 -10px;
             transition: 0.5s;
         }
     }
@@ -161,6 +167,7 @@ nav {
 
     .navbar-collapse.show {
         padding: 0 10px;
+        margin-top: 4px;
     }
 
 }
@@ -216,7 +223,7 @@ nav {
 
 @media all and (max-width: 768px) {
     .navbar-brand {
-        margin-left: 0 !important;
+        margin-left: 0px !important;
         padding: 0;
     }
 
@@ -241,6 +248,10 @@ nav {
 
     .navbar-toggler {
         transform: scale(0.9);
+    }
+
+    .navbar-brand {
+        margin-left: -10px !important;
     }
 
     .navbar-brand img {

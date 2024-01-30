@@ -26,6 +26,16 @@ export type Pub = {
 
 export const publications: Pub[] = [
     {
+        title: "Linearity of Relation Decoding in Transformer Language Models",
+        author: "Evan Hernandez*, Arnab Sen Sharma*, Tal Haklay, Kevin Meng, Martin Wattenberg, Jacob Andreas, Yonathan Belinkov, and David Bau",
+        venue: "ICLR",
+        image: "https://sites.harvard.edu/insight-lab/files/2024/01/linear-decoding-748162687ed95315.png",
+        summary: "We reveal a simple, interpretable, but heterogeneously deployed knowledge representation strategy in transformer LMs.",
+        preprint: "https://openreview.net/pdf?id=w7LU2s14kE",
+        year: 2024,
+        tags: ["interpretability"]
+    },
+    {
         title: "Inference-Time Intervention: Eliciting Truthful Answers from a Language Model",
         author: "Kenneth Li*, Oam Patel*, Fernanda Viégas, Hanspeter Pfister, and Martin Wattenberg",
         venue: "NeurIPS",
@@ -48,6 +58,16 @@ export const publications: Pub[] = [
         poster: "https://nips.cc/media/PosterPDFs/NeurIPS%202023/74894.png?t=1701540884.728899",
         year: 2023,
         tags: ["interpretability"]
+    },
+    {
+        title: "LingoLand: An AI-Assisted Immersive Game for Language Learning",
+        author: "Olivia Seow",
+        venue: "UIST",
+        image: "https://sites.harvard.edu/insight-lab/files/2024/01/lingoland-fae62b4d7d4f79f4.png",
+        summary: "We present LingoLand, an immersive game for language learning powered by generative machine learning.",
+        preprint: "https://dl.acm.org/doi/10.1145/3586182.3625117",
+        year: 2023,
+        tags: ["human-ai interaction"]
     },
     {
         title: "AttentionViz: A Global View of Transformer Attention",
@@ -73,6 +93,16 @@ export const publications: Pub[] = [
         video: "https://www.youtube.com/watch?v=p6-xK7qQiYQ",
         year: 2023,
         tags: ["visualization"]
+    },
+    {
+        title: "The System Model and the User Model: Exploring AI Dashboard Design",
+        author: "Fernanda Viégas and Martin Wattenberg",
+        venue: "arXiv",
+        image: "https://sites.harvard.edu/insight-lab/files/2024/01/user-sys-9aab3437c07af165.jpeg",
+        summary: "We speculate on the future of AI interface research, and propose a new design space based on identifying, interpreting, and displaying the system's mental models of the user and the system itself.",
+        preprint: "https://arxiv.org/pdf/2305.02469.pdf",
+        year: 2023,
+        tags: ["human-ai interaction", "interpretability"]
     },
     {
         title: "Emergent World Representations: Exploring a Sequence Model Trained on a Synthetic Task",

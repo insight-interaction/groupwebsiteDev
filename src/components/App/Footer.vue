@@ -3,7 +3,7 @@
         <div class="container">
             <a id="up-arrow" class="arrow-button" href="#" title="Back to top"><img :src="toTop" /></a>
             <div class="footer-imgs">
-                <a href="#" title="Insight + Interaction"><img :src="footerLogo" /></a>
+                <a href="#" title="Insight + Interaction"><img :src="footerLogo" id="footer-logo" /></a>
                 <a-divider type="vertical"
                     style="height: 40px; background-color: white; opacity: 0.5; width: 2px; margin: 0 20px; transform: rotate(15deg);" />
                 <a href="https://seas.harvard.edu/" target="_blank" title="Harvard SEAS"><img :src="harvardLogo" /></a>
@@ -57,6 +57,10 @@ export default defineComponent({
         width: auto;
         margin: 0 !important;
         transition: 0.5s;
+    }
+
+    #footer-logo {
+        padding: 2px;
     }
 
     .footer-imgs img:hover {

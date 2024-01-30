@@ -3,8 +3,8 @@
         <div class="container">
             <div class="section-head" id="themes"><span>Research Themes</span></div>
             <!-- Below is a list of our main research themes in the area of AI Interpretability, Human-Computer Interaction, and visualization. -->
-            <div class="project-outer-container">
-                <div v-for="project in projects" :key="project.title" class="project-inner-container">
+            <div class="project-outer-container row">
+                <div v-for="project in projects" :key="project.title" class="project-inner-container col-md-4 col-sm-12">
                     <Project :project="project" />
                 </div>
             </div>
@@ -27,21 +27,25 @@ import { reactive, toRefs } from "vue";
 const projects = [
     {
         imgurl: "proj_interpret.gif",
-        title: "Mechanistic Interpretability",
-        about: "We aim to understand the inner workings of complex machine learning models, and based on these findings, improving the controllability of current model behavior to secure human benefits. Our work targets real-world problems derived from AI safety research, e.g., hallucination, privacy, and copyright issues. Previously, we conducted preliminary explorations into the world models of toy GPT models and diffusion models, which were shown to causally impact model generations.",
+        title: "AI Interpretability",
+        about: "We aim to understand the inner workings of complex machine learning models, and use these findings to improve the controllability of model behavior. Our work targets real-world problems, such as ensuring factuality and avoiding toxicity. We also explore basic scientific questions about neural network behavior, such as how they model the world that produces the data they see.",
         id: "proj_transform",
     },
     {
-        imgurl: "proj_dashboard.png",
+        imgurl: "proj_hci.gif",
         title: "Human-Computer Interaction",
+<<<<<<< HEAD
         about: "We are working to pioneer HCI technologies in the age of AI. A key aspect of our research is investigating novel interface designs for AI models. These interfaces aim to surface the inner workings of LLMs to public, ensuring their transparent, safe, and reliable utilization in a controlled manner. We are also interested in developing new techniques for practical applications such as language learning to enhance user experience and effectiveness.",
+=======
+        about: "How can we build human-centered systems in the age of AI? A core interest is interface design for AI language models. One of our current projects aims to build interfaces that surface the inner workings of LLMs to users.. We are also interested in developing new techniques for practical applications such as language learning to enhance user experiences and effectiveness.",
+>>>>>>> c0138049e6ec5b3c0250538132b58050df908bf6
         id: "proj_dashboard",
     },
     {
         imgurl: "proj_vis.gif",
         title: "Data Visualization",
-        about: "We investigate the use of data visualization for uncovering unseen patterns and communicating them in novel ways. To this aim, we develop innovative interactive visualizations for real-world applications, with focuses on critical fields such as artificial intelligence and healthcare. Additionally, we are eager to explore the integration of visualization techniques in the realm of art, aiming to enhance its revelatory and expressive power.",
-        id: "proj_dashboard",
+        about: "We investigate the use of data visualization for uncovering patterns and communicating them in novel ways. To this aim, we develop innovative interactive visualizations for real-world applications, with focuses on fields such as artificial intelligence and healthcare. Additionally, we explore the integration of visualization techniques in the realm of art, taking advantage of its revelatory and expressive power.",
+        id: "proj_vis",
     }
 ] as any[];
 
@@ -69,7 +73,13 @@ export default defineComponent({
 
 <style rel="stylesheet" lang="scss">
 .project-outer-container {
-    margin-top: 10px;
+    // margin-top: 10px;
     margin-bottom: 10px;
+}
+
+@media all and (max-width: 600px) {
+    .project-outer-container {
+        margin-bottom: 0px;
+    }
 }
 </style>

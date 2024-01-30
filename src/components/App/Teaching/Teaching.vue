@@ -3,50 +3,27 @@
         <div class="container">
             <div class="section-head" id="courses"><span>Courses</span></div>
             <div class="row">
-                <div class="col-md-6 col-sm-12 d-flex flex-wrap align-items-center img-wrapper course-container">
+                <div v-for="course in courses" :key="course.id"
+                    class="col-md-6 col-sm-12 d-flex flex-wrap align-items-center img-wrapper course-container">
                     <div class="course-inner">
 
-                        <img :src="require(`@/assets/images/course_cs73.png`)" class="mx-auto d-block" />
+                        <a :href="course.site" target="_blank" :title="course.number">
+                            <img :src="course.img" class="mx-auto d-block" /></a>
                         <div class="caption">
                             <div class="course-title">
-                                COMPSCI 73: Code, Data, and Art
 
-                                <a href="https://wattenberg.github.io/cs73/" target="_blank" title="Course Website">
+                                <a :href="course.site" target="_blank" title="Course Website">
+                                    {{ course.number }}: {{ course.title }}
+
                                     <LinkOutlined :style="{ verticalAlign: 'middle' }" />
                                 </a>
                             </div>
 
                             <p class="course-description">
-                                A studio course where software is used as an artistic medium. The course
-                                is designed to expose students to current perspectives on the
-                                intersection of computer science and art, and to build skills that will
-                                allow them to express themselves creatively via software. An additional
-                                focus will be the role of data in modern artistic practice.</p>
+                                {{ course.desc }}
+                            </p>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-sm-12 d-flex flex-wrap align-items-center img-wrapper course-container">
-                    <div class="course-inner">
-                        <img :src="require(`@/assets/images/course_hbs.jpg`)" class="mx-auto d-block" />
-                        <div class="caption">
-                            <div class="course-title">
-                                HBS 2135: Data Visualization for Analysis and Communication
-
-                                <a href="https://www.hbs.edu/coursecatalog/2135.html" target="_blank"
-                                    title="Course Website">
-                                    <LinkOutlined :style="{ verticalAlign: 'middle' }" />
-                                </a>
-                            </div>
-
-                            <p class="course-description">
-                                A course designed for students who expect to analyze or present data
-                                during their career—and these days, data is everywhere, from finance to
-                                management consulting. The course will discuss how to critically
-                                evaluate visualizations, and how to use them as a bridge between
-                                quantitative analysis and decision-making.</p>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>
@@ -63,13 +40,37 @@ import { reactive, toRefs } from "vue";
 
 import { LinkOutlined } from "@ant-design/icons-vue";
 
+const courses = [
+    {
+        imgurl: "course_cs73.png",
+        number: "COMPSCI 73",
+        title: "Code, Data, and Art",
+        site: "https://wattenberg.github.io/cs73/",
+        desc: "A studio course where software is used as an artistic medium. The course is designed to expose students to current perspectives on the intersection of computer science and art, and to build skills that will allow them to express themselves creatively via software. An additional focus will be the role of data in modern artistic practice.",
+        id: "cs73",
+    },
+    {
+        imgurl: "course_hbs.jpg",
+        number: "HBS 2135",
+        site: "https://www.hbs.edu/coursecatalog/2135.html",
+        title: "Data Visualization for Analysis and Communication",
+        desc: "A course designed for students who expect to analyze or present data during their career—and these days, data is everywhere, from finance to management consulting. The course will discuss how to critically evaluate visualizations, and how to use them as a bridge between quantitative analysis and decision-making.",
+        id: "hbs",
+    },
+] as any[];
+
 export default defineComponent({
-    name: "People",
+    name: "Courses",
     components: { LinkOutlined },
     setup() {
         const state = reactive({});
 
+        for (let c of courses) {
+            c.img = require(`@/assets/images/${c.imgurl}`);
+        }
+
         return {
+            courses,
             ...toRefs(state),
         };
     },
@@ -84,15 +85,24 @@ div.course-container {
 
     .course-inner {
         width: 100%;
+        display: block;
+        position: relative;
+        margin-bottom: 10px;
     }
 
     img {
         width: 100%;
         display: block;
-        max-height: 320px;
+        aspect-ratio: 16/9;
+        margin: 0 !important;
 
-        border: 2px solid $light-accent;
+        // border: 2px solid $light-accent;
         border-radius: 2px;
+
+        border: 2px solid transparent;
+        // transition: 0.5s;
+        background: linear-gradient(transparent, transparent) padding-box,
+            linear-gradient(135deg, $dark-accent, $light-accent) border-box;
     }
 
     a {
@@ -104,10 +114,11 @@ div.course-container {
         font-weight: 500;
         position: absolute;
         bottom: 2px;
+        left: 2px;
         background: rgb($text-color, 0.7);
         /* Semi-transparent background */
         color: $light-accent;
-        width: calc(100% - 26px);
+        width: calc(100% - 4px);
         display: block;
         // text-align: center;
         padding: 12px 18px;
@@ -115,13 +126,21 @@ div.course-container {
         .course-title {
             margin-bottom: 2px;
 
-            svg {
-                margin-left: 2px;
-                margin-top: -2px;
+            a {
+
+                display: flex;
+                // align-items: center;
+                justify-content: space-between;
+                text-decoration: none;
                 transition: 0.5s;
 
                 &:hover {
-                    opacity: 0.8;
+                    opacity: 0.9;
+                }
+
+                svg {
+                    margin-top: 4px;
+                    margin-left: 4px;
                 }
             }
         }
@@ -133,10 +152,11 @@ div.course-container {
             color: white;
             opacity: 0;
             transform: translateY(100%);
-            transform-origin: bottom;
+            transform-origin: top;
             transition: 0.5s;
             margin-bottom: 0;
             margin-top: -80px;
+            // font-size: 0;
         }
 
         &:hover {
@@ -144,6 +164,66 @@ div.course-container {
                 opacity: 1;
                 transform: translateY(0);
                 margin-top: 0;
+                // font-size: smaller;
+                // height: 100%;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 1020px) {
+    .course-container {
+        width: 100% !important;
+
+        &:not(:hover) {
+            p.course-description {
+                margin-top: -60px !important;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 900px) {
+    .course-container {
+        &:not(:hover) {
+            p.course-description {
+                margin-top: -70px !important;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 800px) {
+    .course-container {
+        &:not(:hover) {
+            p.course-description {
+                margin-top: -80px !important;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 600px) {
+    #courses {
+        margin-top: 20px;
+    }
+}
+
+@media all and (max-width: 500px) {
+    .course-container {
+        &:not(:hover) {
+            p.course-description {
+                margin-top: -120px !important;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 400px) {
+    .course-container {
+        &:not(:hover) {
+            p.course-description {
+                margin-top: -160px !important;
             }
         }
     }

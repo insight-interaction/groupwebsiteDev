@@ -1,9 +1,9 @@
 <template>
     <div class="row project-container" ref="pub" v-bind:id="project.id">
-        <div class="col-md-5 col-sm-12 d-flex flex-wrap align-items-center img-wrapper">
+        <div class="col-md-12 col-sm-12 d-flex flex-wrap align-items-center img-wrapper">
             <img :src="project.img" class="proj_img mx-auto d-block" :title="project.title" />
         </div>
-        <div class="col-md-7 col-sm-12 proj">
+        <div class="col-md-12 col-sm-12 proj">
             <div class="proj_title">{{ project.title }}</div>
             <span class="proj_details">
                 {{ project.about }}</span>
@@ -47,6 +47,7 @@ export default defineComponent({
 <style rel="stylesheet" lang="scss">
 .project-container {
     padding: 0 0 1.4em;
+    align-items: center;
 
     // border-bottom: 1px solid black;
     a {
@@ -58,6 +59,9 @@ export default defineComponent({
 .img-wrapper {
     max-width: 100%;
     overflow: hidden;
+
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
 }
 
 .proj_img {
@@ -104,5 +108,17 @@ export default defineComponent({
 .proj_details {
     font-size: 0.9em;
     // font-family: $title-font;
+}
+
+@media all and (max-width: 1080px) {
+    .project-inner-container {
+        width: 50% !important;
+    }
+}
+
+@media all and (max-width: 576px) {
+    .project-inner-container {
+        width: 100% !important;
+    }
 }
 </style>
