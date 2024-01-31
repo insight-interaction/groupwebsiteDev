@@ -34,7 +34,7 @@ const projects = [
     {
         imgurl: "proj_hci.gif",
         title: "Human-Computer Interaction",
-        about: "How can we build human-centered systems in the age of AI? A core interest is interface design for AI language models. One of our current projects aims to build interfaces that surface the inner workings of LLMs to users.. We are also interested in developing new techniques for practical applications such as language learning to enhance user experiences and effectiveness.",
+        about: "How can we build human-centered systems in the age of AI? A core interest is interface design for AI language models. One of our current projects aims to build interfaces that surface the inner workings of LLMs to users. We are also interested in developing new techniques for practical applications such as language learning to enhance user experiences and effectiveness.",
         id: "proj_dashboard",
     },
     {

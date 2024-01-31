@@ -90,8 +90,7 @@ div#section-about {
     img.section-about-logo {
         margin: 0px auto 20px;
         display: block;
-        width: 100% // width: 300px;
-            // height: 300px;
+        width: 100%;
     }
 }
 
@@ -105,35 +104,36 @@ div.section-about-head {
 }
 
 div.section-about-introtext {
-    text-align: center;
+    // text-align: center;
     font-size: 18px;
+    color: $lightest-accent;
+    transition: 0.5s;
 
     span.emphasis {
-        font-weight: 500;
-        // font-family: $accent-font;
-        letter-spacing: 0.2px;
-        // font-style: italic;
-        // color: $light-accent;
+        font-weight: 300;
+        // letter-spacing: 0.2px;
+        // color: $lightest-accent;
 
-        background: -webkit-linear-gradient(45deg, white, $tag-color-3);
+        // background: -webkit-linear-gradient(45deg, white, $tag-color-3);
         // background: -webkit-linear-gradient(45deg, white, $light-accent) !important;
-        -webkit-background-clip: text !important;
-        background-clip: text !important;
-        -webkit-text-fill-color: transparent !important;
+        // -webkit-background-clip: text !important;
+        // background-clip: text !important;
+        // -webkit-text-fill-color: transparent !important;
         transition: 0.5s;
 
         &:hover {
-            letter-spacing: 0.4px;
+            letter-spacing: 0.2px;
+            color: white;
         }
     }
 
-    span.orange {
-        background: -webkit-linear-gradient(45deg, white, $tag-color-1);
-    }
+    // span.orange {
+    //     background: -webkit-linear-gradient(45deg, white, $tag-color-1);
+    // }
 
-    span.green {
-        background: -webkit-linear-gradient(45deg, white, $tag-color-2);
-    }
+    // span.green {
+    //     background: -webkit-linear-gradient(45deg, white, $tag-color-2);
+    // }
 
 }
 

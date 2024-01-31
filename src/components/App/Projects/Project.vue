@@ -85,7 +85,8 @@ export default defineComponent({
 }
 
 .proj_title::before {
-    background-color: rgb($tag-color-2, 0.3);
+    // background-color: rgb($tag-color-2, 0.3);
+    background-color: rgb($med-accent, 0.3) !important;
 
     content: "";
     position: absolute;
