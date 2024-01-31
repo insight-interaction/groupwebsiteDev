@@ -75,6 +75,7 @@ export default defineComponent({
 
 .proj_title {
     font-size: 1.2em;
+    color: $med-accent;
     font-weight: 600;
     font-family: $title-font;
     width: max-content;
@@ -84,27 +85,27 @@ export default defineComponent({
     z-index: 10;
 }
 
-.proj_title::before {
-    // background-color: rgb($tag-color-2, 0.3);
-    background-color: rgb($med-accent, 0.3) !important;
+// .proj_title::before {
+//     // background-color: rgb($tag-color-2, 0.3);
+//     background-color: rgb($med-accent, 0.3) !important;
 
-    content: "";
-    position: absolute;
-    width: calc(100% + 8px);
-    height: 50%;
-    left: -4px;
-    bottom: 0px;
-    z-index: -1;
-    // transform: rotate(-2deg);
-}
+//     content: "";
+//     position: absolute;
+//     width: calc(100% + 8px);
+//     height: 50%;
+//     left: -4px;
+//     bottom: 0px;
+//     z-index: -1;
+//     // transform: rotate(-2deg);
+// }
 
-.project-inner-container:nth-child(2) .proj_title::before {
-    background-color: rgb($tag-color-3, 0.3);
-}
+// .project-inner-container:nth-child(2) .proj_title::before {
+//     background-color: rgb($tag-color-3, 0.3);
+// }
 
-.project-inner-container:nth-child(3) .proj_title::before {
-    background-color: rgb($tag-color-1, 0.3);
-}
+// .project-inner-container:nth-child(3) .proj_title::before {
+//     background-color: rgb($tag-color-1, 0.3);
+// }
 
 .proj_details {
     font-size: 0.9em;
