@@ -120,6 +120,7 @@ div.section-about-introtext {
         // background-clip: text !important;
         // -webkit-text-fill-color: transparent !important;
         transition: 0.5s;
+        font-family: $main-font;
 
         &:hover {
             letter-spacing: 0.2px;
