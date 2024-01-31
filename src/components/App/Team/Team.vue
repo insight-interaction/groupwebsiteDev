@@ -1,7 +1,8 @@
 <template>
     <div class="section" id="section-people">
+        <div class="anchor" id="team"></div>
         <div class="container">
-            <div class="section-head" id="team"><span>Team</span></div>
+            <div class="section-head"><span>Team</span></div>
 
             <div class="people-lists">
                 <div>

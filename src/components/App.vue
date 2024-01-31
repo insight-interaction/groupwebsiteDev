@@ -139,6 +139,11 @@ div.section {
     margin-top: 20px;
 }
 
+div.anchor {
+    position: relative;
+    top: -80px;
+}
+
 @media all and (min-width: 768px) {
 
     // margin: 0px 100px;
