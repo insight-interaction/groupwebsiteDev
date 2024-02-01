@@ -1,6 +1,6 @@
 <template>
     <div class="footer-contain">
-        <div class="update">Last Updated: January 2024</div>
+        <div class="update">Last Updated: February 2024</div>
         <footer class="footer h-100">
             <div class="container">
                 <a id="up-arrow" class="arrow-button" href="#" title="Back to top"><img :src="toTop" /></a>

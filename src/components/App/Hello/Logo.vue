@@ -182,7 +182,7 @@ export default defineComponent({
 
 <style rel="stylesheet" lang="scss">
 #my-logo {
-    margin: 0px auto 30px;
+    margin: 10px auto 30px;
     max-width: 500px;
     // display: block;
     transition: 0.5s;
