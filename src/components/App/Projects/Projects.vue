@@ -69,6 +69,11 @@ export default defineComponent({
 </script>
 
 <style rel="stylesheet" lang="scss">
+#section-project .section-head {
+    padding-bottom: 0;
+    padding-top: 10px;
+}
+
 .project-outer-container {
     // margin-top: 10px;
     margin-bottom: 10px;
