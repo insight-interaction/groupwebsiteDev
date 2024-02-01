@@ -138,9 +138,9 @@ div.section-about-introtext {
     //     background: -webkit-linear-gradient(45deg, white, $tag-color-1);
     // }
 
-    span.green {
-        background: -webkit-linear-gradient(45deg, white, $tag-color-2);
-    }
+    // span.green {
+    //     background: -webkit-linear-gradient(45deg, white, $tag-color-2);
+    // }
 
 }
 
