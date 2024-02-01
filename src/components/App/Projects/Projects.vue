@@ -1,7 +1,8 @@
 <template>
     <div class="section" id="section-project">
+        <div class="anchor" id="themes"></div>
         <div class="container">
-            <div class="section-head" id="themes"><span>Research Themes</span></div>
+            <div class="section-head"><span>Research Themes</span></div>
             <!-- Below is a list of our main research themes in the area of AI Interpretability, Human-Computer Interaction, and visualization. -->
             <div class="project-outer-container row">
                 <div v-for="project in projects" :key="project.title" class="project-inner-container col-md-4 col-sm-12">
@@ -34,7 +35,7 @@ const projects = [
     {
         imgurl: "proj_hci.gif",
         title: "Human-Computer Interaction",
-        about: "How can we build human-centered systems in the age of AI? A core interest is interface design for AI language models. One of our current projects aims to build interfaces that surface the inner workings of LLMs to users.. We are also interested in developing new techniques for practical applications such as language learning to enhance user experiences and effectiveness.",
+        about: "How can we build human-centered systems in the age of AI? A core interest is interface design for AI language models. One of our current projects aims to build interfaces that surface the inner workings of LLMs to users. We are also interested in developing new techniques for practical applications such as language learning to enhance user experiences and effectiveness.",
         id: "proj_dashboard",
     },
     {

@@ -1,7 +1,8 @@
 <template>
     <div class="section" id="section-people">
+        <div class="anchor" id="courses"></div>
         <div class="container">
-            <div class="section-head" id="courses"><span>Courses</span></div>
+            <div class="section-head" id="my-courses"><span>Courses</span></div>
             <div class="row">
                 <div v-for="course in courses" :key="course.id"
                     class="col-md-6 col-sm-12 d-flex flex-wrap align-items-center img-wrapper course-container">
@@ -204,7 +205,7 @@ div.course-container {
 }
 
 @media all and (max-width: 600px) {
-    #courses {
+    #my-courses {
         margin-top: 20px;
     }
 }

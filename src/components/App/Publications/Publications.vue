@@ -1,7 +1,8 @@
 <template>
     <div class="section" id="section-research">
+        <div class="anchor" id="publications"></div>
         <div class="container">
-            <div class="section-head" id="publications">
+            <div class="section-head">
                 <div class="pub-header">
                     <span>Publications</span>
                     <div class="tag-select">
