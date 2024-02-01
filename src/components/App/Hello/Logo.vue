@@ -184,7 +184,7 @@ export default defineComponent({
 #my-logo {
     margin: 0px auto 30px;
     max-width: 500px;
-    display: block;
+    // display: block;
     transition: 0.5s;
 
     &:hover {

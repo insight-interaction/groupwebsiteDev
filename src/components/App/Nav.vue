@@ -173,6 +173,9 @@ nav {
 }
 
 @media all and (min-width: 768px) {
+    nav {
+        padding: 0px 60px;
+    }
 
     // margin: 0px 100px;
     div.myrow {

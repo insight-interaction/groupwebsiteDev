@@ -3,17 +3,13 @@
         <Nav />
 
         <div id="body">
-            <div class="col-sm-none">
-                <Hello />
+            <Hello />
 
-                <div class="myrow row">
-                    <div class="col-12">
-                        <Projects />
-                        <Team />
-                        <Publications />
-                        <Teaching />
-                    </div>
-                </div>
+            <div class="">
+                <Projects />
+                <Team />
+                <Publications />
+                <Teaching />
             </div>
         </div>
 
@@ -45,7 +41,7 @@ export default defineComponent({
         Teaching,
         Team,
         Footer,
-        Nav
+        Nav,
     },
     setup() {
         const store = useStore();
@@ -73,37 +69,37 @@ export default defineComponent({
             ],
             link: [
                 {
-                    rel: 'icon',
+                    rel: "icon",
                     href: require(`@/assets/fav.svg`), // Use the imported favicon
-                    type: 'image/x-icon'
-                }
+                    type: "image/x-icon",
+                },
             ],
         });
 
         return {
-            ...toRefs(state)
+            ...toRefs(state),
         };
-    }
+    },
 });
 </script>
 
 <style rel="stylesheet" lang="scss">
 // fonts
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 @import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900;1,9..40,1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900;1,9..40,1000&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 
 ::-moz-selection {
     background: $light-accent;
@@ -140,7 +136,6 @@ div.section {
 }
 
 @media all and (min-width: 768px) {
-
     // margin: 0px 100px;
     div.myrow {
         margin-left: 30px;
@@ -199,8 +194,7 @@ div#body {
     //     content: "";
     // }
 
-
-    &>span {
+    & > span {
         padding: 8px 0;
     }
 }
