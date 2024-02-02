@@ -53,7 +53,7 @@ div#section-about {
     background: $dark-accent;
     color: white;
 
-    padding-bottom: 0px;
+    padding-bottom: 20px;
     padding-top: 20px;
 
     margin-top: 0px !important;
@@ -83,13 +83,11 @@ div#section-about {
         margin: 0 !important;
         z-index: -1;
 
-        -webkit-mask-image: -webkit-gradient(
-            linear,
-            left bottom,
-            left top,
-            from(rgba(0, 0, 0, 1)),
-            to(rgba(0, 0, 0, 0))
-        );
+        -webkit-mask-image: -webkit-gradient(linear,
+                left bottom,
+                left top,
+                from(rgba(0, 0, 0, 1)),
+                to(rgba(0, 0, 0, 0)));
         mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 0) 100%);
     }
 
