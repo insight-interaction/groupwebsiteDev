@@ -3,16 +3,41 @@
         <div class="update">Last Updated: January 2024</div>
         <footer class="footer h-100">
             <div class="container">
-                <a id="up-arrow" class="arrow-button" href="#" title="Back to top"><img :src="toTop" /></a>
+                <a id="up-arrow" class="arrow-button" href="#" title="Back to top"
+                    ><img :src="toTop"
+                /></a>
                 <div class="footer-imgs">
-                    <a href="#" title="Insight + Interaction"><img :src="footerLogo" id="footer-logo" /></a>
-                    <a-divider type="vertical"
-                        style="height: 40px; background-color: white; opacity: 0.5; width: 2px; margin: 0 20px; transform: rotate(15deg);" />
-                    <a href="https://seas.harvard.edu/" target="_blank" title="Harvard SEAS"><img :src="harvardLogo" /></a>
+                    <a href="#" title="Insight + Interaction"
+                        ><img :src="footerLogo" id="footer-logo"
+                    /></a>
+                    <a-divider
+                        type="vertical"
+                        style="
+                            height: 40px;
+                            background-color: white;
+                            opacity: 0.5;
+                            width: 2px;
+                            margin: 0 20px;
+                            transform: rotate(15deg);
+                        "
+                    />
+                    <a href="https://seas.harvard.edu/" target="_blank" title="Harvard SEAS"
+                        ><img :src="harvardLogo"
+                    /></a>
                 </div>
-                <!-- <div class="update-msg container align-middle justify-content-center align-self-center text-center">
-                Last updated: Dec 2023
-            </div> -->
+                <div
+                    class="copyright-msg container align-middle justify-content-center align-self-center text-center"
+                >
+                    Copyright © 2024 The President and Fellows of Harvard College |
+                    <a href="https://accessibility.harvard.edu/">Accessibility</a> |
+                    <a href="https://accessibility.huit.harvard.edu/digital-accessibility-policy"
+                        >Digital Accessibility</a
+                    >
+                    |
+                    <a href="https://www.harvard.edu/copyright-issue/"
+                        >Report Copyright Infringement</a
+                    >
+                </div>
             </div>
         </footer>
     </div>
@@ -36,10 +61,10 @@ export default defineComponent({
             ...toRefs(state),
             footerLogo,
             harvardLogo,
-            toTop
+            toTop,
         };
     },
-    computed: {}
+    computed: {},
 });
 </script>
 
@@ -68,7 +93,7 @@ export default defineComponent({
         position: relative;
 
         img {
-            max-height: 40px;
+            max-height: 60px;
             width: auto;
             margin: 0 !important;
             transition: 0.5s;
@@ -101,6 +126,14 @@ export default defineComponent({
 
         #up-arrow:hover {
             opacity: 0.7;
+        }
+
+        .copyright-msg {
+            padding-top: 20px;
+        }
+
+        a {
+            color: inherit;
         }
     }
 }

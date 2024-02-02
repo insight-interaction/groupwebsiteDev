@@ -1,33 +1,75 @@
 <template>
     <nav class="navbar navbar-expand-lg sticky-top section" v-bind:class="{ navbarOpen: navShow }">
         <div class="container">
-            <a class="navbar-brand" href="#" title="Insight + Interaction"><img :src="headerLogo" /></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                @click.stop="toggleNavbar()">
+            <a class="navbar-brand" href="https://seas.harvard.edu/" title="Harvard SEAS"
+                ><img :src="harvardLogo"
+            /></a>
+            <a class="navbar-brand"  id="nav-headlogo" href="#" title="Insight + Interaction"
+                ><img :src="headerLogo"
+            /></a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                @click.stop="toggleNavbar()"
+            >
                 <div id="nav-icon" :class="{ open: navShow }">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent" v-bind:class="{ show: navShow }">
+            <div
+                class="collapse navbar-collapse"
+                id="navbarSupportedContent"
+                v-bind:class="{ show: navShow }"
+            >
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item" :class="{ active: activeSection === 'home' }">
-                        <a class="nav-link" href="#" title="Home" @click.stop="setActiveSection('home')">Home</a>
+                        <a
+                            class="nav-link"
+                            href="#"
+                            title="Home"
+                            @click.stop="setActiveSection('home')"
+                            >Home</a
+                        >
                     </li>
                     <li class="nav-item" :class="{ active: activeSection === 'themes' }">
-                        <a class="nav-link" href="#themes" title="Themes"
-                            @click.stop="setActiveSection('themes')">Themes</a>
+                        <a
+                            class="nav-link"
+                            href="#themes"
+                            title="Themes"
+                            @click.stop="setActiveSection('themes')"
+                            >Themes</a
+                        >
                     </li>
                     <li class="nav-item" :class="{ active: activeSection === 'team' }">
-                        <a class="nav-link" href="#team" title="Team" @click.stop="setActiveSection('team')">Team</a>
+                        <a
+                            class="nav-link"
+                            href="#team"
+                            title="Team"
+                            @click.stop="setActiveSection('team')"
+                            >Team</a
+                        >
                     </li>
                     <li class="nav-item" :class="{ active: activeSection === 'pubs' }">
-                        <a class="nav-link" href="#publications" title="Publications"
-                            @click.stop="setActiveSection('pubs')">Publications</a>
+                        <a
+                            class="nav-link"
+                            href="#publications"
+                            title="Publications"
+                            @click.stop="setActiveSection('pubs')"
+                            >Publications</a
+                        >
                     </li>
                     <li class="nav-item" :class="{ active: activeSection === 'courses' }">
-                        <a class="nav-link" href="#courses" @click.stop="setActiveSection('courses')">Courses</a>
+                        <a
+                            class="nav-link"
+                            href="#courses"
+                            @click.stop="setActiveSection('courses')"
+                            >Courses</a
+                        >
                     </li>
                 </ul>
             </div>
@@ -49,6 +91,7 @@ export default defineComponent({
         });
 
         const headerLogo = require(`@/assets/logos/headerlogo.svg`);
+        const harvardLogo = require(`@/assets/logos/harvardlogo.svg`);
 
         const toggleNavbar = () => {
             state.navShow = !state.navShow;
@@ -57,7 +100,7 @@ export default defineComponent({
         const setActiveSection = (section: string) => {
             state.activeSection = section;
             // console.log(section);
-        }
+        };
 
         const onScroll = () => {
             const scrollPosition = window.scrollY + 100;
@@ -70,26 +113,56 @@ export default defineComponent({
 
             // Logic to determine which section is in view
             if (themes && scrollPosition < themes.offsetTop) {
-                setActiveSection('home');
-            } else if (themes && team && scrollPosition >= themes.offsetTop && scrollPosition < team.offsetTop) {
-                setActiveSection('themes');
-            } else if (team && pubs && scrollPosition >= team.offsetTop && scrollPosition < pubs.offsetTop) {
-                setActiveSection('team');
-            } else if (pubs && courses && scrollPosition >= pubs.offsetTop && scrollPosition < Math.min(courses.offsetTop, document.documentElement.offsetHeight - document.documentElement.clientHeight - 100)) {
-                setActiveSection('pubs');
+                setActiveSection("home");
+            } else if (
+                themes &&
+                team &&
+                scrollPosition >= themes.offsetTop &&
+                scrollPosition < team.offsetTop
+            ) {
+                setActiveSection("themes");
+            } else if (
+                team &&
+                pubs &&
+                scrollPosition >= team.offsetTop &&
+                scrollPosition < pubs.offsetTop
+            ) {
+                setActiveSection("team");
+            } else if (
+                pubs &&
+                courses &&
+                scrollPosition >= pubs.offsetTop &&
+                scrollPosition <
+                    Math.min(
+                        courses.offsetTop,
+                        document.documentElement.offsetHeight -
+                            document.documentElement.clientHeight -
+                            100
+                    )
+            ) {
+                setActiveSection("pubs");
             } else {
-                setActiveSection('courses');
+                setActiveSection("courses");
+            }
+
+            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+                document.querySelectorAll(".navbar-brand img").forEach((el) => {
+                    (el as any).style.maxHeight = "40px";
+                });
+            } else {
+                document.querySelectorAll(".navbar-brand img").forEach((el) => {
+                    (el as any).style.maxHeight = "60px";
+                });
             }
         };
 
         onMounted(() => {
-            window.addEventListener('scroll', onScroll);
+            window.addEventListener("scroll", onScroll);
         });
 
         onBeforeUnmount(() => {
-            window.removeEventListener('scroll', onScroll);
+            window.removeEventListener("scroll", onScroll);
         });
-
 
         return {
             ...toRefs(state),
@@ -97,9 +170,10 @@ export default defineComponent({
             setActiveSection,
             onScroll,
             headerLogo,
+            harvardLogo,
         };
     },
-    computed: {}
+    computed: {},
 });
 </script>
 
@@ -129,7 +203,7 @@ nav {
         min-width: 200px;
 
         img {
-            max-height: 18px;
+            max-height: 60px;
             margin: 0 0 0 -10px;
             transition: 0.5s;
         }
@@ -169,7 +243,6 @@ nav {
         padding: 0 10px;
         margin-top: 4px;
     }
-
 }
 
 @media all and (min-width: 768px) {
@@ -228,6 +301,7 @@ nav {
     .navbar-brand {
         margin-left: 0px !important;
         padding: 0;
+        min-width: 120px !important;
     }
 
     .navbar-toggler {
@@ -241,9 +315,17 @@ nav {
     nav.navbarOpen {
         box-shadow: 0px 3px 15px rgb($med-accent, 0.5);
     }
+
+    .navbar-brand img {
+        max-height: 36px !important;
+    }
+
+    #nav-headlogo img{
+        max-height: 24px !important;
+    }
 }
 
-@media all and (max-width:450px) {
+@media all and (max-width: 450px) {
     .navbar {
         padding-top: 0.4rem;
         padding-bottom: 0.4rem;
@@ -257,9 +339,9 @@ nav {
         margin-left: -10px !important;
     }
 
-    .navbar-brand img {
-        max-height: 16px !important;
-    }
+    // .navbar-brand img {
+    //     max-height: 16px !important;
+    // }
 }
 
 #nav-icon {
@@ -271,10 +353,10 @@ nav {
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
-    -webkit-transition: .5s ease-in-out;
-    -moz-transition: .5s ease-in-out;
-    -o-transition: .5s ease-in-out;
-    transition: .5s ease-in-out;
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
     cursor: pointer;
 }
 
@@ -291,10 +373,10 @@ nav {
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
-    -webkit-transition: .25s ease-in-out;
-    -moz-transition: .25s ease-in-out;
-    -o-transition: .25s ease-in-out;
-    transition: .25s ease-in-out;
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
 }
 
 #nav-icon span:nth-child(1) {
