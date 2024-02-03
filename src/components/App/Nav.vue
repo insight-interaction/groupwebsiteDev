@@ -1,75 +1,46 @@
 <template>
     <nav class="navbar navbar-expand-lg sticky-top section" v-bind:class="{ navbarOpen: navShow }">
         <div class="container">
-            <a class="navbar-brand" href="https://seas.harvard.edu/" title="Harvard SEAS"
-                ><img :src="harvardLogo"
-            /></a>
-            <a class="navbar-brand"  id="nav-headlogo" href="#" title="Insight + Interaction"
-                ><img :src="headerLogo"
-            /></a>
+            <div class="navbar-brand">
+                <a href="https://seas.harvard.edu/" target="_blank" title="Harvard SEAS"><img :src="harvardLogo" /></a>
+                <a-divider id="nav-divider" type="vertical" class="nav-hide" style="
+                            height: 36px;
+                            background-color: white;
+                            opacity: 0.5;
+                            width: 2px;
+                            margin: 0 10px;
+                            transform: rotate(15deg);
+                            transition: 0.5s;
+                        " />
+                <a id="nav-headlogo" href="#" title="Insight + Interaction" class="nav-hide"><img :src="headerLogo" /></a>
+            </div>
 
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-                @click.stop="toggleNavbar()"
-            >
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                @click.stop="toggleNavbar()">
                 <div id="nav-icon" :class="{ open: navShow }">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
             </button>
-            <div
-                class="collapse navbar-collapse"
-                id="navbarSupportedContent"
-                v-bind:class="{ show: navShow }"
-            >
+            <div class="collapse navbar-collapse" id="navbarSupportedContent" v-bind:class="{ show: navShow }">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item" :class="{ active: activeSection === 'home' }">
-                        <a
-                            class="nav-link"
-                            href="#"
-                            title="Home"
-                            @click.stop="setActiveSection('home')"
-                            >Home</a
-                        >
+                        <a class="nav-link" href="#" title="Home" @click.stop="setActiveSection('home')">Home</a>
                     </li>
                     <li class="nav-item" :class="{ active: activeSection === 'themes' }">
-                        <a
-                            class="nav-link"
-                            href="#themes"
-                            title="Themes"
-                            @click.stop="setActiveSection('themes')"
-                            >Themes</a
-                        >
+                        <a class="nav-link" href="#themes" title="Themes"
+                            @click.stop="setActiveSection('themes')">Themes</a>
                     </li>
                     <li class="nav-item" :class="{ active: activeSection === 'team' }">
-                        <a
-                            class="nav-link"
-                            href="#team"
-                            title="Team"
-                            @click.stop="setActiveSection('team')"
-                            >Team</a
-                        >
+                        <a class="nav-link" href="#team" title="Team" @click.stop="setActiveSection('team')">Team</a>
                     </li>
                     <li class="nav-item" :class="{ active: activeSection === 'pubs' }">
-                        <a
-                            class="nav-link"
-                            href="#publications"
-                            title="Publications"
-                            @click.stop="setActiveSection('pubs')"
-                            >Publications</a
-                        >
+                        <a class="nav-link" href="#publications" title="Publications"
+                            @click.stop="setActiveSection('pubs')">Publications</a>
                     </li>
                     <li class="nav-item" :class="{ active: activeSection === 'courses' }">
-                        <a
-                            class="nav-link"
-                            href="#courses"
-                            @click.stop="setActiveSection('courses')"
-                            >Courses</a
-                        >
+                        <a class="nav-link" href="#courses" @click.stop="setActiveSection('courses')">Courses</a>
                     </li>
                 </ul>
             </div>
@@ -90,7 +61,7 @@ export default defineComponent({
             activeSection: "home",
         });
 
-        const headerLogo = require(`@/assets/logos/headerlogo.svg`);
+        const headerLogo = require(`@/assets/logos/footerlogo.svg`);
         const harvardLogo = require(`@/assets/logos/harvardlogo.svg`);
 
         const toggleNavbar = () => {
@@ -133,25 +104,43 @@ export default defineComponent({
                 courses &&
                 scrollPosition >= pubs.offsetTop &&
                 scrollPosition <
-                    Math.min(
-                        courses.offsetTop,
-                        document.documentElement.offsetHeight -
-                            document.documentElement.clientHeight -
-                            100
-                    )
+                Math.min(
+                    courses.offsetTop,
+                    document.documentElement.offsetHeight -
+                    document.documentElement.clientHeight -
+                    100
+                )
             ) {
                 setActiveSection("pubs");
             } else {
                 setActiveSection("courses");
             }
 
-            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+            if (scrollPosition - 100 > 80) {
                 document.querySelectorAll(".navbar-brand img").forEach((el) => {
-                    (el as any).style.maxHeight = "40px";
+                    (el as any).style.maxHeight = "48px";
+                });
+
+                document.querySelectorAll(".navbar-brand .nav-hide").forEach((el) => {
+                    if ((el as any).id === "nav-divider") {
+
+                        (el as any).style.opacity = "0.5";
+                    } else {
+
+                        (el as any).style.opacity = "1";
+                    }
+                    (el as any).style.visibility = "visible";
+                    (el as any).style.pointerEvents = "auto";
                 });
             } else {
                 document.querySelectorAll(".navbar-brand img").forEach((el) => {
                     (el as any).style.maxHeight = "60px";
+                });
+
+                document.querySelectorAll(".navbar-brand .nav-hide").forEach((el) => {
+                    (el as any).style.opacity = "0";
+                    (el as any).style.visibility = "hidden";
+                    (el as any).style.pointerEvents = "none";
                 });
             }
         };
@@ -200,12 +189,20 @@ nav {
         margin-left: 10px;
         transition: 0.5s;
         width: max-content;
-        min-width: 200px;
+        // min-width: 300px;
+        display: flex;
+        align-items: center;
 
         img {
             max-height: 60px;
+            width: 100%;
             margin: 0 0 0 -10px;
             transition: 0.5s;
+        }
+
+        #nav-headlogo img {
+            padding: 2px;
+            margin-left: 4px !important;
         }
     }
 
@@ -245,6 +242,18 @@ nav {
     }
 }
 
+@media all and (max-width: 920px) {
+    .navbar-brand img {
+        max-height: 48px !important;
+    }
+}
+
+@media all and (max-width: 830px) {
+    .navbar-brand img {
+        max-height: 36px !important;
+    }
+}
+
 @media all and (min-width: 768px) {
     nav {
         padding: 0px 60px;
@@ -277,31 +286,11 @@ nav {
     }
 }
 
-@media all and (min-width: 768px) {
-    .navbar-expand-lg .navbar-toggler {
-        display: none;
-    }
-
-    .navbar-expand-lg .navbar-collapse {
-        display: flex !important;
-        flex-basis: auto;
-    }
-
-    .navbar-expand-lg .navbar-nav {
-        flex-direction: row;
-    }
-
-    .navbar-expand-lg .navbar-nav .nav-link {
-        padding-right: 0.5rem;
-        padding-left: 0.5rem;
-    }
-}
-
 @media all and (max-width: 768px) {
     .navbar-brand {
-        margin-left: 0px !important;
+        // margin-left: 10px !important;
         padding: 0;
-        min-width: 120px !important;
+        // min-width: 120px !important;
     }
 
     .navbar-toggler {
@@ -316,12 +305,13 @@ nav {
         box-shadow: 0px 3px 15px rgb($med-accent, 0.5);
     }
 
-    .navbar-brand img {
-        max-height: 36px !important;
-    }
+    // .navbar-brand img {
+    //     max-height: 36px !important;
+    // }
 
-    #nav-headlogo img{
-        max-height: 24px !important;
+    #nav-divider {
+        height: 28px !important;
+        margin: 0 6px !important;
     }
 }
 
@@ -336,7 +326,7 @@ nav {
     }
 
     .navbar-brand {
-        margin-left: -10px !important;
+        margin-left: 10px !important;
     }
 
     // .navbar-brand img {

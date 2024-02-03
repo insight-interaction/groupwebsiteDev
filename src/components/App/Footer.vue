@@ -3,40 +3,42 @@
         <div class="update">Last Updated: February 2024</div>
         <footer class="footer h-100">
             <div class="container">
-                <a id="up-arrow" class="arrow-button" href="#" title="Back to top"
-                    ><img :src="toTop"
-                /></a>
+                <a id="up-arrow" class="arrow-button" href="#" title="Back to top"><img :src="toTop" /></a>
                 <div class="footer-imgs">
-                    <a href="#" title="Insight + Interaction"
-                        ><img :src="footerLogo" id="footer-logo"
-                    /></a>
-                    <a-divider
-                        type="vertical"
-                        style="
+                    <a href="#" title="Insight + Interaction"><img :src="footerLogo" id="footer-logo" /></a>
+                    <a-divider type="vertical" style="
                             height: 40px;
                             background-color: white;
                             opacity: 0.5;
                             width: 2px;
                             margin: 0 20px;
                             transform: rotate(15deg);
-                        "
-                    />
-                    <a href="https://seas.harvard.edu/" target="_blank" title="Harvard SEAS"
-                        ><img :src="harvardLogo"
-                    /></a>
+                        " />
+                    <a href="https://seas.harvard.edu/" target="_blank" title="Harvard SEAS"><img :src="harvardLogo" /></a>
                 </div>
-                <div
-                    class="copyright-msg container align-middle justify-content-center align-self-center text-center"
-                >
-                    Copyright © 2024 The President and Fellows of Harvard College |
-                    <a href="https://accessibility.harvard.edu/">Accessibility</a> |
-                    <a href="https://accessibility.huit.harvard.edu/digital-accessibility-policy"
-                        >Digital Accessibility</a
-                    >
-                    |
-                    <a href="https://www.harvard.edu/copyright-issue/"
-                        >Report Copyright Infringement</a
-                    >
+                <div class="copyright-msg container align-middle justify-content-center align-self-center text-center">
+                    Copyright © {{ year }} The President and Fellows of Harvard College
+                    <div>
+                        <a href="https://accessibility.harvard.edu/" target="_blank">Accessibility</a>
+                        <a-divider type="vertical" style="
+                            height: 16px;
+                            background-color: white;
+                            opacity: 0.5;
+                            width: 1.5px;
+                            margin: 0 8px;
+                        " />
+                        <a href="https://accessibility.huit.harvard.edu/digital-accessibility-policy"
+                            target="_blank">Digital
+                            Accessibility</a>
+                        <a-divider type="vertical" style="
+                            height: 16px;
+                            background-color: white;
+                            opacity: 0.5;
+                            width: 1.5px;
+                            margin: 0 8px;
+                        " />
+                        <a href="https://www.harvard.edu/copyright-issue/" target="_blank">Report Copyright Infringement</a>
+                    </div>
                 </div>
             </div>
         </footer>
@@ -51,7 +53,9 @@ import { defineComponent, reactive, toRefs } from "vue";
 export default defineComponent({
     name: "Footer",
     setup() {
-        const state = reactive({});
+        const state = reactive({
+            year: new Date().getFullYear(),
+        });
 
         const footerLogo = require(`@/assets/logos/footerlogo.svg`);
         const harvardLogo = require(`@/assets/logos/harvardlogo.svg`);
@@ -84,9 +88,8 @@ export default defineComponent({
 
     .footer {
         background-color: $dark-accent;
-        height: 40px;
-        padding-top: 12px;
-        padding-bottom: 12px;
+        padding-top: 20px;
+        padding-bottom: 20px;
         color: white;
         font-size: smaller;
         text-align: center;
@@ -103,8 +106,12 @@ export default defineComponent({
             padding: 2px;
         }
 
-        .footer-imgs img:hover {
-            opacity: 0.7;
+        .footer-imgs {
+            width: 100%;
+
+            img:hover {
+                opacity: 0.7;
+            }
         }
 
         p {
@@ -129,7 +136,25 @@ export default defineComponent({
         }
 
         .copyright-msg {
-            padding-top: 20px;
+            padding-top: 15px;
+            font-size: small;
+            transition: 0.5s;
+
+            div {
+                transform: scale(0.95);
+                font-weight: 200;
+                // font-family: $title-font;
+                color: $lightest-accent;
+            }
+
+            a {
+                text-decoration: none;
+                transition: 0.5s;
+
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
         }
 
         a {

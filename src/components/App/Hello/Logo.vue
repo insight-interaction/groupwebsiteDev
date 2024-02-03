@@ -127,7 +127,7 @@ import "bootstrap/dist/css/bootstrap.css";
 
 import { defineComponent } from "vue";
 
-import { onMounted, reactive, toRefs, onUnmounted } from "vue";
+import { reactive, toRefs } from "vue";
 
 function animateSvgLetters() {
     let delay: number = 200;
