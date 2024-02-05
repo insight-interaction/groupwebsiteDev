@@ -176,11 +176,11 @@ nav {
 
     a {
         color: white !important;
+        transition: 0.5s !important;
     }
 
     a:hover {
-        opacity: 0.7;
-        transition: 0.5s;
+        opacity: 0.7 !important;
     }
 
     .navbar-brand {
@@ -192,6 +192,12 @@ nav {
         // min-width: 300px;
         display: flex;
         align-items: center;
+
+        .nav-hide {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
 
         img {
             max-height: 60px;
