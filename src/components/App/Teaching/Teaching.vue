@@ -214,7 +214,7 @@ div.course-container {
     .course-container {
         &:not(:hover) {
             p.course-description {
-                margin-top: -120px !important;
+                margin-top: -100px !important;
             }
         }
     }
@@ -224,7 +224,7 @@ div.course-container {
     .course-container {
         &:not(:hover) {
             p.course-description {
-                margin-top: -160px !important;
+                margin-top: -140px !important;
             }
         }
     }

@@ -118,7 +118,9 @@ export default defineComponent({
 
             if (scrollPosition - 100 > 80) {
                 document.querySelectorAll(".navbar-brand img").forEach((el) => {
-                    (el as any).style.maxHeight = "48px";
+                    const img = el as HTMLImageElement;
+                    img.style.maxHeight = "48px";
+                    img.style.minWidth = "160px";
                 });
 
                 document.querySelectorAll(".navbar-brand .nav-hide").forEach((el) => {
@@ -134,7 +136,9 @@ export default defineComponent({
                 });
             } else {
                 document.querySelectorAll(".navbar-brand img").forEach((el) => {
-                    (el as any).style.maxHeight = "60px";
+                    const img = el as HTMLImageElement;
+                    img.style.maxHeight = "60px";
+                    img.style.minWidth = "200px";
                 });
 
                 document.querySelectorAll(".navbar-brand .nav-hide").forEach((el) => {
@@ -201,7 +205,8 @@ nav {
 
         img {
             max-height: 60px;
-            width: 100%;
+            width: auto;
+            min-width: 200px;
             margin: 0 0 0 -10px;
             transition: 0.5s;
         }
@@ -251,12 +256,14 @@ nav {
 @media all and (max-width: 920px) {
     .navbar-brand img {
         max-height: 48px !important;
+        min-width: 160px !important;
     }
 }
 
 @media all and (max-width: 830px) {
     .navbar-brand img {
         max-height: 36px !important;
+        min-width: 120px !important;
     }
 }
 
@@ -310,10 +317,6 @@ nav {
     nav.navbarOpen {
         box-shadow: 0px 3px 15px rgb($med-accent, 0.5);
     }
-
-    // .navbar-brand img {
-    //     max-height: 36px !important;
-    // }
 
     #nav-divider {
         height: 28px !important;

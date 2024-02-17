@@ -109,6 +109,10 @@ export default defineComponent({
         .footer-imgs {
             width: 100%;
 
+            img {
+                max-width: 220px;
+            }
+
             img:hover {
                 opacity: 0.7;
             }
@@ -163,10 +167,19 @@ export default defineComponent({
     }
 }
 
+@media (max-width: 600px) {
+    .footer {
+        img {
+            max-width: 180px !important;
+        }
+    }
+}
+
 @media (max-width: 500px) {
     .footer {
         img {
             max-height: 45px !important;
+            max-width: 140px !important;
         }
 
         #up-arrow {
