@@ -166,7 +166,7 @@ export default defineComponent({
 @media (max-width: 500px) {
     .footer {
         img {
-            max-height: 35px;
+            max-height: 45px !important;
         }
 
         #up-arrow {
@@ -174,7 +174,7 @@ export default defineComponent({
         }
 
         #up-arrow img {
-            max-height: 20px;
+            max-height: 20px !important;
         }
     }
 }

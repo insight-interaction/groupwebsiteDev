@@ -323,8 +323,7 @@ nav {
 
 @media all and (max-width: 450px) {
     .navbar {
-        padding-top: 0.4rem;
-        padding-bottom: 0.4rem;
+        padding: 0.4rem 10px;
     }
 
     .navbar-toggler {
@@ -338,6 +337,38 @@ nav {
     // .navbar-brand img {
     //     max-height: 16px !important;
     // }
+}
+
+@media all and (max-width: 400px) {
+    .navbar {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media all and (max-width: 350px) {
+    .navbar-brand img {
+        max-height: 32px !important;
+    }
+}
+
+@media all and (max-width: 300px) {
+    .navbar-brand {
+        margin-top: -2px;
+
+        img {
+            max-height: 24px !important;
+        }
+    }
+
+    #nav-divider {
+        height: 20px !important;
+        margin: 4px 2px 0 !important;
+    }
+
+    .navbar-toggler {
+        transform: scale(0.7);
+    }
 }
 
 #nav-icon {
