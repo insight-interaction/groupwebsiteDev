@@ -77,7 +77,7 @@ export const people: Person[] = [
   {
     name: "Trevor DePodesta",
     role: "Undergraduate",
-    profile: "trevor.jpg",
+    profile: "trevor.png",
     alter: "trevor.png",
     url: "https://tdepodesta.github.io/",
   },

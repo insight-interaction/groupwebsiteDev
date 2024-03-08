@@ -114,7 +114,7 @@ export default defineComponent({
 html,
 body {
     // overflow-x: hidden;
-    width: 100vw;
+    width: 100%;
 
     font-family: $main-font;
     font-weight: 300;
@@ -141,6 +141,7 @@ div.anchor {
 }
 
 @media all and (min-width: 768px) {
+
     // margin: 0px 100px;
     div.myrow {
         margin-left: 30px;
@@ -168,7 +169,7 @@ div.anchor {
 }
 
 div#body {
-    width: 100vw;
+    width: 100%;
     overflow: hidden;
 }
 
@@ -199,7 +200,7 @@ div#body {
     //     content: "";
     // }
 
-    & > span {
+    &>span {
         padding: 8px 0;
     }
 }
