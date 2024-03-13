@@ -10,6 +10,7 @@
                 <Team />
                 <Publications />
                 <Teaching />
+                <Contact />
             </div>
         </div>
 
@@ -27,6 +28,7 @@ import Hello from "./App/Hello/Hello.vue";
 import Projects from "./App/Projects/Projects.vue";
 import Team from "./App/Team/Team.vue";
 import Teaching from "./App/Teaching/Teaching.vue";
+import Contact from "./App/Contact/Contact.vue";
 import Footer from "./App/Footer.vue";
 import Nav from "./App/Nav.vue";
 
@@ -42,6 +44,7 @@ export default defineComponent({
         Team,
         Footer,
         Nav,
+        Contact
     },
     setup() {
         const store = useStore();

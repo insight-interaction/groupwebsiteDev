@@ -42,6 +42,9 @@
                     <li class="nav-item" :class="{ active: activeSection === 'courses' }">
                         <a class="nav-link" href="#courses" @click.stop="setActiveSection('courses')">Courses</a>
                     </li>
+                    <li class="nav-item" :class="{ active: activeSection === 'contact' }">
+                        <a class="nav-link" href="#contact" @click.stop="setActiveSection('contact')">Contact</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -81,6 +84,7 @@ export default defineComponent({
             const team = document.getElementById("team");
             const pubs = document.getElementById("publications");
             const courses = document.getElementById("courses");
+            const contact = document.getElementById("contact");
 
             // Logic to determine which section is in view
             if (themes && scrollPosition < themes.offsetTop) {
@@ -112,8 +116,16 @@ export default defineComponent({
                 )
             ) {
                 setActiveSection("pubs");
-            } else {
+            } else if ( courses && contact && scrollPosition >= courses.offsetTop &&                 scrollPosition <
+                Math.min(
+                    contact.offsetTop,
+                    document.documentElement.offsetHeight -
+                    document.documentElement.clientHeight -
+                    100
+                )) {
                 setActiveSection("courses");
+            } else {
+                setActiveSection("contact");
             }
 
             if (scrollPosition - 100 > 80) {
