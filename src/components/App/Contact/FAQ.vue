@@ -1,9 +1,9 @@
 <template>
     <div class="faq_container">
-        <div class="q">
+        <div class="q" :class='{ "open": open }' @click="toggleOpen()" :title='open ? "Close FAQ" : "Open FAQ"'>
             <div><b>Q:</b> {{ faq.Q }}</div>
-            <PlusOutlined v-if="!open" @click="toggleOpen()" />
-            <MinusOutlined v-else @click="toggleOpen()" />
+            <PlusOutlined v-if="!open" />
+            <MinusOutlined v-else />
         </div>
         <div class="a" v-if="open"><b>A:</b> {{ faq.A }}</div>
     </div>
@@ -41,12 +41,12 @@ export default defineComponent({
 
 <style rel="stylesheet" lang="scss">
 .faq_container {
-    margin: 5px 0px 8px;
+    margin: 5px 0px 10px;
     // border-bottom: 0.5px solid #cccccc; /* Light grey color */
 
     .q,
     .a {
-        padding: 6px 12px;
+        padding: 8px 12px;
         border-radius: 2px;
 
         b {
@@ -58,6 +58,8 @@ export default defineComponent({
         background: rgb($text-color, 0.03);
         // color: $dark-accent;
         font-weight: 500;
+        cursor: pointer;
+        transition: 0.5s;
 
         display: flex;
         justify-content: space-between;
@@ -69,13 +71,12 @@ export default defineComponent({
             color: $dark-accent;
         }
 
-        svg {
-            cursor: pointer;
-            transition: 0.5s;
+        &.open {
+            background: rgb($light-accent, 0.3);
+        }
 
-            &:hover {
-                opacity: 0.7;
-            }
+        &:hover {
+            background: rgb($light-accent, 0.2);
         }
     }
 

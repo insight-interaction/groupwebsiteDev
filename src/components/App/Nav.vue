@@ -41,10 +41,12 @@
                             @click.stop="setActiveSection('pubs')">Publications</a>
                     </li>
                     <li class="nav-item" :class="{ active: activeSection === 'courses' }">
-                        <a class="nav-link" href="#courses" @click.stop="setActiveSection('courses')">Courses</a>
+                        <a class="nav-link" href="#courses" title="Courses"
+                            @click.stop="setActiveSection('courses')">Courses</a>
                     </li>
                     <li class="nav-item" :class="{ active: activeSection === 'contact' }">
-                        <a class="nav-link" href="#contact" @click.stop="setActiveSection('contact')">Contact</a>
+                        <a class="nav-link" href="#contact" title="Contact"
+                            @click.stop="setActiveSection('contact')">Contact</a>
                     </li>
                 </ul>
             </div>

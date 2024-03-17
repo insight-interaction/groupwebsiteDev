@@ -26,12 +26,13 @@
             </div>
             <!-- Show More/Less Buttons -->
             <div class="publist-buttons">
-                <a-button type="text" size="small" v-if="displayLimit < filteredPublications.length"
-                    @click="showMore">Show
+                <a-button type="text" size="small" v-if="displayLimit < filteredPublications.length" @click="showMore"
+                    title="Show More">Show
                     More</a-button>
                 <p class="slash" v-if="displayLimit < filteredPublications.length && displayLimit > 10"> /
                 </p>
-                <a-button type="text" size="small" v-if="displayLimit > 10" @click="showLess">Show Less</a-button>
+                <a-button type="text" size="small" v-if="displayLimit > 10" @click="showLess" title="Show Less">Show
+                    Less</a-button>
             </div>
 
         </div>
