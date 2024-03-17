@@ -1,6 +1,6 @@
 <template>
     <div class="footer-contain">
-        <div class="update">Last Updated: February 2024</div>
+        <div class="update">Last Updated: March 2024</div>
         <footer class="footer h-100">
             <div class="container">
                 <a id="up-arrow" class="arrow-button" href="#" title="Back to top"><img :src="toTop" /></a>
@@ -14,7 +14,8 @@
                             margin: 0 20px;
                             transform: rotate(15deg);
                         " />
-                    <a href="https://seas.harvard.edu/" target="_blank" title="Harvard SEAS"><img :src="harvardLogo" /></a>
+                    <a href="https://seas.harvard.edu/" target="_blank" title="Harvard SEAS"><img
+                            :src="harvardLogo" /></a>
                 </div>
                 <div class="copyright-msg container align-middle justify-content-center align-self-center text-center">
                     Copyright © {{ year }} The President and Fellows of Harvard College
@@ -37,7 +38,8 @@
                             width: 1.5px;
                             margin: 0 8px;
                         " />
-                        <a href="https://www.harvard.edu/copyright-issue/" target="_blank">Report Copyright Infringement</a>
+                        <a href="https://www.harvard.edu/copyright-issue/" target="_blank">Report Copyright
+                            Infringement</a>
                     </div>
                 </div>
             </div>

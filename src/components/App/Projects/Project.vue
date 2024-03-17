@@ -1,5 +1,5 @@
 <template>
-    <div class="row project-container" ref="pub" v-bind:id="project.id">
+    <div class="row project-container" ref="proj" v-bind:id="project.id">
         <div class="col-md-12 col-sm-12 d-flex flex-wrap align-items-center img-wrapper">
             <img :src="project.img" class="proj_img mx-auto d-block" :title="project.title" />
         </div>
@@ -17,27 +17,24 @@ import "@fortawesome/fontawesome-free/css/all.css";
 import "@fortawesome/fontawesome-free/js/all.js";
 
 import { defineComponent } from "vue";
-import { useStore } from "vuex";
 
-import { ref, onMounted, computed, reactive, toRefs, h, watch } from "vue";
+import { ref, onMounted, reactive, toRefs, } from "vue";
 
 export default defineComponent({
     name: "Project",
     props: ["project"],
     components: {},
-    setup(props) {
-        const store = useStore();
+    setup() {
 
         const state = reactive({
-            svgStr: computed(() => store.state.svgStr),
         });
-        const pub = ref(null);
+        const proj = ref(null);
 
         onMounted(() => { });
 
         return {
             ...toRefs(state),
-            pub,
+            proj,
         };
     },
     computed: {},

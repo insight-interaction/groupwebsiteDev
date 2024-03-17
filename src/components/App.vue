@@ -21,7 +21,6 @@
 <script lang="ts">
 import "bootstrap/dist/css/bootstrap.css";
 import { useHead } from "@vueuse/head";
-import { useStore } from "vuex";
 
 import Publications from "./App/Publications/Publications.vue";
 import Hello from "./App/Hello/Hello.vue";
@@ -47,10 +46,7 @@ export default defineComponent({
         Contact
     },
     setup() {
-        const store = useStore();
-
         const state = reactive({
-            svgStr: computed(() => store.state.svgStr),
         });
 
         const siteData = reactive({

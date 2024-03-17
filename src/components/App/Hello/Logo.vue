@@ -157,7 +157,7 @@ function myEventHandler(e: Event) {
 }
 
 export default defineComponent({
-    name: "App",
+    name: "Logo",
     components: {},
     setup() {
 

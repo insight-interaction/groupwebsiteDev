@@ -12,7 +12,8 @@
                             transform: rotate(15deg);
                             transition: 0.5s;
                         " />
-                <a id="nav-headlogo" href="#" title="Insight + Interaction" class="nav-hide"><img :src="headerLogo" /></a>
+                <a id="nav-headlogo" href="#" title="Insight + Interaction" class="nav-hide"><img
+                        :src="headerLogo" /></a>
             </div>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -108,15 +109,10 @@ export default defineComponent({
                 courses &&
                 scrollPosition >= pubs.offsetTop &&
                 scrollPosition <
-                Math.min(
-                    courses.offsetTop,
-                    document.documentElement.offsetHeight -
-                    document.documentElement.clientHeight -
-                    100
-                )
+                courses.offsetTop
             ) {
                 setActiveSection("pubs");
-            } else if ( courses && contact && scrollPosition >= courses.offsetTop &&                 scrollPosition <
+            } else if (courses && contact && scrollPosition >= courses.offsetTop && scrollPosition <
                 Math.min(
                     contact.offsetTop,
                     document.documentElement.offsetHeight -
@@ -145,6 +141,7 @@ export default defineComponent({
                     }
                     (el as any).style.visibility = "visible";
                     (el as any).style.pointerEvents = "auto";
+                    (el as any).style.width = "auto";
                 });
             } else {
                 document.querySelectorAll(".navbar-brand img").forEach((el) => {
@@ -157,6 +154,7 @@ export default defineComponent({
                     (el as any).style.opacity = "0";
                     (el as any).style.visibility = "hidden";
                     (el as any).style.pointerEvents = "none";
+                    (el as any).style.width = "0";
                 });
             }
         };
@@ -241,7 +239,7 @@ nav {
 
     .navbar-toggler {
         padding: 0.25rem 0;
-        margin-right: 10px;
+        // margin-right: 10px;
         display: flex;
         align-items: center;
         transition: 0.5s;
@@ -279,7 +277,7 @@ nav {
     }
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 890px) {
     nav {
         padding: 0px 60px;
     }

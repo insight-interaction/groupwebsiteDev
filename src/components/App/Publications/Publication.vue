@@ -40,8 +40,8 @@
 
                 </div>
                 <div class="publication_miscellaneous">
-                    <a v-if="publication.preprint" :href="publication.preprint" target="_blank" rel="noopener noreferrer"
-                        title="Paper" class="paper-button">
+                    <a v-if="publication.preprint" :href="publication.preprint" target="_blank"
+                        rel="noopener noreferrer" title="Paper" class="paper-button">
                         <FileTextOutlined />
                         <span>Paper</span>
                     </a>
@@ -77,21 +77,17 @@ import "@fortawesome/fontawesome-free/css/all.css";
 import "@fortawesome/fontawesome-free/js/all.js";
 
 import { defineComponent, onMounted, onUnmounted } from "vue";
-import { useStore } from "vuex";
 import { colors } from "./pub";
 
-import { ref, computed, reactive, toRefs } from "vue";
+import { ref, reactive, toRefs } from "vue";
 import { FileTextOutlined, LinkOutlined, DesktopOutlined, CodeOutlined, YoutubeOutlined, CameraOutlined } from '@ant-design/icons-vue';
 
 export default defineComponent({
-    name: "App",
+    name: "Publication",
     props: ["publication"],
     components: { FileTextOutlined, LinkOutlined, DesktopOutlined, CodeOutlined, YoutubeOutlined, CameraOutlined },
     setup(props) {
-        const store = useStore();
-
         const state = reactive({
-            svgStr: computed(() => store.state.svgStr),
             imageSize: "small",
             clickLink: props.publication.project ? props.publication.project : props.publication.preprint ? props.publication.preprint : "",
         });

@@ -6,15 +6,18 @@
                 <div class="pub-header">
                     <span>Publications</span>
                     <div class="tag-select">
-                        <a-radio-group class="tag-group" v-model:value="currentTag" size="small" button-style="outlined">
-                            <a-radio-button v-for="tag in colorOptions" :value="tag" :title="tag">{{ tag }}</a-radio-button>
+                        <a-radio-group class="tag-group" v-model:value="currentTag" size="small"
+                            button-style="outlined">
+                            <a-radio-button v-for="tag in colorOptions" :value="tag" :title="tag">{{ tag
+                                }}</a-radio-button>
                         </a-radio-group>
                     </div>
                 </div>
                 <div class="slider-container">
                     {{ minYear }}
-                    <a-slider range v-model:value="yearFilter" :min="minYear" :max="maxYear" tooltipPlacement="bottom" />{{
-                        maxYear }}
+                    <a-slider range v-model:value="yearFilter" :min="minYear" :max="maxYear"
+                        tooltipPlacement="bottom" />{{
+                            maxYear }}
                 </div>
             </div>
             <div v-for="( publication, index ) in  filteredPublications " :key="publication.title">
@@ -23,7 +26,8 @@
             </div>
             <!-- Show More/Less Buttons -->
             <div class="publist-buttons">
-                <a-button type="text" size="small" v-if="displayLimit < filteredPublications.length" @click="showMore">Show
+                <a-button type="text" size="small" v-if="displayLimit < filteredPublications.length"
+                    @click="showMore">Show
                     More</a-button>
                 <p class="slash" v-if="displayLimit < filteredPublications.length && displayLimit > 10"> /
                 </p>
@@ -65,7 +69,7 @@ const publicationsByYear = _.chain(publications)
     .value();
 
 export default defineComponent({
-    name: "App",
+    name: "Publications",
     components: { Publication, CommentOutlined },
     setup() {
         const minYear = Math.min(...publications.map(p => p.year));
