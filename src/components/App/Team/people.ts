@@ -5,12 +5,13 @@ export type Person = {
   profile: string;
   alter: string;
   url: string;
+  year: number;
 };
 
 // define alum type
 export type Alum = {
   name: string;
-  prev: "Professor" | "Postdoc" | "PhD Student" | "Undergraduate";
+  prev: "Postdoc" | "PhD Student" | "Undergraduate";
   now: string;
   profile: string;
   url: string;
@@ -24,6 +25,7 @@ export const people: Person[] = [
     profile: "martin.jpeg",
     alter: "martin.png",
     url: "https://www.bewitched.com/",
+    year: 2021,
   },
   {
     name: "Fernanda Viégas",
@@ -31,6 +33,7 @@ export const people: Person[] = [
     profile: "fernanda.jpg",
     alter: "fernanda.png",
     url: "http://www.fernandaviegas.com/",
+    year: 2021,
   },
   {
     name: "Yida Chen",
@@ -38,13 +41,7 @@ export const people: Person[] = [
     profile: "yida.jpg",
     alter: "yida.jpg",
     url: "https://yc015.github.io/",
-  },
-  {
-    name: "Cynthia Chen",
-    role: "Undergraduate",
-    profile: "cynthia.jpeg",
-    alter: "cynthia.png",
-    url: "https://chenxcynthia.github.io/",
+    year: 2022,
   },
   {
     name: "Kenneth Li",
@@ -52,13 +49,15 @@ export const people: Person[] = [
     profile: "kenneth.jpeg",
     alter: "kenneth.png",
     url: "https://likenneth.github.io/",
+    year: 2021,
   },
   {
     name: "Shivam Raval",
     role: "PhD Student",
     profile: "shivam.png",
     alter: "shivam.png",
-    url: "https://scholar.harvard.edu/shivamraval",
+    url: "https://shivam-raval96.github.io/",
+    year: 2019,
   },
   {
     name: "Aoyu Wu",
@@ -66,6 +65,7 @@ export const people: Person[] = [
     profile: "aoyu.jpg",
     alter: "aoyu.jpeg",
     url: "https://wowjyu.github.io/",
+    year: 2022,
   },
   {
     name: "Catherine Yeh",
@@ -73,13 +73,15 @@ export const people: Person[] = [
     profile: "catherine.jpg",
     alter: "catherine.jpg",
     url: "https://catherinesyeh.github.io/",
+    year: 2022,
   },
   {
     name: "Trevor DePodesta",
     role: "Undergraduate",
-    profile: "trevor.png",
+    profile: "trevor.jpg",
     alter: "trevor.png",
     url: "https://tdepodesta.github.io/",
+    year: 2022,
   },
   {
     name: "Olivia Seow",
@@ -87,6 +89,7 @@ export const people: Person[] = [
     profile: "olivia.jpeg",
     alter: "olivia.jpg",
     url: "https://www.oliviaseow.com/",
+    year: 2023,
   },
   {
     name: "Oam Patel",
@@ -94,6 +97,23 @@ export const people: Person[] = [
     profile: "oam.png",
     alter: "oam.png",
     url: "https://oampatel.com/",
+    year: 2023,
+  },
+  {
+    name: "Jan Riecke",
+    role: "Undergraduate",
+    profile: "jan.jpg",
+    alter: "jan.jpg",
+    url: "https://linkedin.com/in/jan-riecke-835689255/",
+    year: 2023,
+  },
+  {
+    name: "Nikola Jurkovic",
+    role: "Undergraduate",
+    profile: "nikola.png",
+    alter: "nikola.png",
+    url: "https://nikolajurkovic.com/",
+    year: 2024,
   },
 ];
 
@@ -106,5 +126,13 @@ export const alumni: Alum[] = [
     profile: "david.jpg",
     url: "http://davidbau.com/research/",
     year: 2022,
+  },
+  {
+    name: "Cynthia Chen",
+    prev: "Undergraduate",
+    now: "SWE @ Decagon",
+    profile: "cynthia.jpeg",
+    url: "https://chenxcynthia.github.io/",
+    year: 2024,
   },
 ];

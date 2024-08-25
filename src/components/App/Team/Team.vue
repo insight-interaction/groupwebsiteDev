@@ -67,7 +67,11 @@ const comparePeople = (a: Person, b: Person) => {
     if (roleOrder.indexOf(a.role) < roleOrder.indexOf(b.role)) return -1;
     if (roleOrder.indexOf(a.role) > roleOrder.indexOf(b.role)) return 1;
 
-    // If roles are equal, compare by first name
+    // If roles are equal, compare by year
+    if (a.year > b.year) return 1;
+    if (a.year < b.year) return -1;
+
+    // If years are equal, compare by first name
     const firstNameA = a.name.split(" ")[0] || "";
     const firstNameB = b.name.split(" ")[0] || "";
     return firstNameA.localeCompare(firstNameB);
@@ -87,7 +91,12 @@ const finalPeopleList = people.map((x) => ({
 }));
 
 const compareAlumni = (a: Alum, b: Alum) => {
-    // Compare by year
+
+    // First, compare by role
+    if (roleOrder.indexOf(a.prev) < roleOrder.indexOf(b.prev)) return -1;
+    if (roleOrder.indexOf(a.prev) > roleOrder.indexOf(b.prev)) return 1;
+
+    // If roles are equal, compare by year
     if (a.year > b.year) return -1;
     if (a.year < b.year) return 1;
 
