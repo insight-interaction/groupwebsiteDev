@@ -95,6 +95,20 @@ export const people: Person[] = [
     alter: "oam.png",
     url: "https://oampatel.com/",
   },
+  {
+    name: "Jan Riecke",
+    role: "Undergraduate",
+    profile: "jan.jpg",
+    alter: "jan.jpg",
+    url: "https://insight.seas.harvard.edu/"
+  },
+  {
+    name: "Nikola Jurkovic",
+    role: "Undergraduate",
+    profile: "nikola.png",
+    alter: "nikola.png",
+    url: "https://nikolajurkovic.com/"
+  }
 ];
 
 // ALUMNI
