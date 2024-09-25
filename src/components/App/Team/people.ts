@@ -100,6 +100,22 @@ export const people: Person[] = [
     year: 2023,
   },
   {
+    name: "Lena Armstrong",
+    role: "PhD Student",
+    profile: "lena.png",
+    alter: "lena.png",
+    url: "https://lenaarmstrong.github.io/",
+    year: 2024,
+  },
+  {
+    name: "Rachit Bansal",
+    role: "PhD Student",
+    profile: "rachit.jpg",
+    alter: "rachit.jpg",
+    url: "https://rachitbansal.github.io",
+    year: 2024,
+  },
+  {
     name: "Oam Patel",
     role: "Undergraduate",
     profile: "oam.png",
