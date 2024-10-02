@@ -111,7 +111,7 @@ export const people: Person[] = [
     name: "Rachit Bansal",
     role: "PhD Student",
     profile: "rachit.jpg",
-    alter: "rachit.jpg",
+    alter: "rachit.png",
     url: "https://rachitbansal.github.io",
     year: 2024,
   },
@@ -138,7 +138,7 @@ export const people: Person[] = [
     alter: "nikola.png",
     url: "https://nikolajurkovic.com/",
     year: 2024,
-  }
+  },
 ];
 
 // ALUMNI
