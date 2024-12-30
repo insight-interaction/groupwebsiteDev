@@ -40,7 +40,9 @@
 
             <div class="contact-text">
                 <div class="contact_subhead">Frequently Asked Questions</div>
-                <FAQ v-for="faq in faqs" :id="faq.Q" :faq=faq />
+                <div class="row">
+                    <FAQ v-for="faq in faqs" :id="faq.Q" :faq=faq class="col-md-6 col-sm-12" />
+                </div>
             </div>
         </div>
     </div>

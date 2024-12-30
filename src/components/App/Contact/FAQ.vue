@@ -41,7 +41,7 @@ export default defineComponent({
 
 <style rel="stylesheet" lang="scss">
 .faq_container {
-    margin: 5px 0px 10px;
+    margin: 5px 0px;
     // border-bottom: 0.5px solid #cccccc; /* Light grey color */
 
     .q,
