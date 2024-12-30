@@ -13,8 +13,13 @@
                 :class="{ 'col-md-10': imageSize === 'small', 'col-md-9': imageSize === 'medium', 'col-md-8': imageSize === 'big' }">
 
                 <div class="tag-box">
-                    <div class="publication_venue">
-                        {{ publication.venue }} {{ publication.year }}
+                    <div>
+                        <div class="publication_venue">
+                            {{ publication.venue }} {{ publication.year }}
+                        </div>
+                        <div v-if="publication.award" class="publication_venue publication_award">
+                            {{ publication.award }}
+                        </div>
                     </div>
                     <div class="tag-container">
                         <div class="tags" v-for="tag in publication.tags" :key="tag">
@@ -187,6 +192,7 @@ div.pub_info_wrapper {
 }
 
 .publication_venue {
+    display: inline-block;
     font-size: x-small !important;
     width: max-content;
     padding: 0 4px;
@@ -197,6 +203,18 @@ div.pub_info_wrapper {
     // font-style: italic;
     background: rgb($text-color, 0.03);
     // font-family: $title-font;
+
+    &.publication_award {
+        background: rgb($light-accent, 0.15);
+        color: $med-accent;
+        font-weight: 400;
+        // font-style: italic;
+
+        svg {
+            margin-bottom: 3px;
+            font-size: smaller;
+        }
+    }
 }
 
 .publication_miscellaneous {

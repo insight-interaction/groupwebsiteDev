@@ -16,6 +16,7 @@ export type Pub = {
   title: string;
   author: string;
   venue: string;
+  award?: string;
   image: string;
   tags: Tag[];
   summary?: string;
@@ -35,6 +36,7 @@ export const publications: Pub[] = [
     author:
       "Core Francisco Park, Maya Okawa, Andrew Lee, Hidenori Tanaka, and Ekdeep Singh Lubana",
     venue: "NeurIPS",
+    award: "Spotlight",
     image:
       "https://sites.harvard.edu/insight-lab/files/2024/12/concept-space.png",
     summary:
@@ -60,6 +62,7 @@ export const publications: Pub[] = [
     title: "Hypertrix: An Indicatrix for High-Dimensional Visualizations",
     author: "Shivam Raval, Fernanda Viégas, and Martin Wattenberg",
     venue: "IEEE VIS",
+    award: "Best Paper",
     image:
       "https://sites.harvard.edu/insight-lab/files/2024/12/v-short-1090_Image-e1735524529659.png",
     summary:
@@ -76,6 +79,7 @@ export const publications: Pub[] = [
     author:
       "Kenneth Li, Tianle Liu, Naomi Bashkansky, David Bau, Fernanda Viégas, Hanspeter Pfister, and Martin Wattenberg",
     venue: "COLM",
+    award: "Oral",
     image: "https://sites.harvard.edu/insight-lab/files/2024/12/colm-2024.png",
     summary:
       "When a dialogue goes long, a chatbot ceases to follow its system prompt surprisingly quickly—within 8 rounds.",
@@ -104,6 +108,7 @@ export const publications: Pub[] = [
     author:
       "Andrew Lee, Xiaoyan Bai, Itamar Pres, Martin Wattenberg, Jonathan K. Kummerfeld, and Rada Mihalcea",
     venue: "ICML",
+    award: "Oral",
     image: "https://sites.harvard.edu/insight-lab/files/2024/12/dpo.png",
     summary:
       "We study the mechanisms by which alignment algorithms alter a model's behavior, using direct preference optimization (DPO) and toxicity as a case-study.",
@@ -134,6 +139,7 @@ export const publications: Pub[] = [
     author:
       "Ian Arawjo, Chelse Swoopes, Priyan Vaithilingam, Martin Wattenberg, and Elena Glassman",
     venue: "ACM CHI",
+    award: "Honorable Mention",
     image: "https://sites.harvard.edu/insight-lab/files/2024/12/chainforge.png",
     summary:
       "We present ChainForge, an open-source visual toolkit for prompt engineering and on-demand hypothesis testing of text generation LLMs.",
@@ -149,6 +155,7 @@ export const publications: Pub[] = [
     author:
       "Evan Hernandez*, Arnab Sen Sharma*, Tal Haklay, Kevin Meng, Martin Wattenberg, Jacob Andreas, Yonathan Belinkov, and David Bau",
     venue: "ICLR",
+    award: "Spotlight",
     image:
       "https://sites.harvard.edu/insight-lab/files/2024/01/linear-decoding-748162687ed95315.png",
     summary:
@@ -163,6 +170,7 @@ export const publications: Pub[] = [
     author:
       "Kenneth Li*, Oam Patel*, Fernanda Viégas, Hanspeter Pfister, and Martin Wattenberg",
     venue: "NeurIPS",
+    award: "Spotlight",
     image: "https://sites.harvard.edu/insight-lab/files/2023/12/truth.png",
     summary:
       "By manipulating the activations of a language model, we can compel it to tell the truth it knows but otherwise hides.",
@@ -192,6 +200,7 @@ export const publications: Pub[] = [
       "Emergent Linear Representations in World Models of Self-Supervised Sequence Models",
     author: "Neel Nanda*, Andrew Lee*, and Martin Wattenberg",
     venue: "EMNLP",
+    award: "Honorable Mention",
     image:
       "https://sites.harvard.edu/insight-lab/files/2024/12/emergent-linear.png",
     summary: `Building off previous work on Othello-playing neural networks,  we show that probing for "my colour" vs. "opponent's colour" may be a simple yet powerful way to interpret the model's internal state.`,
@@ -203,6 +212,7 @@ export const publications: Pub[] = [
     title: "LingoLand: An AI-Assisted Immersive Game for Language Learning",
     author: "Olivia Seow",
     venue: "UIST",
+    award: "Best Demo",
     image:
       "https://sites.harvard.edu/insight-lab/files/2024/01/lingoland-fae62b4d7d4f79f4.png",
     summary:
@@ -260,6 +270,7 @@ export const publications: Pub[] = [
     author:
       "Kenneth Li, Aspen K. Hopkins, David Bau, Fernanda Viégas, Hanspeter Pfister, and Martin Wattenberg",
     venue: "ICLR",
+    award: "Oral",
     image: "https://sites.harvard.edu/insight-lab/files/2023/12/othello.png",
     summary:
       "In a GPT trained from scratch on Othello game transcripts, we uncover an interpretable and controllable world model of the game board.",
