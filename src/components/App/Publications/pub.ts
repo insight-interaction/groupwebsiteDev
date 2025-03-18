@@ -31,6 +31,18 @@ export type Pub = {
 
 export const publications: Pub[] = [
   {
+    title: "ICLR: In-Context Learning of Representations",
+    author:
+      "Core Francisco Park*, Andrew Lee*, Ekdeep Singh Lubana*, Yongyi Yang*, Maya Okawa, Kento Nishi, Martin Wattenberg, and Hidenori Tanaka",
+    venue: "ICLR",
+    image: "https://sites.harvard.edu/insight-lab/files/2025/03/iclr2025.png",
+    summary:
+      "We find that language models can form representations of in-context learning tasks as context is scaled.",
+    preprint: "https://arxiv.org/pdf/2501.00070",
+    year: 2025,
+    tags: ["interpretability", "machine learning"],
+  },
+  {
     title:
       "Emergence of Hidden Capabilities: Exploring Learning Dynamics in Concept Space",
     author:
