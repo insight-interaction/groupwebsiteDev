@@ -60,7 +60,7 @@ import { people, Person, Alum, alumni } from "./people";
 
 // CURRENT MEMBERS
 // sort by role
-const roleOrder = ["Professor", "Postdoc", "PhD Student", "Undergraduate"]
+const roleOrder = ["Professor", "Postdoc", "PhD Student", "Undergraduate", "Affiliate"]
 
 const comparePeople = (a: Person, b: Person) => {
     // Compare by role

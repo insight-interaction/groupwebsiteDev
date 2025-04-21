@@ -1,7 +1,7 @@
 // define person type
 export type Person = {
   name: string;
-  role: "Professor" | "Postdoc" | "PhD Student" | "Undergraduate";
+  role: "Professor" | "Postdoc" | "PhD Student" | "Undergraduate" | "Affiliate";
   profile: string;
   alter: string;
   url: string;
@@ -11,7 +11,7 @@ export type Person = {
 // define alum type
 export type Alum = {
   name: string;
-  prev: "Postdoc" | "PhD Student" | "Undergraduate";
+  prev: "Postdoc" | "PhD Student" | "Undergraduate" | "Affiliate";
   now: string;
   profile: string;
   url: string;
@@ -117,28 +117,20 @@ export const people: Person[] = [
   },
   {
     name: "Oam Patel",
-    role: "Undergraduate",
+    role: "Affiliate",
     profile: "oam.png",
     alter: "oam.png",
     url: "https://oampatel.com/",
     year: 2023,
   },
   {
-    name: "Jan Riecke",
+    name: "Victoria Li",
     role: "Undergraduate",
-    profile: "jan.jpg",
-    alter: "jan.jpg",
-    url: "https://linkedin.com/in/jan-riecke-835689255/",
-    year: 2023,
-  },
-  {
-    name: "Nikola Jurkovic",
-    role: "Undergraduate",
-    profile: "nikola.png",
-    alter: "nikola.png",
-    url: "https://nikolajurkovic.com/",
+    profile: "victoria.jpg",
+    alter: "victoria.jpg",
+    url: "http://victoriarli.com/",
     year: 2024,
-  },
+  }
 ];
 
 // ALUMNI
@@ -159,4 +151,20 @@ export const alumni: Alum[] = [
     url: "https://chenxcynthia.github.io/",
     year: 2024,
   },
+  {
+    name: "Nikola Jurkovic",
+    prev: "Affiliate",
+    now: "Technical Staff @ METR",
+    profile: "nikola.png",
+    url: "https://nikolajurkovic.com/",
+    year: 2025,
+  },
+  {
+    name: "Jan Riecke",
+    prev: "Affiliate",
+    now: "",
+    profile: "jan.jpg",
+    url: "https://linkedin.com/in/jan-riecke-835689255/",
+    year: 2025,
+  }
 ];
