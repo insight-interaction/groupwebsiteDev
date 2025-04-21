@@ -162,7 +162,7 @@ export const alumni: Alum[] = [
   {
     name: "Jan Riecke",
     prev: "Affiliate",
-    now: "",
+    now: "Postgrad",
     profile: "jan.jpg",
     url: "https://linkedin.com/in/jan-riecke-835689255/",
     year: 2025,
