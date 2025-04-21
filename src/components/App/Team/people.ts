@@ -85,10 +85,10 @@ export const people: Person[] = [
   },
   {
     name: "Trevor DePodesta",
-    role: "Undergraduate",
+    role: "PhD Student",
     profile: "trevor.jpg",
     alter: "trevor.png",
-    url: "https://tdepodesta.github.io/",
+    url: "https://tdepodesta.com/",
     year: 2022,
   },
   {
