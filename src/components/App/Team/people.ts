@@ -116,6 +116,14 @@ export const people: Person[] = [
     year: 2024,
   },
   {
+    name: "Naomi Saphra",
+    role: "Affiliate",
+    profile: "naomi.png",
+    alter: "naomi.png",
+    url: "https://nsaphra.net/",
+    year: 2023,
+  },
+  {
     name: "Oam Patel",
     role: "Affiliate",
     profile: "oam.png",
