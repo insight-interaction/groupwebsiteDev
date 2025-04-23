@@ -119,7 +119,7 @@ export const people: Person[] = [
     name: "Naomi Saphra",
     role: "Affiliate",
     profile: "naomi.png",
-    alter: "naomi.png",
+    alter: "naomi.jpg",
     url: "https://nsaphra.net/",
     year: 2023,
   },
@@ -138,7 +138,7 @@ export const people: Person[] = [
     alter: "victoria.jpg",
     url: "http://victoriarli.com/",
     year: 2024,
-  }
+  },
 ];
 
 // ALUMNI
@@ -174,5 +174,5 @@ export const alumni: Alum[] = [
     profile: "jan.jpg",
     url: "https://linkedin.com/in/jan-riecke-835689255/",
     year: 2025,
-  }
+  },
 ];
