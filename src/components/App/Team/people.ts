@@ -86,7 +86,7 @@ export const people: Person[] = [
   {
     name: "Trevor DePodesta",
     role: "PhD Student",
-    profile: "trevor.jpg",
+    profile: "trevor.png",
     alter: "trevor.png",
     url: "https://tdepodesta.com/",
     year: 2022,
@@ -109,7 +109,7 @@ export const people: Person[] = [
   },
   {
     name: "Rachit Bansal",
-    role: "PhD Student",
+    role: "Affiliate",
     profile: "rachit.jpg",
     alter: "rachit.png",
     url: "https://rachitbansal.github.io",
