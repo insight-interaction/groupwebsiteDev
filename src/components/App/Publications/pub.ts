@@ -66,7 +66,7 @@ export const publications: Pub[] = [
     author: "Victoria R. Li*, Jonathan L. Sun*, and Martin Wattenberg",
     venue: "IEEE VIS",
     year: 2025,
-    tags: ["interpretability"],
+    tags: ["visualization"],
     summary:
       "Charts and graphs help people analyze data, but can they also help AI? In this paper, we provide initial evidence that it does!",
     preprint: "https://arxiv.org/pdf/2507.18022",
