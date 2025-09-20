@@ -31,6 +31,78 @@ export type Pub = {
 
 export const publications: Pub[] = [
   {
+    title:
+      "Story Ribbons: Reimagining Storyline Visualizations with Large Language Models",
+    author:
+      "Catherine Yeh, Tara Menon, Robin Singh Arya, Helen He, Moira Weigel, Fernanda Viégas, and Martin Wattenberg",
+    venue: "IEEE VIS",
+    award: "Honorable Mention",
+    image:
+      "https://sites.harvard.edu/insight-lab/files/2025/09/SR-lab-pic-1.png",
+    summary:
+      "We explore the potential of LLMs to reimagine narrative visualizations and reveal new insights about familiar stories.",
+    preprint: "https://arxiv.org/pdf/2508.06772",
+    video:
+      "https://drive.google.com/file/d/18uf8udAJpnfHrJYLpCiVmPiP1GXs3R3t/view",
+    year: 2025,
+    tags: ["visualization", "human-ai interaction"],
+  },
+  {
+    title:
+      "Chronotome: Real-Time Topic Modeling for Streaming Embedding Spaces",
+    author:
+      "Matte Lim*, Catherine Yeh*, Martin Wattenberg, Fernanda Viégas, and Panagiotis Michalatos",
+    venue: "IEEE VIS",
+    award: "Honorable Mention",
+    image: "https://sites.harvard.edu/insight-lab/files/2025/09/chronotome.png",
+    summary:
+      "We design a technique based on force-based projection and streaming clustering to visualize evolving themes in time-based data — in real time.",
+    preprint: "https://arxiv.org/pdf/2509.01051",
+    year: 2025,
+    tags: ["visualization"],
+  },
+  {
+    title: "Does Visualization Help AI Understand Data?",
+    author: "Victoria R. Li*, Jonathan L. Sun*, and Martin Wattenberg",
+    venue: "IEEE VIS",
+    year: 2025,
+    tags: ["interpretability"],
+    summary:
+      "Charts and graphs help people analyze data, but can they also help AI? In this paper, we provide initial evidence that it does!",
+    preprint: "https://arxiv.org/pdf/2507.18022",
+    image: "https://sites.harvard.edu/insight-lab/files/2025/09/doesvis.png",
+  },
+  {
+    title: "When Bad Data Leads to Good Models",
+    author: "Kenneth Li, Yida Chen, Fernanda Viégas, and Martin Wattenberg",
+    venue: "ICML",
+    year: 2025,
+    preprint: "https://arxiv.org/pdf/2505.04741.pdf",
+    image: "https://sites.harvard.edu/insight-lab/files/2025/09/baddata.png",
+    summary:
+      "A little bit of toxic data in pretraining can act as a catalyst for more alignable language models.",
+    tags: ["interpretability"],
+  },
+  {
+    title: "What Kind of User Are You? Uncovering User Models in LLM Chatbots",
+    author:
+      "Yida Chen, Aoyu Wu, Trevor DePodesta, Catherine Yeh, Lena Armstrong, Kenneth Li, Nicholas Castillo Marin, Oam Patel, Jan Riecke, Shivam Raval, Olivia Seow, Martin Wattenberg, and Fernanda Viégas",
+    venue: "ICML",
+    image:
+      "https://sites.harvard.edu/insight-lab/files/2024/12/dashboard_overview.png",
+    summary: `We show evidence that conversational language models develop internal models of their users and design a dashboard to provide transparency and control over these "user models."`,
+    preprint: "https://arxiv.org/pdf/2406.07882",
+    project:
+      "https://yc015.github.io/TalkTuner-a-dashboard-ui-for-chatbot-llm/",
+    poster:
+      "https://actionable-interpretability.github.io/posters/ICML_2025_What_Kind_of_User_Are_You_Portrait%20%281%29%20-%20%E4%B9%9D%E6%9D%A1%E5%A4%9C%E9%95%B7.pdf",
+    code: "https://github.com/yc015/TalkTuner-chatbot-llm-dashboard/tree/main",
+    video:
+      "https://drive.google.com/file/d/1WB_w8yoDugg35BMG0GFFnpY1pa5npSbw/view?usp=sharing",
+    year: 2025,
+    tags: ["human-ai interaction", "interpretability"],
+  },
+  {
     title: "ICLR: In-Context Learning of Representations",
     author:
       "Core Francisco Park*, Andrew Lee*, Ekdeep Singh Lubana*, Yongyi Yang*, Maya Okawa, Kento Nishi, Martin Wattenberg, and Hidenori Tanaka",
@@ -59,8 +131,21 @@ export const publications: Pub[] = [
   },
   {
     title:
+      "Causal Promises but Correlational Delivers: A Study of Circuit Mechanisms and Model Behaviors",
+    author:
+      "Jenny Kaufmann*, Victoria R. Li*, Martin Wattenberg, David Alvarez-Melis, and Naomi Saphra",
+    venue: "NeurIPS",
+    image: "https://sites.harvard.edu/insight-lab/files/2025/09/ood.png",
+    summary:
+      "We investigate the correspondence between attention patterns and out-of-distribution generalization behavior of small transformer models.",
+    preprint: "https://openreview.net/pdf?id=JYyqhr8zJ8",
+    year: 2024,
+    tags: ["interpretability"],
+  },
+  {
+    title:
       "ChatGPT Doesn't Trust Chargers Fans: Guardrail Sensitivity in Context",
-    author: "Victoria R. Li, Yida Chen, and Naomi Saphra",
+    author: "Victoria R. Li*, Yida Chen*, and Naomi Saphra",
     venue: "EMNLP",
     image:
       "https://sites.harvard.edu/insight-lab/files/2024/12/guardrail-sensitivity-experimental-setup.jpg",
@@ -128,22 +213,6 @@ export const publications: Pub[] = [
     code: "https://github.com/ajyl/dpo_toxic",
     year: 2024,
     tags: ["interpretability"],
-  },
-  {
-    title:
-      "Designing a Dashboard for Transparency and Control of Conversational AI",
-    author:
-      "Yida Chen, Aoyu Wu, Trevor DePodesta, Catherine Yeh, Kenneth Li, Nicholas Castillo Marin, Oam Patel, Jan Riecke, Shivam Raval, Olivia Seow, Martin Wattenberg, and Fernanda Viégas",
-    venue: "arXiv",
-    image:
-      "https://sites.harvard.edu/insight-lab/files/2024/12/dashboard_overview.png",
-    summary: `We show evidence that conversational language models develop internal models of their users and design a dashboard to provide transparency and control over these "user models."`,
-    preprint: "https://arxiv.org/pdf/2406.07882",
-    project:
-      "https://yc015.github.io/TalkTuner-a-dashboard-ui-for-chatbot-llm/",
-    code: "https://github.com/yc015/TalkTuner-chatbot-llm-dashboard/tree/main",
-    year: 2024,
-    tags: ["human-ai interaction", "interpretability"],
   },
   {
     title:

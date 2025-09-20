@@ -52,14 +52,6 @@ export const people: Person[] = [
     year: 2024,
   },
   {
-    name: "Kenneth Li",
-    role: "PhD Student",
-    profile: "kenneth.jpeg",
-    alter: "kenneth.png",
-    url: "https://likenneth.github.io/",
-    year: 2021,
-  },
-  {
     name: "Shivam Raval",
     role: "PhD Student",
     profile: "shivam.png",
@@ -108,27 +100,11 @@ export const people: Person[] = [
     year: 2024,
   },
   {
-    name: "Rachit Bansal",
-    role: "Affiliate",
-    profile: "rachit.jpg",
-    alter: "rachit.png",
-    url: "https://rachitbansal.github.io",
-    year: 2024,
-  },
-  {
     name: "Naomi Saphra",
     role: "Affiliate",
     profile: "naomi.png",
     alter: "naomi.jpg",
     url: "https://nsaphra.net/",
-    year: 2023,
-  },
-  {
-    name: "Oam Patel",
-    role: "Affiliate",
-    profile: "oam.png",
-    alter: "oam.png",
-    url: "https://oampatel.com/",
     year: 2023,
   },
   {
@@ -138,6 +114,14 @@ export const people: Person[] = [
     alter: "victoria.jpg",
     url: "http://victoriarli.com/",
     year: 2024,
+  },
+  {
+    name: "Helena Vasconcelos",
+    role: "PhD Student",
+    profile: "helena.png",
+    alter: "helena.jpg",
+    url: "https://helenavasc.com/",
+    year: 2025,
   },
 ];
 
@@ -160,19 +144,11 @@ export const alumni: Alum[] = [
     year: 2024,
   },
   {
-    name: "Nikola Jurkovic",
-    prev: "Affiliate",
-    now: "Technical Staff @ METR",
-    profile: "nikola.png",
-    url: "https://nikolajurkovic.com/",
-    year: 2025,
-  },
-  {
-    name: "Jan Riecke",
-    prev: "Affiliate",
-    now: "Postgrad",
-    profile: "jan.jpg",
-    url: "https://linkedin.com/in/jan-riecke-835689255/",
+    name: "Kenneth Li",
+    prev: "PhD Student",
+    now: "Researcher @ Meta",
+    profile: "kenneth.jpeg",
+    url: "https://likenneth.github.io/",
     year: 2025,
   },
 ];
