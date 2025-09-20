@@ -38,7 +38,8 @@
                                 <a :href="p.url" target="_blank" :title="p.name">
                                     <div class="team-people-name">{{ p.name }}</div>
                                 </a>
-                                <div class="team-people-role">{{ p.prev }} &rarr; {{ p.now }}</div>
+                                <div class="team-people-role">{{ p.prev }} <span v-if="p.now !== undefined">&rarr; {{
+                                    p.now }}</span></div>
                             </div>
                         </div>
                     </div>

@@ -12,7 +12,7 @@ export type Person = {
 export type Alum = {
   name: string;
   prev: "Postdoc" | "PhD Student" | "Undergraduate" | "Affiliate";
-  now: string;
+  now?: string;
   profile: string;
   url: string;
   year: number;
@@ -58,14 +58,6 @@ export const people: Person[] = [
     alter: "shivam.png",
     url: "https://shivam-raval96.github.io/",
     year: 2019,
-  },
-  {
-    name: "Aoyu Wu",
-    role: "Postdoc",
-    profile: "aoyu.jpg",
-    alter: "aoyu.jpeg",
-    url: "https://wowjyu.github.io/",
-    year: 2022,
   },
   {
     name: "Catherine Yeh",
@@ -157,6 +149,13 @@ export const alumni: Alum[] = [
     now: "Researcher @ Meta",
     profile: "kenneth.jpeg",
     url: "https://likenneth.github.io/",
+    year: 2025,
+  },
+  {
+    name: "Aoyu Wu",
+    prev: "Postdoc",
+    profile: "aoyu.jpg",
+    url: "https://wowjyu.github.io/",
     year: 2025,
   },
 ];
