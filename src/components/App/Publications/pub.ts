@@ -73,6 +73,32 @@ export const publications: Pub[] = [
     image: "https://sites.harvard.edu/insight-lab/files/2025/09/doesvis.png",
   },
   {
+    title: "Shared Global and Local Geometry of Language Model Embeddings",
+    author: "Andrew Lee, Melanie Weber, Fernanda Viégas, and Martin Wattenberg",
+    venue: "COLM",
+    year: 2025,
+    summary:
+      "We find similar geometry of token embeddings across language models, both at a global and local level.",
+    preprint: "https://arxiv.org/pdf/2503.21073",
+    image:
+      "https://sites.harvard.edu/insight-lab/files/2025/09/sharedglobal.png",
+    tags: ["interpretability", "machine learning"],
+  },
+  {
+    title:
+      "The Geometry of Self-Verification in a Task-Specific Reasoning Model",
+    author:
+      "Andrew Lee, Lihao Sun, Chris Wendler, Fernanda Viégas, and Martin Wattenberg",
+    venue: "arXiv",
+    year: 2025,
+    summary:
+      "We study how a reasoning model self-verifies its chain-of-thought tokens for a specific search task.",
+    preprint: "https://arxiv.org/pdf/2504.14379",
+    image:
+      "https://sites.harvard.edu/insight-lab/files/2025/09/geometryself.png",
+    tags: ["interpretability", "machine learning"],
+  },
+  {
     title: "When Bad Data Leads to Good Models",
     author: "Kenneth Li, Yida Chen, Fernanda Viégas, and Martin Wattenberg",
     venue: "ICML",
