@@ -81,7 +81,7 @@ export const people: Person[] = [
     profile: "trevor.png",
     alter: "trevor.png",
     url: "https://tdepodesta.com/",
-    year: 2022,
+    year: 2025,
   },
   {
     name: "Olivia Seow",
