@@ -123,6 +123,14 @@ export const people: Person[] = [
     url: "https://helenavasc.com/",
     year: 2025,
   },
+  {
+    name: "Usha Bhalla",
+    role: "Affiliate",
+    profile: "usha.jpg",
+    alter: "usha.jpg",
+    url: "https://ushabhalla.github.io/",
+    year: 2023,
+  },
 ];
 
 // ALUMNI
