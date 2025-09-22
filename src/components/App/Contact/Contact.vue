@@ -7,6 +7,13 @@
             <div class="contact-text">
                 <!-- <div class="contact_subhead">Contacting Fernanda and Martin</div> -->
 
+                <b class="contact-alert">Note: Fernanda and Martin are on sabbatical this year (2025-26) and will be
+                    slower than usual to reply or else absent from some activities like reviewing, committees, and
+                    advising.
+                    In exceptionally urgent cases, you can contact the lab's faculty coordinator Madison Hulme at
+                    <a href="mailto:mhulme@seas.harvard.edu"
+                        title="Email Madison Hulme">mhulme@seas.harvard.edu</a>.</b>
+
                 <p class="contact-desc">
                     We receive a great deal of mail and we can't respond to every message. If you feel
                     your message is important and may have gotten lost in our inboxes; please do send a
@@ -92,6 +99,22 @@ export default defineComponent({
 <style rel="stylesheet" lang="scss">
 .contact-text {
     font-size: 0.9em;
+
+    .contact-alert {
+        display: block;
+        margin-bottom: 4px;
+
+        a {
+            color: $dark-accent;
+            text-decoration: none;
+            transition: 0.5s;
+
+            &:hover {
+                opacity: 0.7;
+                letter-spacing: 0.2px;
+            }
+        }
+    }
 
     .contact-desc {
         margin-bottom: 0;
