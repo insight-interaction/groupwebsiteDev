@@ -10,7 +10,8 @@
                     <div class="team-peoples">
                         <div v-for="p in finalPeopleList" class="team-people">
                             <div class="flip-card">
-                                <a class="flip-card-inner" :href="p.url" target="_blank" :title="p.name">
+                                <a class="flip-card-inner" :href="p.url"
+                                    :target="p.url && !p.url.includes('mailto:') ? '_blank' : ''" :title="p.name">
                                     <div class="flip-card-front">
                                         <img :src="p.img" class="team-people-img mx-auto d-block" />
                                     </div>
@@ -61,7 +62,7 @@ import { people, Person, Alum, alumni } from "./people";
 
 // CURRENT MEMBERS
 // sort by role
-const roleOrder = ["Professor", "Postdoc", "PhD Student", "Undergraduate", "Affiliate"]
+const roleOrder = ["Professor", "Admin", "Postdoc", "PhD Student", "Undergraduate", "Affiliate"]
 
 const comparePeople = (a: Person, b: Person) => {
     // Compare by role

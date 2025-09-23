@@ -1,7 +1,13 @@
 // define person type
 export type Person = {
   name: string;
-  role: "Professor" | "Postdoc" | "PhD Student" | "Undergraduate" | "Affiliate";
+  role:
+    | "Professor"
+    | "Admin"
+    | "Postdoc"
+    | "PhD Student"
+    | "Undergraduate"
+    | "Affiliate";
   profile: string;
   alter: string;
   url: string;
@@ -34,6 +40,14 @@ export const people: Person[] = [
     alter: "fernanda.png",
     url: "http://www.fernandaviegas.com/",
     year: 2021,
+  },
+  {
+    name: "Madison Hulme",
+    role: "Admin",
+    profile: "madison.png",
+    alter: "madison.png",
+    url: "mailto:mhulme@seas.harvard.edu",
+    year: 2020,
   },
   {
     name: "Yida Chen",
