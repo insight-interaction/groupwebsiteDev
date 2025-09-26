@@ -137,6 +137,14 @@ export const people: Person[] = [
     url: "https://ushabhalla.github.io/",
     year: 2023,
   },
+  {
+    name: "Priyanka Nanayakkara",
+    role: "Affiliate",
+    profile: "priyanka.jpg",
+    alter: "priyanka.webp",
+    url: "https://priyakalot.github.io/",
+    year: 2024,
+  },
 ];
 
 // ALUMNI

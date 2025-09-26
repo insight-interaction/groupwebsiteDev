@@ -44,6 +44,7 @@ export const publications: Pub[] = [
     preprint: "https://arxiv.org/pdf/2508.06772",
     video:
       "https://drive.google.com/file/d/18uf8udAJpnfHrJYLpCiVmPiP1GXs3R3t/view",
+    project: "https://catherinesyeh.github.io/story-docs/",
     year: 2025,
     tags: ["visualization", "human-ai interaction"],
   },
