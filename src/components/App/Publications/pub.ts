@@ -87,6 +87,19 @@ export const publications: Pub[] = [
   },
   {
     title:
+      "Why Can't Transformers Learn Multiplication? Reverse-Engineering Reveals Long-Range Dependency Pitfalls",
+    author:
+      "Xiaoyan Bai, Itamar Pres, Yuntian Deng, Chenhao Tan, Stuart Shieber, Fernanda Viégas, Martin Wattenberg, and Andrew Lee",
+    venue: "arXiv",
+    year: 2025,
+    summary:
+      "We uncover why Transformers can't learn to do multi-digit multiplication by reverse-engineering a Transformer that learns to do multiplication with implicit chain-of-thought.",
+    preprint: "https://arxiv.org/pdf/2510.00184",
+    image: "https://sites.harvard.edu/insight-lab/files/2025/10/multiply.png",
+    tags: ["interpretability", "machine learning"],
+  },
+  {
+    title:
       "The Geometry of Self-Verification in a Task-Specific Reasoning Model",
     author:
       "Andrew Lee, Lihao Sun, Chris Wendler, Fernanda Viégas, and Martin Wattenberg",
