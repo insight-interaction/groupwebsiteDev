@@ -64,7 +64,7 @@ export const publications: Pub[] = [
   },
   {
     title: "Does Visualization Help AI Understand Data?",
-    author: "Victoria R. Li*, Jonathan L. Sun*, and Martin Wattenberg",
+    author: "Victoria R. Li*, Johnathan L. Sun*, and Martin Wattenberg",
     venue: "IEEE VIS",
     year: 2025,
     tags: ["visualization"],
