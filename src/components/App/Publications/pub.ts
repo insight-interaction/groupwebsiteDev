@@ -84,6 +84,7 @@ export const publications: Pub[] = [
     image:
       "https://sites.harvard.edu/insight-lab/files/2025/09/sharedglobal.png",
     tags: ["interpretability", "machine learning"],
+    award: "Outstanding Paper",
   },
   {
     title:
