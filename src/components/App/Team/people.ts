@@ -10,7 +10,7 @@ export type Person = {
     | "Affiliate";
   profile: string;
   alter: string;
-  url: string;
+  url?: string;
   year: number;
 };
 
@@ -42,12 +42,11 @@ export const people: Person[] = [
     year: 2021,
   },
   {
-    name: "Madison Hulme",
+    name: "Marina DiDonato McLaughlin",
     role: "Admin",
-    profile: "madison.png",
-    alter: "madison.png",
-    url: "mailto:mhulme@seas.harvard.edu",
-    year: 2020,
+    profile: "marina.png",
+    alter: "marina.png",
+    year: 2025,
   },
   {
     name: "Yida Chen",
