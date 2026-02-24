@@ -10,9 +10,7 @@
                 <b class="contact-alert">Note: Fernanda and Martin are on sabbatical this year (2025-26) and will be
                     slower than usual to reply or else absent from some activities like reviewing, committees, and
                     advising.
-                    In exceptionally urgent cases, you can contact the lab's faculty coordinator Madison Hulme at
-                    <a href="mailto:mhulme@seas.harvard.edu"
-                        title="Email Madison Hulme">mhulme@seas.harvard.edu</a>.</b>
+                </b>
 
                 <p class="contact-desc">
                     We receive a great deal of mail and we can't respond to every message. If you feel
