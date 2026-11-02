@@ -16,6 +16,12 @@
                     <span class="emphasis">artistic exploration</span>.
                 </div>
 
+                <div class="section-about-notice">
+                    <i class="fa fa-info-circle" aria-hidden="true"></i>
+                    The lab is no longer active and is not accepting new Ph.D. students or research
+                    assistants. This site remains up as an archive of our work.
+                </div>
+
                 <a id="down-arrow" class="arrow-button" href="#themes" title="Go to main content">
                     <i class="fa fa-angle-down" aria-hidden="true"></i>
                 </a>
@@ -140,6 +146,27 @@ div.section-about-introtext {
     //     background: -webkit-linear-gradient(45deg, white, $tag-color-2);
     // }
 
+}
+
+div.section-about-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 16px;
+    padding: 10px 14px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.12);
+    font-size: 14px;
+    font-style: italic;
+    color: $lightest-accent;
+
+    // font awesome swaps the <i> for an <svg>; center it within the first line (1.5em tall)
+    svg,
+    i {
+        flex-shrink: 0;
+        height: 1em;
+        margin-top: 0.25em;
+    }
 }
 
 @media all and (max-width: 650px) {

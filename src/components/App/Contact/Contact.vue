@@ -7,9 +7,9 @@
             <div class="contact-text">
                 <!-- <div class="contact_subhead">Contacting Fernanda and Martin</div> -->
 
-                <b class="contact-alert">Note: Fernanda and Martin are on sabbatical this year (2025-26) and will be
-                    slower than usual to reply or else absent from some activities like reviewing, committees, and
-                    advising.
+                <b class="contact-alert">Note: The lab is no longer active, and Fernanda and Martin are not
+                    accepting new Ph.D. students, post-docs, or research assistants. Please do not email us about
+                    joining the lab.
                 </b>
 
                 <p class="contact-desc">
@@ -29,14 +29,14 @@
                         especially if you're building on our work or need more information about our
                         results and methods.
                     </li>
-                    <li>
+                    <!-- <li>
                         <b>Harvard students:</b> In general, feel free to email us. (If you're looking for
                         research opportunities, see the FAQ below first.) If you're in a class we're
                         teaching, office hours are also listed in Canvas.
                     </li>
                     <li>
                         <b>Other Harvard community members:</b> please reach out by mail!
-                    </li>
+                    </li> -->
                     <li>
                         <b>Press, speaking invites:</b> email us.
                     </li>
@@ -65,7 +65,8 @@ import { PlusOutlined, MinusOutlined } from "@ant-design/icons-vue";
 const faqs = [
     {
         Q: "I'm a Harvard student interested in research opportunities in your lab. Are there any available?",
-        A: "Maybe: we do sometimes have slots available. Typically these positions require skills in machine learning or data visualization. Please reach out to us by mail.",
+        // A: "Maybe: we do sometimes have slots available. Typically these positions require skills in machine learning or data visualization. Please reach out to us by mail.",
+        A: "No: the lab is no longer active, so we aren't taking on new students.",
     },
     {
         Q: "I've been reading your papers, and I have an idea for an interesting follow-up. Can I mail you about it?",
@@ -73,7 +74,8 @@ const faqs = [
     },
     {
         Q: "I'm a student, but not at Harvard. Can I work in your lab?",
-        A: "Depending on where you are in your career, you could apply for the Ph.D. program or a post-doc. Other than that, we probably can't find a position: we generally don't supervise non-Harvard students. In particular, we don't supervise high school students.",
+        // A: "Depending on where you are in your career, you could apply for the Ph.D. program or a post-doc. Other than that, we probably can't find a position: we generally don't supervise non-Harvard students. In particular, we don't supervise high school students.",
+        A: "No: the lab is no longer active and isn't accepting new Ph.D. students, post-docs, or other researchers.",
     },
 
     { Q: "Can I pay you to supervise a student?", A: "No." },
